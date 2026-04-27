@@ -346,6 +346,7 @@ backgroundRepeat: "no-repeat",
                 <img
                   src="/chisonosilvia.webp"
                   alt="Silvia - SCIARAM 33"
+                  loading="lazy"
                   className="w-full object-cover rounded-[2.5rem] shadow-2xl shadow-primary/10"
                   style={{ aspectRatio: "4/5" }}
                   data-testid="img-chisonosilvia"
@@ -367,6 +368,7 @@ backgroundRepeat: "no-repeat",
                 <img
                   src="/sessioneindividuale.webp"
                   alt="Sessione individuale"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                   data-testid="img-body-freedom"
                 />
@@ -409,6 +411,7 @@ backgroundRepeat: "no-repeat",
                     <img
                       src={p.img}
                       alt={p.title}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
