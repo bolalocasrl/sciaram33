@@ -162,11 +162,11 @@ export default function Home() {
           className="absolute inset-0"
           data-testid="img-hero-bg"
           style={{
-            backgroundImage: "url('/studiosilviavuoto.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center 30%",
-            backgroundAttachment: "fixed",
-            backgroundRepeat: "no-repeat",
+backgroundImage: "url('/studiosilviavuoto.webp')",
+backgroundSize: "cover",
+backgroundPosition: "center 30%",
+backgroundAttachment: window.innerWidth > 768 ? "fixed" : "scroll",
+backgroundRepeat: "no-repeat",
           }}
         />
         {/* Uniform dark overlay 40% */}
