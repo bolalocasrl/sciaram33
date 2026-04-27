@@ -51,28 +51,28 @@ const percorsi = [
     title: "Pilates Matwork & Yoga",
     subtitle: "Small Group · 6 posti",
     description: "Lavoro a corpo libero per ritrovare equilibrio, respiro e connessione con il tuo centro. Un'esperienza collettiva ma profondamente personale.",
-    img: "/StudioCorpoLibero.jpg",
+    img: "/StudioCorpoLibero.webp",
   },
   {
     icon: <Layers className="w-5 h-5" />,
     title: "Reformer & Cadillac",
     subtitle: "Duetto · 2 posti",
     description: "Precisione profonda con macchinari professionali. Ogni movimento calibrato per trasformare il corpo dall'interno.",
-    img: "/2persone.jpg",
+    img: "/2persone.webp",
   },
   {
     icon: <User className="w-5 h-5" />,
     title: "Sessioni Individuali",
     subtitle: "1-to-1 · Su misura",
     description: "Percorsi personalizzati per riabilitazione, prevenzione o obiettivi specifici. Attenzione totale al tuo corpo, alla tua storia.",
-    img: "/CorpoLibero.jpg",
+    img: "/CorpoLibero.webp",
   },
   {
     icon: <Layers className="w-5 h-5" />,
     title: "Studio Mix",
     subtitle: "Esperienza completa",
     description: "L'unione tra matwork e macchine. Una pratica integrata che porta il corpo a una libertà totale e consapevole.",
-    img: "/StudioMix.jpg",
+    img: "/StudioMix.webp",
   },
 ];
 
@@ -162,7 +162,7 @@ export default function Home() {
           className="absolute inset-0"
           data-testid="img-hero-bg"
           style={{
-            backgroundImage: "url('/SilviaStudioClean.png')",
+            backgroundImage: "url('/studiosilviavuoto.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center 30%",
             backgroundAttachment: "fixed",
@@ -344,7 +344,7 @@ export default function Home() {
             <ScrollReveal direction="right">
               <div className="relative">
                 <img
-                  src="/chisonosilvia.jpg"
+                  src="/chisonosilvia.webp"
                   alt="Silvia - SCIARAM 33"
                   className="w-full object-cover rounded-[2.5rem] shadow-2xl shadow-primary/10"
                   style={{ aspectRatio: "4/5" }}
@@ -365,7 +365,7 @@ export default function Home() {
             <ScrollReveal direction="left">
               <div className="relative overflow-hidden rounded-t-full rounded-b-[100px] aspect-[3/4] shadow-2xl shadow-primary/10">
                 <img
-                  src="/sessioneindividuale.png"
+                  src="/sessioneindividuale.webp"
                   alt="Sessione individuale"
                   className="w-full h-full object-cover"
                   data-testid="img-body-freedom"
