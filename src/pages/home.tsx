@@ -133,6 +133,8 @@ export default function Home() {
         >
           <a href="#chi-sono" className="hover:opacity-60 transition-opacity">Chi Sono</a>
           <a href="#percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
+          <a href="#lo-studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
+          <a href="#rituali" className="hover:opacity-60 transition-opacity">Rituali</a>
           <a href="#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
         </nav>
         <a
@@ -435,6 +437,133 @@ backgroundRepeat: "no-repeat",
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── LO STUDIO ── */}
+      <section id="lo-studio" className="py-32 px-6 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">Il nostro spazio</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-16">Lo Studio</h2>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <ScrollReveal direction="left">
+              <div className="rounded-3xl border border-primary/10 p-10 bg-secondary/20 h-full">
+                <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">Sala Grande</p>
+                <h3 className="text-2xl font-serif text-primary mb-6">Sala Macchine</h3>
+                <ul className="space-y-3 text-foreground/70 font-light text-lg">
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                    Cadillac
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                    Reformer
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                    Ladder Barrel
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                    Spine Corrector
+                  </li>
+                </ul>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right">
+              <div className="rounded-3xl border border-primary/10 p-10 bg-secondary/20 h-full">
+                <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">Sala Piccola</p>
+                <h3 className="text-2xl font-serif text-primary mb-6">Sala Matwork</h3>
+                <ul className="space-y-3 text-foreground/70 font-light text-lg">
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                    Pilates Matwork
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                    Yoga
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                    Meditazione
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                    Piccoli attrezzi
+                  </li>
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <ScrollReveal>
+            <p className="text-center text-foreground/60 font-light text-lg mb-10 max-w-2xl mx-auto">
+              Adatto a tutti: anziani, donne in gravidanza, riabilitazione post intervento.
+            </p>
+            <div className="flex justify-center">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-10 py-4 text-xs tracking-widest uppercase rounded-full text-white transition-all duration-300 hover:opacity-90 active:scale-95 shadow-lg"
+                style={{ backgroundColor: "hsl(var(--primary))" }}
+              >
+                Vieni a trovarci <ChevronRight className="w-3 h-3" />
+              </a>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ── RITUALI SPECIALI ── */}
+      <section id="rituali" className="py-32 px-6 bg-secondary/20">
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">Ogni mese</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-16">Rituali Speciali</h2>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ScrollReveal direction="left">
+              <div className="group rounded-3xl border border-primary/10 bg-background p-10 flex flex-col h-full hover:border-primary/25 transition-all duration-500">
+                <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4">3 Luglio 2026</p>
+                <h3 className="text-2xl font-serif text-primary mb-4">Sciamana Peruviana</h3>
+                <p className="text-foreground/70 font-light leading-relaxed mb-8 flex-1">
+                  Un evento immersivo con una sciamana peruviana. Lettura delle foglie di coca, cerimonie di connessione con la terra e rituali di trasformazione. Un'esperienza che va oltre il corpo.
+                </p>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 hover:bg-primary hover:text-white transition-all duration-300 self-start text-primary"
+                >
+                  Prenota il posto <ChevronRight className="w-3 h-3" />
+                </a>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right">
+              <div className="group rounded-3xl border border-primary/10 bg-background p-10 flex flex-col h-full hover:border-primary/25 transition-all duration-500">
+                <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4">Prossimamente</p>
+                <h3 className="text-2xl font-serif text-primary mb-4">Costellazioni Familiari</h3>
+                <p className="text-foreground/70 font-light leading-relaxed mb-8 flex-1">
+                  Un percorso di esplorazione profonda dei legami familiari. Attraverso le costellazioni, riscopri i pattern che plasmano il tuo presente e apri spazio a nuove possibilità.
+                </p>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 hover:bg-primary hover:text-white transition-all duration-300 self-start text-primary"
+                >
+                  Ricevi aggiornamenti <ChevronRight className="w-3 h-3" />
+                </a>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
