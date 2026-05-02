@@ -339,6 +339,12 @@ backgroundRepeat: "no-repeat",
                 </p>
               </div>
               <div className="mt-10 h-[1px] w-20 bg-primary/30" />
+              <a
+                href="/silvia"
+                className="inline-flex items-center gap-2 mt-8 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300 self-start"
+              >
+                Scopri di più su Silvia <ChevronRight className="w-3 h-3" />
+              </a>
             </ScrollReveal>
           </div>
 
@@ -438,6 +444,14 @@ backgroundRepeat: "no-repeat",
               </ScrollReveal>
             ))}
           </div>
+          <div className="flex justify-center mt-14">
+            <a
+              href="/percorsi"
+              className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-white/30 rounded-full px-6 py-3 text-white hover:bg-white hover:text-primary transition-all duration-300"
+            >
+              Esplora i percorsi <ChevronRight className="w-3 h-3" />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -505,7 +519,7 @@ backgroundRepeat: "no-repeat",
             <p className="text-center text-foreground/60 font-light text-lg mb-10 max-w-2xl mx-auto">
               Adatto a tutti: anziani, donne in gravidanza, riabilitazione post intervento.
             </p>
-            <div className="flex justify-center">
+            <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
@@ -514,6 +528,12 @@ backgroundRepeat: "no-repeat",
                 style={{ backgroundColor: "hsl(var(--primary))" }}
               >
                 Vieni a trovarci <ChevronRight className="w-3 h-3" />
+              </a>
+              <a
+                href="/studio"
+                className="inline-flex items-center gap-2 px-10 py-4 text-xs tracking-widest uppercase border border-primary/30 rounded-full text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              >
+                Scopri lo studio <ChevronRight className="w-3 h-3" />
               </a>
             </div>
           </ScrollReveal>
@@ -563,6 +583,16 @@ backgroundRepeat: "no-repeat",
                   Ricevi aggiornamenti <ChevronRight className="w-3 h-3" />
                 </a>
               </div>
+            </ScrollReveal>
+          </div>
+          <div className="flex justify-center mt-14">
+            <ScrollReveal>
+              <a
+                href="/rituali"
+                className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-6 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              >
+                Tutti i rituali <ChevronRight className="w-3 h-3" />
+              </a>
             </ScrollReveal>
           </div>
         </div>
