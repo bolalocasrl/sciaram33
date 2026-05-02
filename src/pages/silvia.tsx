@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { ChevronRight, MapPin, MessageCircle } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/393204488202";
 
@@ -67,8 +67,7 @@ export default function Silvia() {
             style={{
               maxHeight: "40px",
               width: "auto",
-              opacity: scrolled ? 1 : 0,
-              pointerEvents: scrolled ? "auto" : "none",
+              opacity: 1,
             }}
           />
         </a>

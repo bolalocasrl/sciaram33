@@ -131,10 +131,10 @@ export default function Home() {
           className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase transition-colors duration-500"
           style={{ color: scrolled ? "hsl(var(--foreground))" : "rgba(255,255,255,0.92)" }}
         >
-          <a href="#chi-sono" className="hover:opacity-60 transition-opacity">Chi Sono</a>
-          <a href="#percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
-          <a href="#lo-studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
-          <a href="#rituali" className="hover:opacity-60 transition-opacity">Rituali</a>
+          <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
+          <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
+          <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
+          <a href="/rituali" className="hover:opacity-60 transition-opacity">Rituali</a>
           <a href="#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
         </nav>
         <a
@@ -673,7 +673,7 @@ backgroundRepeat: "no-repeat",
                           <FormControl>
                             <Input
                               placeholder="Il tuo nome"
-                              className="bg-transparent border-t-0 border-x-0 border-b border-primary/20 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary text-lg"
+                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary text-lg"
                               data-testid="input-contact-name"
                               {...field}
                             />
@@ -691,7 +691,7 @@ backgroundRepeat: "no-repeat",
                           <FormControl>
                             <Input
                               placeholder="la.tua@email.com"
-                              className="bg-transparent border-t-0 border-x-0 border-b border-primary/20 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary text-lg"
+                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary text-lg"
                               data-testid="input-contact-email"
                               {...field}
                             />
@@ -709,7 +709,7 @@ backgroundRepeat: "no-repeat",
                           <FormControl>
                             <Textarea
                               placeholder="Come possiamo aiutarti?"
-                              className="bg-transparent border-t-0 border-x-0 border-b border-primary/20 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary min-h-[100px] resize-none text-lg"
+                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary min-h-[100px] resize-none text-lg"
                               data-testid="textarea-contact-message"
                               {...field}
                             />

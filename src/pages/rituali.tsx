@@ -104,8 +104,7 @@ export default function Rituali() {
             style={{
               maxHeight: "40px",
               width: "auto",
-              opacity: scrolled ? 1 : 0,
-              pointerEvents: scrolled ? "auto" : "none",
+              opacity: 1,
             }}
           />
         </a>
