@@ -686,7 +686,7 @@ backgroundRepeat: "no-repeat",
                           <FormControl>
                             <Input
                               placeholder="Il tuo nome"
-                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary text-lg"
+                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary text-lg font-light placeholder:text-foreground/50 placeholder:font-light"
                               data-testid="input-contact-name"
                               {...field}
                             />
@@ -704,7 +704,7 @@ backgroundRepeat: "no-repeat",
                           <FormControl>
                             <Input
                               placeholder="la.tua@email.com"
-                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary text-lg"
+                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary text-lg font-light placeholder:text-foreground/50 placeholder:font-light"
                               data-testid="input-contact-email"
                               {...field}
                             />
@@ -722,7 +722,7 @@ backgroundRepeat: "no-repeat",
                           <FormControl>
                             <Textarea
                               placeholder="Come possiamo aiutarti?"
-                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary min-h-[100px] resize-none text-lg"
+                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary min-h-[100px] resize-none text-lg font-light placeholder:text-foreground/50 placeholder:font-light"
                               data-testid="textarea-contact-message"
                               {...field}
                             />
