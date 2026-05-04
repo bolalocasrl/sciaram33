@@ -131,10 +131,10 @@ export default function Home() {
           className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase transition-colors duration-500"
           style={{ color: scrolled ? "hsl(var(--foreground))" : "rgba(255,255,255,0.92)" }}
         >
-          <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
+          <a href="/rituali" className="hover:opacity-60 transition-opacity">Rituali</a>
           <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
           <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
-          <a href="/rituali" className="hover:opacity-60 transition-opacity">Rituali</a>
+          <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
           <a href="#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
         </nav>
         <a
@@ -341,7 +341,7 @@ backgroundRepeat: "no-repeat",
               <div className="mt-10 h-[1px] w-20 bg-primary/30" />
               <a
                 href="/silvia"
-                className="inline-flex items-center gap-2 mt-8 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300 self-start"
+                className="hidden md:inline-flex items-center gap-2 mt-8 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300 self-start"
               >
                 Scopri di più su Silvia <ChevronRight className="w-3 h-3" />
               </a>
@@ -363,6 +363,14 @@ backgroundRepeat: "no-repeat",
                 <div className="absolute -top-6 -right-6 w-16 h-16 rounded-full bg-accent/30 -z-10" />
               </div>
             </ScrollReveal>
+            <div className="md:hidden mt-8">
+              <a
+                href="/silvia"
+                className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              >
+                Scopri di più su Silvia <ChevronRight className="w-3 h-3" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -370,6 +378,11 @@ backgroundRepeat: "no-repeat",
       {/* ── BODY FREEDOM ── */}
       <section className="py-32 px-6 bg-secondary/20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+          <div className="md:hidden w-full max-w-lg mx-auto mb-2">
+            <h2 className="text-4xl font-serif text-primary">
+              Quanto è libero il tuo corpo?
+            </h2>
+          </div>
           <div className="flex-1 w-full max-w-lg">
             <ScrollReveal direction="left">
               <div className="relative overflow-hidden rounded-t-full rounded-b-[100px] aspect-[3/4] shadow-2xl shadow-primary/10">
@@ -386,7 +399,7 @@ backgroundRepeat: "no-repeat",
 
           <div className="flex-1 max-w-xl">
             <ScrollReveal direction="right">
-              <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8">
+              <h2 className="hidden md:block text-4xl md:text-5xl font-serif text-primary mb-8">
                 Quanto è libero il tuo corpo?
               </h2>
               <p className="text-lg md:text-xl text-foreground/70 font-light leading-relaxed mb-10">
