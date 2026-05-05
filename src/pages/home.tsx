@@ -387,7 +387,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-serif text-center mb-20">I Percorsi</h2>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {percorsi.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 0.1}>
                 <div className="group flex flex-col h-full rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500">
