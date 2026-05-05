@@ -124,9 +124,9 @@ export default function Eventi() {
           <div className="space-y-12">
             {eventi.map((ev, i) => (
               <ScrollReveal key={ev.guest} delay={i * 0.1}>
-                <div className="flex items-start gap-0 border-t border-primary/10 pt-10">
+                <div className="flex flex-col md:flex-row md:items-start border-t border-primary/10 pt-10">
                   {/* Data */}
-                  <div className="w-48 shrink-0">
+                  <div className="md:w-48 md:shrink-0 mb-4 md:mb-0">
                     <p
                       className="font-serif text-primary leading-tight"
                       style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}
@@ -135,8 +135,8 @@ export default function Eventi() {
                     </p>
                   </div>
 
-                  {/* Divisore verticale */}
-                  <div className="border-l border-primary/20 mx-8 self-stretch" />
+                  {/* Divisore verticale — solo desktop */}
+                  <div className="hidden md:block border-l border-primary/20 mx-8 self-stretch" />
 
                   {/* Contenuto */}
                   <div className="flex-1">
