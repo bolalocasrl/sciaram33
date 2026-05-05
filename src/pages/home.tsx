@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -70,13 +70,6 @@ const percorsi = [
 ];
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -98,31 +91,24 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background overflow-hidden selection:bg-primary/20 selection:text-primary">
 
-      {/* ── NAVBAR — sticky, backdrop blur activates on scroll ── */}
+      {/* ── NAVBAR ── */}
       <header
-        className="fixed top-0 left-0 right-0 z-50 px-8 py-5 flex justify-between items-center transition-all duration-500"
+        className="fixed top-0 left-0 right-0 z-50 px-8 py-5 flex justify-between items-center"
         style={{
-          backdropFilter: scrolled ? "blur(18px)" : "blur(0px)",
-          WebkitBackdropFilter: scrolled ? "blur(18px)" : "blur(0px)",
-          backgroundColor: scrolled ? "rgba(245,243,242,0.82)" : "rgba(0,0,0,0.10)",
-          borderBottom: scrolled ? "1px solid rgba(140,59,59,0.10)" : "none",
+          backgroundColor: "rgba(245,243,242,0.95)",
+          borderBottom: "1px solid rgba(140,59,59,0.10)",
         }}
       >
         <img
           src="/SilviaLogo_Final.png"
           alt="SCIARAM 33"
-          className="object-contain transition-all duration-500"
-          style={{
-            maxHeight: "40px",
-            width: "auto",
-            opacity: scrolled ? 1 : 0,
-            pointerEvents: scrolled ? "auto" : "none",
-          }}
+          className="object-contain"
+          style={{ maxHeight: "40px", width: "auto" }}
           data-testid="img-logo-navbar"
         />
         <nav
-          className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase transition-colors duration-500"
-          style={{ color: scrolled ? "hsl(var(--foreground))" : "rgba(255,255,255,0.92)" }}
+          className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase"
+          style={{ color: "hsl(var(--foreground))" }}
         >
           <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
           <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
@@ -135,12 +121,10 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
           data-testid="link-whatsapp-navbar"
-          className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-500"
+          className="text-xs tracking-widest uppercase rounded-full px-5 py-2"
           style={{
-            color: scrolled ? "hsl(var(--primary))" : "rgba(255,255,255,0.92)",
-            border: scrolled
-              ? "1px solid rgba(140,59,59,0.35)"
-              : "1px solid rgba(255,255,255,0.50)",
+            color: "hsl(var(--primary))",
+            border: "1px solid rgba(140,59,59,0.35)",
           }}
         >
           Prenota
