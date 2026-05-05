@@ -67,13 +67,6 @@ const percorsi = [
     description: "Percorsi personalizzati per riabilitazione, prevenzione o obiettivi specifici. Attenzione totale al tuo corpo, alla tua storia.",
     img: "/CorpoLibero.webp",
   },
-  {
-    icon: <Layers className="w-5 h-5" />,
-    title: "Studio Mix",
-    subtitle: "Esperienza completa",
-    description: "L'unione tra matwork e macchine. Una pratica integrata che porta il corpo a una libertà totale e consapevole.",
-    img: "/StudioMix.webp",
-  },
 ];
 
 export default function Home() {

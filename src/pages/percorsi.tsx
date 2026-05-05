@@ -88,25 +88,6 @@ const percorsi = [
     ],
     ideal: "Ideale per chi ha esigenze specifiche, per la riabilitazione post-intervento, per la gravidanza, per atleti e per chi vuole il massimo dall'esperienza.",
   },
-  {
-    icon: <Layers className="w-6 h-6" />,
-    title: "Studio Mix",
-    subtitle: "Esperienza completa",
-    img: "/StudioMix.webp",
-    tag: "Misto",
-    duration: "75 min",
-    level: "Intermedio / Avanzato",
-    description:
-      "Il percorso Studio Mix è per chi vuole tutto. Una sessione che combina il lavoro a corpo libero con le macchine, costruita come un flusso continuo dove il tappetino e il Reformer si alternano senza soluzione di continuità.",
-    details: [
-      "Riscaldamento con sequenze di yoga e respirazione",
-      "Lavoro centrale di Pilates Matwork",
-      "Transizione fluida al Reformer o al Cadillac",
-      "Finale di integrazione con stretching profondo",
-      "Meditazione breve di chiusura",
-    ],
-    ideal: "Ideale per chi ha già una base di Pilates o yoga e vuole un'esperienza integrata e completa, che tocca corpo, respiro e mente.",
-  },
 ];
 
 export default function Percorsi() {
