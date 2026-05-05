@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/393204488202";
@@ -33,37 +33,19 @@ function ScrollReveal({
 const eventi = [
   {
     date: "3 Luglio 2026",
-    status: "confirmed" as const,
-    title: "Sciamana Peruviana",
-    subtitle: "Cerimonia immersiva",
+    guest: "Martina Mamani",
+    type: "Sciamana Peruviana",
     description:
-      "Un incontro straordinario con una sciamana peruviana di tradizione andina. La serata si apre con una cerimonia di benvenuto, seguita dalla lettura delle foglie di coca — un'antica pratica divinatoria che permette di entrare in contatto con la propria intuizione profonda.",
-    details: [
-      "Cerimonia di apertura con erbe sacre andine",
-      "Lettura delle foglie di coca personalizzata",
-      "Meditazione guidata con canti sciamanici",
-      "Ritual di chiusura e integrazione",
-      "Tisane e silenzio condiviso",
-    ],
-    practical: "Evento serale. Posti limitati a 12 partecipanti. Abbigliamento comodo consigliato.",
+      "Lettura delle foglie di coca, cerimonia immersiva e spirituale con la tradizione andina.",
     cta: "Prenota il posto",
   },
   {
     date: "Prossimamente",
-    status: "soon" as const,
-    title: "Costellazioni Familiari",
-    subtitle: "Percorso di esplorazione",
+    guest: "Costellazioni Familiari",
+    type: null,
     description:
-      "Le costellazioni familiari sono un metodo terapeutico sistemico che permette di esplorare i legami invisibili che ci connettono alla nostra famiglia d'origine. Attraverso rappresentazioni spaziali e movimenti guidati, emergono pattern inconsci che influenzano la nostra vita presente.",
-    details: [
-      "Introduzione al metodo Hellinger",
-      "Sessioni individuali di costellazione in gruppo",
-      "Integrazione corporea post-sessione con movimento guidato",
-      "Condivisione in cerchio",
-      "Materiali di approfondimento",
-    ],
-    practical: "Data da definire. Iscriviti alla lista d'attesa per essere tra i primi ad essere avvisati.",
-    cta: "Iscriviti alla lista d'attesa",
+      "Un viaggio nelle dinamiche profonde della famiglia.",
+    cta: "Ricevi aggiornamenti",
   },
 ];
 
@@ -76,13 +58,6 @@ export default function Eventi() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const heroRef = useRef(null);
-  const { scrollYProgress: heroScroll } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-  const heroOpacity = useTransform(heroScroll, [0, 0.7], [1, 0]);
-
   return (
     <main className="min-h-screen bg-background overflow-hidden selection:bg-primary/20 selection:text-primary">
 
@@ -92,7 +67,7 @@ export default function Eventi() {
         style={{
           backdropFilter: scrolled ? "blur(18px)" : "blur(0px)",
           WebkitBackdropFilter: scrolled ? "blur(18px)" : "blur(0px)",
-          backgroundColor: scrolled ? "rgba(245,243,242,0.82)" : "rgba(0,0,0,0.10)",
+          backgroundColor: scrolled ? "rgba(245,243,242,0.82)" : "transparent",
           borderBottom: scrolled ? "1px solid rgba(140,59,59,0.10)" : "none",
         }}
       >
@@ -101,21 +76,17 @@ export default function Eventi() {
             src="/SilviaLogo_Final.png"
             alt="SCIARAM 33"
             className="object-contain transition-all duration-500"
-            style={{
-              maxHeight: "40px",
-              width: "auto",
-              opacity: 1,
-            }}
+            style={{ maxHeight: "40px", width: "auto" }}
           />
         </a>
         <nav
           className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase transition-colors duration-500"
-          style={{ color: scrolled ? "hsl(var(--foreground))" : "rgba(255,255,255,0.92)" }}
+          style={{ color: "hsl(var(--foreground))" }}
         >
-          <a href="/#chi-sono" className="hover:opacity-60 transition-opacity">Chi Sono</a>
-          <a href="/#percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
-          <a href="/#lo-studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
-          <a href="/#eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
+          <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
+          <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
+          <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
+          <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
           <a href="/#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
         </nav>
         <a
@@ -124,178 +95,88 @@ export default function Eventi() {
           rel="noopener noreferrer"
           className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-500"
           style={{
-            color: scrolled ? "hsl(var(--primary))" : "rgba(255,255,255,0.92)",
-            border: scrolled
-              ? "1px solid rgba(140,59,59,0.35)"
-              : "1px solid rgba(255,255,255,0.50)",
+            color: "hsl(var(--primary))",
+            border: "1px solid rgba(140,59,59,0.35)",
           }}
         >
           Prenota
         </a>
       </header>
 
-      {/* ── HERO ── */}
-      <section
-        ref={heroRef}
-        className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden"
-        style={{ backgroundColor: "hsl(var(--primary))" }}
-      >
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: "radial-gradient(circle at 30% 50%, rgba(255,255,255,0.3) 0%, transparent 60%), radial-gradient(circle at 70% 20%, rgba(255,255,255,0.15) 0%, transparent 50%)",
-          }}
-        />
+      {/* ── SEZIONE PRINCIPALE ── */}
+      <section className="pt-40 pb-32 px-6 bg-background">
+        <div className="max-w-4xl mx-auto">
 
-        <motion.div
-          style={{ opacity: heroOpacity }}
-          className="relative z-10 flex flex-col items-center text-center px-6 pt-24 pb-16 w-full max-w-2xl mx-auto"
-        >
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.20, ease: "easeOut" }}
-            className="text-white/50 font-light mb-5 tracking-[0.34em] uppercase"
-            style={{ fontSize: "clamp(0.65rem, 1.2vw, 0.88rem)" }}
-          >
-            Ogni mese
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.30, ease: "easeOut" }}
-            className="font-serif text-white leading-tight mb-8"
-            style={{
-              fontSize: "clamp(2.5rem, 6vw, 5rem)",
-              fontWeight: 500,
-              letterSpacing: "0.08em",
-            }}
-          >
-            Eventi Speciali
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.44, ease: "easeOut" }}
-            className="font-serif italic text-white/75 max-w-lg"
-            style={{ fontSize: "clamp(0.95rem, 1.6vw, 1.15rem)", lineHeight: "1.85" }}
-          >
-            "Oltre il movimento, c'è un lavoro più sottile. I rituali mensili sono spazi per incontrare qualcosa di più grande."
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.0 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        >
-          <div className="w-[1px] h-12 bg-white/30 mx-auto overflow-hidden">
-            <motion.div
-              animate={{ y: ["-100%", "100%"] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-              className="w-full h-full bg-white/70"
-            />
-          </div>
-        </motion.div>
-      </section>
-
-      {/* ── INTRO ── */}
-      <section className="py-32 px-6 bg-background">
-        <div className="max-w-4xl mx-auto text-center">
+          {/* Intestazione */}
           <ScrollReveal>
-            <div className="w-14 h-14 border border-primary rounded-full mx-auto mb-12 flex items-center justify-center">
-              <span className="block w-2 h-2 bg-primary rounded-full" />
-            </div>
-            <h2 className="text-3xl md:text-5xl font-serif text-primary leading-tight mb-10">
-              Uno spazio fuori dal tempo ordinario.
-            </h2>
-            <p className="text-lg text-foreground/70 font-light leading-relaxed max-w-2xl mx-auto">
-              I rituali mensili di SCIARAM 33 nascono dalla convinzione che il lavoro sul corpo non basti da solo. Alcune trasformazioni richiedono un accesso diverso — attraverso il simbolo, il cerchio, il rito. Questi incontri sono per chi vuole andare più in profondità.
+            <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4">
+              I prossimi appuntamenti
             </p>
+            <h1
+              className="font-serif text-primary mb-20"
+              style={{ fontSize: "clamp(3rem, 7vw, 6rem)", fontWeight: 500, letterSpacing: "0.06em" }}
+            >
+              EVENTI
+            </h1>
           </ScrollReveal>
+
+          {/* Lista eventi */}
+          <div className="space-y-12">
+            {eventi.map((ev, i) => (
+              <ScrollReveal key={ev.guest} delay={i * 0.1}>
+                <div className="flex items-start gap-0 border-t border-primary/10 pt-10">
+                  {/* Data */}
+                  <div className="w-48 shrink-0">
+                    <p
+                      className="font-serif text-primary leading-tight"
+                      style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}
+                    >
+                      {ev.date}
+                    </p>
+                  </div>
+
+                  {/* Divisore verticale */}
+                  <div className="border-l border-primary/20 mx-8 self-stretch" />
+
+                  {/* Contenuto */}
+                  <div className="flex-1">
+                    <h2 className="text-2xl font-serif text-primary mb-2">{ev.guest}</h2>
+                    {ev.type && (
+                      <p className="text-xs tracking-widest uppercase text-accent mb-4">{ev.type}</p>
+                    )}
+                    <p className="text-foreground/70 font-light leading-relaxed mb-6">
+                      {ev.description}
+                    </p>
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                    >
+                      {ev.cta} <ChevronRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── EVENTI ── */}
-      {eventi.map((evento, i) => (
-        <section
-          key={evento.title}
-          className={`py-32 px-6 ${i % 2 === 0 ? "bg-secondary/15" : "bg-background"}`}
-        >
-          <div className="max-w-4xl mx-auto">
-            <ScrollReveal>
-              <div className="rounded-3xl border border-primary/15 p-10 md:p-14 bg-background">
-                <div className="flex items-start justify-between flex-wrap gap-4 mb-8">
-                  <div>
-                    <p className="text-xs tracking-[0.3em] uppercase text-accent mb-2">{evento.date}</p>
-                    <h2 className="text-3xl md:text-4xl font-serif text-primary">{evento.title}</h2>
-                    <p className="text-sm tracking-widest uppercase text-foreground/40 mt-2">{evento.subtitle}</p>
-                  </div>
-                  {evento.status === "confirmed" && (
-                    <span className="text-xs tracking-widest uppercase px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 self-start">
-                      Data confermata
-                    </span>
-                  )}
-                  {evento.status === "soon" && (
-                    <span className="text-xs tracking-widest uppercase px-4 py-2 rounded-full bg-foreground/5 text-foreground/40 border border-foreground/10 self-start">
-                      Prossimamente
-                    </span>
-                  )}
-                </div>
-
-                <div className="h-[1px] bg-primary/10 mb-8" />
-
-                <p className="text-lg text-foreground/70 font-light leading-relaxed mb-10">
-                  {evento.description}
-                </p>
-
-                <div className="mb-10">
-                  <p className="text-xs tracking-[0.3em] uppercase text-foreground/40 mb-5">Il programma</p>
-                  <ul className="space-y-3">
-                    {evento.details.map((d) => (
-                      <li key={d} className="flex items-start gap-3 text-foreground/65 font-light">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-2" />
-                        {d}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <p className="text-sm text-accent font-light italic mb-10">{evento.practical}</p>
-
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-xs tracking-widest uppercase rounded-full text-white transition-all duration-300 hover:opacity-90 active:scale-95 shadow-lg"
-                  style={{ backgroundColor: "hsl(var(--primary))" }}
-                >
-                  {evento.cta} <ChevronRight className="w-3 h-3" />
-                </a>
-              </div>
-            </ScrollReveal>
-          </div>
-        </section>
-      ))}
-
-      {/* ── NEWSLETTER / LISTA ── */}
-      <section className="py-32 px-6 bg-primary text-white">
+      {/* ── CTA AGGIORNAMENTI ── */}
+      <section className="py-24 px-6 bg-secondary/20">
         <div className="max-w-2xl mx-auto text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-5xl font-serif leading-tight mb-8">
-              Non perderti i prossimi eventi.
-            </h2>
-            <p className="text-white/70 font-light text-lg leading-relaxed mb-12">
-              I posti sono limitati e vanno esauriti rapidamente. Scrivici su WhatsApp per essere inserito nella lista di notifica e ricevere gli aggiornamenti in anteprima.
+            <p className="text-lg text-foreground/70 font-light mb-8">
+              Vuoi essere aggiornato sui prossimi eventi?
             </p>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-10 py-4 text-xs tracking-widest uppercase rounded-full border border-white/30 text-white transition-all duration-300 hover:bg-white hover:text-primary"
+              className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-8 py-4 text-primary hover:bg-primary hover:text-white transition-all duration-300"
             >
-              Iscrivimi alla lista <ChevronRight className="w-3 h-3" />
+              Scrivici su WhatsApp <ChevronRight className="w-3 h-3" />
             </a>
           </ScrollReveal>
         </div>
