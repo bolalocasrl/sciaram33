@@ -67,7 +67,7 @@ const eventi = [
   },
 ];
 
-export default function Rituali() {
+export default function Eventi() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -115,7 +115,7 @@ export default function Rituali() {
           <a href="/#chi-sono" className="hover:opacity-60 transition-opacity">Chi Sono</a>
           <a href="/#percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
           <a href="/#lo-studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
-          <a href="/#rituali" className="hover:opacity-60 transition-opacity">Rituali</a>
+          <a href="/#eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
           <a href="/#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
         </nav>
         <a
@@ -171,7 +171,7 @@ export default function Rituali() {
               letterSpacing: "0.08em",
             }}
           >
-            Rituali Speciali
+            Eventi Speciali
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -284,7 +284,7 @@ export default function Rituali() {
         <div className="max-w-2xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-5xl font-serif leading-tight mb-8">
-              Non perderti i prossimi rituali.
+              Non perderti i prossimi eventi.
             </h2>
             <p className="text-white/70 font-light text-lg leading-relaxed mb-12">
               I posti sono limitati e vanno esauriti rapidamente. Scrivici su WhatsApp per essere inserito nella lista di notifica e ricevere gli aggiornamenti in anteprima.

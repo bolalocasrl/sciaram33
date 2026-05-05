@@ -7,7 +7,7 @@ import Home from "@/pages/home";
 import Silvia from "@/pages/silvia";
 import Studio from "@/pages/studio";
 import Percorsi from "@/pages/percorsi";
-import Rituali from "@/pages/rituali";
+import Eventi from "@/pages/eventi";
 
 const queryClient = new QueryClient();
 
@@ -18,7 +18,7 @@ function Router() {
       <Route path="/silvia" component={Silvia} />
       <Route path="/studio" component={Studio} />
       <Route path="/percorsi" component={Percorsi} />
-      <Route path="/rituali" component={Rituali} />
+      <Route path="/eventi" component={Eventi} />
       <Route component={NotFound} />
     </Switch>
   );

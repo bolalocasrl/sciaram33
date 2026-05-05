@@ -131,7 +131,7 @@ export default function Home() {
           className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase transition-colors duration-500"
           style={{ color: scrolled ? "hsl(var(--foreground))" : "rgba(255,255,255,0.92)" }}
         >
-          <a href="/rituali" className="hover:opacity-60 transition-opacity">Rituali</a>
+          <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
           <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
           <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
           <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
@@ -554,11 +554,11 @@ backgroundRepeat: "no-repeat",
       </section>
 
       {/* ── RITUALI SPECIALI ── */}
-      <section id="rituali" className="py-32 px-6 bg-secondary/20">
+      <section id="eventi" className="py-32 px-6 bg-secondary/20">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">Ogni mese</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-16">Rituali Speciali</h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-16">Eventi Speciali</h2>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -601,10 +601,10 @@ backgroundRepeat: "no-repeat",
           <div className="flex justify-center mt-14">
             <ScrollReveal>
               <a
-                href="/rituali"
+                href="/eventi"
                 className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-6 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300"
               >
-                Tutti i rituali <ChevronRight className="w-3 h-3" />
+                Tutti gli eventi <ChevronRight className="w-3 h-3" />
               </a>
             </ScrollReveal>
           </div>
