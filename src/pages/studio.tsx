@@ -143,7 +143,7 @@ export default function Studio() {
           <a href="/#chi-sono" className="hover:opacity-60 transition-opacity">Chi Sono</a>
           <a href="/#percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
           <a href="/#lo-studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
-          <a href="/#rituali" className="hover:opacity-60 transition-opacity">Rituali</a>
+          <a href="/#eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
           <a href="/#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
         </nav>
         <a
