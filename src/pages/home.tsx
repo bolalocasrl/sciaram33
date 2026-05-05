@@ -150,36 +150,8 @@ export default function Home() {
       {/* ── HERO ── */}
       <section
         ref={heroRef}
-        className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden"
+        className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-background"
       >
-        {/* Background — pure CSS, zero JS, smooth on all devices */}
-        <div
-          className="absolute inset-0"
-          data-testid="img-hero-bg"
-          style={{
-backgroundImage: "url('/studiosilviavuoto.webp')",
-backgroundSize: "cover",
-backgroundPosition: "center 30%",
-backgroundAttachment: window.innerWidth > 768 ? "fixed" : "scroll",
-backgroundRepeat: "no-repeat",
-          }}
-        />
-        {/* Uniform dark overlay 40% */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.65) 100%)",
-          }}
-        />
-        {/* Gradient bands: top (navbar contrast) + bottom (text contrast) */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 22%, transparent 70%, rgba(0,0,0,0.36) 100%)",
-          }}
-        />
 
         {/* ── CENTRED HERO CONTENT ── */}
         <motion.div
@@ -191,12 +163,11 @@ backgroundRepeat: "no-repeat",
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.15, ease: "easeOut" }}
-            className="font-serif text-white leading-none mb-8"
+            className="font-serif text-primary leading-none mb-8"
             style={{
               fontSize: "clamp(1.8rem, 5vw, 4.5rem)",
               fontWeight: 500,
               letterSpacing: "0.20em",
-              textShadow: "0 2px 20px rgba(0,0,0,0.40)",
             }}
             data-testid="text-title-hero"
           >
@@ -233,7 +204,7 @@ backgroundRepeat: "no-repeat",
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.38, ease: "easeOut" }}
-            className="text-white/80 font-light mb-7 tracking-[0.34em] uppercase"
+            className="text-primary/60 font-light mb-7 tracking-[0.34em] uppercase"
             style={{ fontSize: "clamp(0.65rem, 1.2vw, 0.88rem)" }}
           >
             Movement Medicine
@@ -244,12 +215,11 @@ backgroundRepeat: "no-repeat",
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.50, ease: "easeOut" }}
-            className="font-serif italic text-white/90 mb-10 max-w-md"
+            className="font-serif italic text-foreground/70 mb-10 max-w-md"
             style={{
               fontSize: "clamp(0.88rem, 1.5vw, 1.05rem)",
               fontWeight: 400,
               lineHeight: "1.90",
-              textShadow: "0 2px 14px rgba(0,0,0,0.65)",
             }}
           >
             "È il tempo di darsi spazio.
