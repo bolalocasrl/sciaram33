@@ -256,6 +256,75 @@ export default function Silvia() {
         </div>
       </section>
 
+      {/* ── FORMAZIONE & COMPETENZE ── */}
+      <section className="py-32 px-6 bg-background">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xs tracking-[0.3em] uppercase text-accent mb-6">Percorso di studi</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary mb-16 leading-tight">
+              Formazione & Competenze
+            </h2>
+          </ScrollReveal>
+          <div className="space-y-10">
+            {[
+              {
+                title: "Pilates Grandi Attrezzi",
+                desc: "Istruttrice certificata in Italia con specializzazione e approfondimenti conseguiti all'estero.",
+              },
+              {
+                title: "Yoga e Meditazione",
+                desc: "Formazione in India, nell'area dell'Himalaya, seguita da maestri orientali sullo studio dei chakra e del suono per apprendere le tecniche millenarie di equilibrio e presenza.",
+              },
+              {
+                title: "Divino Femminile",
+                desc: "Ho appreso da sagge maestre illuminate il lavoro sul Divino Femminile, approfondendo la sacralità dell'utero inteso come portale di saggezza, creazione e potere intuitivo.",
+              },
+              {
+                title: "Ricerca sulla Coscienza",
+                desc: "Studio e ricerca nella foresta di Palawan sugli stati alterati di coscienza, sperimentando la connessione con altri piani e lo studio dello spazio-tempo.",
+              },
+              {
+                title: "Scienze Olistiche",
+                desc: "Approfondimento in numerologia, astrologia, geometria sacra, sciamanesimo e medicina quantica, intesi come tecnologie di luce e chiavi per la comprensione della propria mappa animica.",
+              },
+            ].map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 0.08}>
+                <div className="flex gap-6 border-t border-primary/10 pt-8">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-2" />
+                  <div>
+                    <p className="font-medium text-foreground mb-2">{item.title}</p>
+                    <p className="text-foreground/70 font-light leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── WELFARE AZIENDALE ── */}
+      <section className="py-32 px-6 bg-secondary/20">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xs tracking-[0.3em] uppercase text-accent mb-6">Collaborazioni</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary mb-10 leading-tight">
+              Welfare & Benessere Aziendale
+            </h2>
+            <p className="text-lg text-foreground/70 font-light leading-relaxed mb-12 max-w-2xl">
+              Ho collaborato con realtà aziendali per promuovere il riequilibrio psico-fisico dei dipendenti. Attraverso programmi mirati, integro tecniche di movimento consapevole e gestione dello stress per migliorare il clima organizzativo e la qualità della vita lavorativa, portando la consapevolezza nel cuore della produttività.
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-6 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300"
+            >
+              Scrivimi per un progetto aziendale <ChevronRight className="w-3 h-3" />
+            </a>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* ── FILOSOFIA ── */}
       <section className="py-32 px-6 bg-primary text-white">
         <div className="max-w-4xl mx-auto text-center">
