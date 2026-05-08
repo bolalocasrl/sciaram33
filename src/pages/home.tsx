@@ -510,20 +510,28 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ScrollReveal direction="left">
-              <div className="group rounded-3xl border border-primary/10 bg-background p-10 flex flex-col h-full hover:border-primary/25 transition-all duration-500">
-                <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4">3 Luglio 2026</p>
-                <h3 className="text-2xl font-serif text-primary mb-4">Sciamana Peruviana</h3>
-                <p className="text-foreground/70 font-light leading-relaxed mb-8 flex-1">
-                  Un evento immersivo con una sciamana peruviana. Lettura delle foglie di coca, cerimonie di connessione con la terra e rituali di trasformazione. Un'esperienza che va oltre il corpo.
-                </p>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 hover:bg-primary hover:text-white transition-all duration-300 self-start text-primary"
-                >
-                  Prenota il posto <ChevronRight className="w-3 h-3" />
-                </a>
+              <div className="group rounded-3xl border border-primary/10 bg-background overflow-hidden flex flex-col h-full hover:border-primary/25 transition-all duration-500">
+                <div className="overflow-hidden aspect-[16/9]">
+                  <img
+                    src="/sciamanaperu2.webp"
+                    alt="Sciamana Peruviana"
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-10 flex flex-col flex-1">
+                  <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4">3 Luglio 2026</p>
+                  <h3 className="text-2xl font-serif text-primary mb-4">Sciamana Peruviana</h3>
+                  <p className="text-foreground/70 font-light leading-relaxed mb-8 flex-1">
+                    Un evento immersivo con una sciamana peruviana. Lettura delle foglie di coca, cerimonie di connessione con la terra e rituali di trasformazione. Un'esperienza che va oltre il corpo.
+                  </p>
+                  <a
+                    href="/eventi"
+                    className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 hover:bg-primary hover:text-white transition-all duration-300 self-start text-primary"
+                  >
+                    Scopri l'evento <ChevronRight className="w-3 h-3" />
+                  </a>
+                </div>
               </div>
             </ScrollReveal>
 
