@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -70,13 +70,6 @@ const percorsi = [
 ];
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -100,53 +93,58 @@ export default function Home() {
 
       {/* ── NAVBAR ── */}
       <header
-        className="fixed top-0 left-0 right-0 z-50 px-8 py-4 grid grid-cols-3 items-center transition-all duration-500"
+        className="sticky top-0 z-50 px-8 py-4 grid grid-cols-3 items-center"
         style={{
-          backgroundColor: scrolled ? "rgba(245,240,235,0.95)" : "rgba(0,0,0,0)",
-          borderBottom: scrolled ? "1px solid rgba(140,59,59,0.10)" : "none",
+          backgroundColor: "rgba(245,240,235,0.98)",
+          borderBottom: "1px solid rgba(140,59,59,0.10)",
         }}
       >
-        {/* Sinistra */}
-        <nav
-          className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase transition-colors duration-500"
-          style={{ color: scrolled ? "hsl(var(--foreground))" : "rgba(255,255,255,0.90)" }}
-        >
-          <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
-          <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
-        </nav>
-        <div className="md:hidden" />
+        {/* Sinistra — logo testo */}
+        <div>
+          <a href="/">
+            <img
+              src="/logo_testo.png"
+              alt="SCIARAM 33"
+              className="object-contain"
+              style={{ maxHeight: "55px", width: "auto" }}
+            />
+          </a>
+        </div>
 
-        {/* Centro — logo sempre visibile */}
+        {/* Centro — logo occhio */}
         <div className="flex justify-center">
           <a href="/">
             <img
               src="/silvia_logo_fine.png"
               alt="SCIARAM 33"
               className="object-contain"
-              style={{ maxHeight: "50px", width: "auto" }}
+              style={{ maxHeight: "65px", width: "auto" }}
               data-testid="img-logo-navbar"
             />
           </a>
         </div>
 
-        {/* Destra */}
-        <div className="flex items-center justify-end gap-8">
+        {/* Destra — navigazione + prenota */}
+        <div className="flex items-center justify-end gap-6">
           <nav
-            className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase transition-colors duration-500"
-            style={{ color: scrolled ? "hsl(var(--foreground))" : "rgba(255,255,255,0.90)" }}
+            className="hidden md:flex items-center gap-6 text-xs tracking-widest uppercase"
+            style={{ color: "hsl(var(--foreground))" }}
           >
+            <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
+            <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
             <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
             <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
+            <a href="#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
           </nav>
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             data-testid="link-whatsapp-navbar"
-            className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-500"
+            className="text-xs tracking-widest uppercase rounded-full px-5 py-2 shrink-0"
             style={{
-              color: scrolled ? "hsl(var(--primary))" : "rgba(255,255,255,0.90)",
-              border: scrolled ? "1px solid rgba(140,59,59,0.35)" : "1px solid rgba(255,255,255,0.50)",
+              color: "hsl(var(--primary))",
+              border: "1px solid rgba(140,59,59,0.35)",
             }}
           >
             Prenota
@@ -157,7 +155,7 @@ export default function Home() {
       {/* ── HERO ── */}
       <section
         ref={heroRef}
-        className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden"
+        className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden"
       >
         {/* Background */}
         <div
@@ -171,53 +169,22 @@ export default function Home() {
         {/* Overlay */}
         <div
           className="absolute inset-0"
-          style={{ background: "rgba(0,0,0,0.40)" }}
+          style={{ background: "rgba(0,0,0,0.35)" }}
         />
 
-        {/* ── CENTRED HERO CONTENT ── */}
+        {/* Contenuto centrato */}
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="relative z-10 flex flex-col items-center text-center px-6 pb-16 w-full max-w-2xl mx-auto"
+          className="relative z-10 flex flex-col items-center text-center px-6 py-16 w-full max-w-2xl mx-auto"
         >
-          {/* Logo testo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.88 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-7"
-            data-testid="img-logo-hero"
-          >
-            <img
-              src="/logo_testo.png"
-              alt="SCIARAM 33"
-              className="object-contain"
-              style={{
-                width: "clamp(280px, 40vw, 560px)",
-                height: "auto",
-                filter: "drop-shadow(0 2px 20px rgba(0,0,0,0.3))",
-              }}
-            />
-          </motion.div>
-
-          {/* Payoff */}
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.30, ease: "easeOut" }}
-            className="text-white/70 font-light mb-7 tracking-widest uppercase"
-            style={{ fontSize: "clamp(0.65rem, 1.2vw, 0.88rem)" }}
-          >
-            Movement Medicine
-          </motion.p>
-
           {/* Quote */}
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.44, ease: "easeOut" }}
-            className="font-serif italic text-white/80 mb-10 max-w-md"
+            transition={{ duration: 0.9, delay: 0.20, ease: "easeOut" }}
+            className="font-serif italic text-white/90 mb-10 max-w-md"
             style={{
-              fontSize: "clamp(0.88rem, 1.5vw, 1.05rem)",
+              fontSize: "clamp(0.95rem, 1.8vw, 1.15rem)",
               fontWeight: 400,
               lineHeight: "1.90",
             }}
@@ -235,7 +202,7 @@ export default function Home() {
             data-testid="link-whatsapp-hero"
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.58, ease: "easeOut" }}
+            transition={{ duration: 0.9, delay: 0.38, ease: "easeOut" }}
             className="inline-flex items-center justify-center px-10 py-4 text-white text-xs tracking-widest uppercase hover:opacity-90 active:scale-95 transition-all duration-300 shadow-xl"
             style={{
               backgroundColor: "hsl(var(--primary))",
