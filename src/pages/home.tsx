@@ -100,7 +100,7 @@ export default function Home() {
         }}
       >
         <img
-          src="/SilviaLogo_Final.png"
+          src="/silvia_logo_fine.png"
           alt="SCIARAM 33"
           className="object-contain"
           style={{ maxHeight: "40px", width: "auto" }}
@@ -166,7 +166,7 @@ export default function Home() {
             className="mb-8"
           >
             <img
-              src="/SilviaLogo_Final.png"
+              src="/silvia_logo_fine.png"
               alt="SCIARAM 33 Logo"
               className="object-contain"
               style={{
@@ -711,7 +711,7 @@ export default function Home() {
       {/* ── FOOTER ── */}
       <footer className="bg-foreground text-background py-1 px-6 text-center">
         <img
-          src="/SilviaLogo_Final.png"
+          src="/silvia_logo_fine.png"
           alt="SCIARAM 33"
           className="mx-auto mb-3 object-contain"
           style={{ maxHeight: "40px", width: "auto" }}

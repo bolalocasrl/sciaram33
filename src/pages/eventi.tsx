@@ -73,7 +73,7 @@ export default function Eventi() {
       >
         <a href="/">
           <img
-            src="/SilviaLogo_Final.png"
+            src="/silvia_logo_fine.png"
             alt="SCIARAM 33"
             className="object-contain transition-all duration-500"
             style={{ maxHeight: "40px", width: "auto" }}
@@ -199,7 +199,7 @@ export default function Eventi() {
       {/* ── FOOTER ── */}
       <footer className="bg-foreground text-background py-1 px-6 text-center">
         <img
-          src="/SilviaLogo_Final.png"
+          src="/silvia_logo_fine.png"
           alt="SCIARAM 33"
           className="mx-auto mb-3 object-contain"
           style={{ maxHeight: "40px", width: "auto" }}
