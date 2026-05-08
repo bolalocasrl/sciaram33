@@ -93,49 +93,79 @@ export default function Home() {
 
       {/* ── NAVBAR ── */}
       <header
-        className="fixed top-0 left-0 right-0 z-50 px-8 py-5 flex justify-between items-center"
+        className="fixed top-0 left-0 right-0 z-50 px-8 py-4 grid grid-cols-3 items-center"
         style={{
-          backgroundColor: "rgba(245,243,242,0.95)",
+          backgroundColor: "rgba(245,240,235,0.95)",
           borderBottom: "1px solid rgba(140,59,59,0.10)",
         }}
       >
-        <img
-          src="/silvia_logo_fine.png"
-          alt="SCIARAM 33"
-          className="object-contain"
-          style={{ maxHeight: "40px", width: "auto" }}
-          data-testid="img-logo-navbar"
-        />
+        {/* Sinistra */}
         <nav
           className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase"
           style={{ color: "hsl(var(--foreground))" }}
         >
           <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
           <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
-          <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
-          <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
-          <a href="#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
         </nav>
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-testid="link-whatsapp-navbar"
-          className="text-xs tracking-widest uppercase rounded-full px-5 py-2"
-          style={{
-            color: "hsl(var(--primary))",
-            border: "1px solid rgba(140,59,59,0.35)",
-          }}
-        >
-          Prenota
-        </a>
+        <div className="md:hidden" />
+
+        {/* Centro — logo */}
+        <div className="flex justify-center">
+          <a href="/">
+            <img
+              src="/silvia_logo_fine.png"
+              alt="SCIARAM 33"
+              className="object-contain"
+              style={{ maxHeight: "40px", width: "auto" }}
+              data-testid="img-logo-navbar"
+            />
+          </a>
+        </div>
+
+        {/* Destra */}
+        <div className="flex items-center justify-end gap-8">
+          <nav
+            className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase"
+            style={{ color: "hsl(var(--foreground))" }}
+          >
+            <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
+            <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
+          </nav>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="link-whatsapp-navbar"
+            className="text-xs tracking-widest uppercase rounded-full px-5 py-2"
+            style={{
+              color: "hsl(var(--primary))",
+              border: "1px solid rgba(140,59,59,0.35)",
+            }}
+          >
+            Prenota
+          </a>
+        </div>
       </header>
 
       {/* ── HERO ── */}
       <section
         ref={heroRef}
-        className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-background"
+        className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden"
       >
+        {/* Background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/heronatura.webp')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        {/* Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "rgba(0,0,0,0.35)" }}
+        />
 
         {/* ── CENTRED HERO CONTENT ── */}
         <motion.div
@@ -147,7 +177,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.15, ease: "easeOut" }}
-            className="font-serif text-primary leading-none mb-8"
+            className="font-serif text-white leading-none mb-8"
             style={{
               fontSize: "clamp(1.8rem, 5vw, 4.5rem)",
               fontWeight: 500,
@@ -188,7 +218,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.38, ease: "easeOut" }}
-            className="text-primary/60 font-light mb-7 tracking-[0.34em] uppercase"
+            className="text-white/80 font-light mb-7 tracking-[0.34em] uppercase"
             style={{ fontSize: "clamp(0.65rem, 1.2vw, 0.88rem)" }}
           >
             Movement Medicine
@@ -199,7 +229,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.50, ease: "easeOut" }}
-            className="font-serif italic text-foreground/70 mb-10 max-w-md"
+            className="font-serif italic text-white/90 mb-10 max-w-md"
             style={{
               fontSize: "clamp(0.88rem, 1.5vw, 1.05rem)",
               fontWeight: 400,
