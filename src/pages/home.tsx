@@ -92,70 +92,80 @@ export default function Home() {
     <main className="min-h-screen bg-background overflow-hidden selection:bg-primary/20 selection:text-primary">
 
       {/* ── NAVBAR ── */}
-      <header
-        className="sticky top-0 z-50 px-8 py-4 grid grid-cols-3 items-center"
-        style={{
-          backgroundColor: "rgba(245,240,235,0.98)",
-          borderBottom: "1px solid rgba(140,59,59,0.10)",
-        }}
-      >
-        {/* Sinistra — logo testo */}
-        <div>
-          <a href="/">
-            <img
-              src="/logo_testo.png"
-              alt="SCIARAM 33"
-              className="object-contain"
-              style={{ maxHeight: "55px", width: "auto" }}
-            />
-          </a>
+      <header className="sticky top-0 z-50">
+        {/* Barra principale */}
+        <div
+          className="px-8 py-3 grid grid-cols-3 items-center"
+          style={{
+            backgroundColor: "rgba(245,240,235,0.98)",
+            borderBottom: "1px solid rgba(140,59,59,0.10)",
+          }}
+        >
+          {/* Sinistra — logo testo */}
+          <div>
+            <a href="/">
+              <img
+                src="/logo_testo.png"
+                alt="SCIARAM 33"
+                className="object-contain"
+                style={{ maxHeight: "40px", width: "auto" }}
+              />
+            </a>
+          </div>
+
+          {/* Centro — logo occhio */}
+          <div className="flex justify-center">
+            <a href="/">
+              <img
+                src="/silvia_logo_fine.png"
+                alt="SCIARAM 33"
+                className="object-contain"
+                style={{ maxHeight: "55px", width: "auto" }}
+                data-testid="img-logo-navbar"
+              />
+            </a>
+          </div>
+
+          {/* Destra — solo Prenota */}
+          <div className="flex justify-end">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="link-whatsapp-navbar"
+              className="text-xs tracking-widest uppercase rounded-full px-5 py-2"
+              style={{
+                color: "hsl(var(--primary))",
+                border: "1px solid rgba(140,59,59,0.35)",
+              }}
+            >
+              Prenota
+            </a>
+          </div>
         </div>
 
-        {/* Centro — logo occhio */}
-        <div className="flex justify-center">
-          <a href="/">
-            <img
-              src="/silvia_logo_fine.png"
-              alt="SCIARAM 33"
-              className="object-contain"
-              style={{ maxHeight: "65px", width: "auto" }}
-              data-testid="img-logo-navbar"
-            />
-          </a>
-        </div>
-
-        {/* Destra — navigazione + prenota */}
-        <div className="flex items-center justify-end gap-6">
-          <nav
-            className="hidden md:flex items-center gap-6 text-xs tracking-widest uppercase"
-            style={{ color: "hsl(var(--foreground))" }}
-          >
+        {/* Barra link navigazione — solo desktop */}
+        <div
+          className="hidden md:flex justify-center items-center gap-10 py-2"
+          style={{
+            backgroundColor: "rgba(245,240,235,0.98)",
+            borderBottom: "1px solid rgba(140,59,59,0.10)",
+          }}
+        >
+          <nav className="flex items-center gap-10 text-xs tracking-widest uppercase" style={{ color: "hsl(var(--foreground))" }}>
             <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
             <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
             <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
             <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
             <a href="#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
           </nav>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="link-whatsapp-navbar"
-            className="text-xs tracking-widest uppercase rounded-full px-5 py-2 shrink-0"
-            style={{
-              color: "hsl(var(--primary))",
-              border: "1px solid rgba(140,59,59,0.35)",
-            }}
-          >
-            Prenota
-          </a>
         </div>
       </header>
 
       {/* ── HERO ── */}
       <section
         ref={heroRef}
-        className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden"
+        className="relative min-h-[92vh] flex flex-col items-center justify-center overflow-hidden"
       >
         {/* Background */}
         <div
@@ -166,10 +176,12 @@ export default function Home() {
             backgroundPosition: "center",
           }}
         />
-        {/* Overlay */}
+        {/* Overlay gradiente */}
         <div
           className="absolute inset-0"
-          style={{ background: "rgba(0,0,0,0.35)" }}
+          style={{
+            background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.65) 100%)",
+          }}
         />
 
         {/* Contenuto centrato */}
@@ -177,14 +189,50 @@ export default function Home() {
           style={{ opacity: heroOpacity }}
           className="relative z-10 flex flex-col items-center text-center px-6 py-16 w-full max-w-2xl mx-auto"
         >
-          {/* Quote */}
+          {/* Logo occhio con glow */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.88 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-6"
+          >
+            <img
+              src="/silvia_logo_fine.png"
+              alt="SCIARAM 33"
+              className="object-contain"
+              style={{
+                width: "clamp(100px, 12vw, 160px)",
+                height: "auto",
+                filter: [
+                  "drop-shadow(0 0 20px rgba(255,255,255,0.60))",
+                  "drop-shadow(0 0 50px rgba(255,255,255,0.30))",
+                  "drop-shadow(0 4px 12px rgba(0,0,0,0.25))",
+                ].join(" "),
+              }}
+              data-testid="img-logo-hero"
+            />
+          </motion.div>
+
+          {/* Movement Medicine */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.28, ease: "easeOut" }}
+            className="text-white/70 text-xs mb-8"
+            style={{ letterSpacing: "0.4em" }}
+          >
+            MOVEMENT MEDICINE
+          </motion.p>
+
+          {/* Citazione */}
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.20, ease: "easeOut" }}
-            className="font-serif italic text-white/90 mb-10 max-w-md"
+            transition={{ duration: 0.9, delay: 0.40, ease: "easeOut" }}
+            className="font-serif italic mb-10 max-w-lg"
             style={{
-              fontSize: "clamp(0.95rem, 1.8vw, 1.15rem)",
+              color: "rgba(255,255,255,0.85)",
+              fontSize: "clamp(0.92rem, 1.6vw, 1.10rem)",
               fontWeight: 400,
               lineHeight: "1.90",
             }}
@@ -202,7 +250,7 @@ export default function Home() {
             data-testid="link-whatsapp-hero"
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.38, ease: "easeOut" }}
+            transition={{ duration: 0.9, delay: 0.54, ease: "easeOut" }}
             className="inline-flex items-center justify-center px-10 py-4 text-white text-xs tracking-widest uppercase hover:opacity-90 active:scale-95 transition-all duration-300 shadow-xl"
             style={{
               backgroundColor: "hsl(var(--primary))",
