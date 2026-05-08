@@ -107,8 +107,8 @@ export default function Home() {
               <img
                 src="/logo_testo.png"
                 alt="SCIARAM 33"
-                className="object-contain"
-                style={{ maxHeight: "40px", width: "auto" }}
+                className="block object-contain"
+                style={{ maxHeight: "70px", width: "auto" }}
               />
             </a>
           </div>
