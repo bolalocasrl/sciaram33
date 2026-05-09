@@ -105,7 +105,7 @@ export default function Home() {
           <div>
             <a href="/">
               <img
-                src="/logo_testo1.png"
+                src="/sciaramscritta1.png"
                 alt="SCIARAM 33"
                 className="block object-contain"
                 style={{ maxHeight: "70px", width: "auto" }}
