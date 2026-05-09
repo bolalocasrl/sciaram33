@@ -108,7 +108,7 @@ export default function Home() {
                 src="/sciaramscritta1.png"
                 alt="SCIARAM 33"
                 className="block object-contain"
-                style={{ maxHeight: "70px", width: "auto" }}
+                style={{ maxHeight: "50px", width: "auto" }}
               />
             </a>
           </div>
@@ -120,7 +120,7 @@ export default function Home() {
                 src="/silvia_logo_fine.png"
                 alt="SCIARAM 33"
                 className="object-contain"
-                style={{ maxHeight: "55px", width: "auto" }}
+                style={{ maxHeight: "65px", width: "auto" }}
                 data-testid="img-logo-navbar"
               />
             </a>
