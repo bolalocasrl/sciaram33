@@ -55,7 +55,7 @@
 }
 
 :root {
-  --background: 20 15% 96%;
+  --background: 39 89% 93%;
   --foreground: 0 0% 17%;
   --border: 0 35% 86%;
   --card: 20 15% 96%;
@@ -132,7 +132,7 @@
 
 .dark {
   /* Mirroring light mode since there's no dark mode requested */
-  --background: 20 15% 96%;
+  --background: 39 89% 93%;
   --foreground: 0 0% 17%;
   --border: 0 35% 86%;
   --card: 20 15% 96%;
