@@ -92,73 +92,61 @@ export default function Home() {
     <main className="min-h-screen bg-background overflow-hidden selection:bg-primary/20 selection:text-primary">
 
       {/* ── NAVBAR ── */}
-      <header className="sticky top-0 z-50">
-        {/* Barra principale */}
-        <div
-          className="px-8 py-3 grid grid-cols-3 items-center"
-          style={{
-            backgroundColor: "rgba(245,240,235,0.98)",
-            borderBottom: "1px solid rgba(140,59,59,0.10)",
-          }}
-        >
-          {/* Sinistra — logo testo */}
-          <div>
-            <a href="/">
-              <img
-                src="/sciaramscritta1.png"
-                alt="SCIARAM 33"
-                className="block object-contain"
-                style={{ maxHeight: "50px", width: "auto" }}
-              />
-            </a>
-          </div>
-
-          {/* Centro — logo occhio */}
-          <div className="flex justify-center">
-            <a href="/">
-              <img
-                src="/silvia_logo_fine.png"
-                alt="SCIARAM 33"
-                className="object-contain"
-                style={{ maxHeight: "65px", width: "auto" }}
-                data-testid="img-logo-navbar"
-              />
-            </a>
-          </div>
-
-          {/* Destra — solo Prenota */}
-          <div className="flex justify-end">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="link-whatsapp-navbar"
-              className="text-xs tracking-widest uppercase rounded-full px-5 py-2"
-              style={{
-                color: "hsl(var(--primary))",
-                border: "1px solid rgba(140,59,59,0.35)",
-              }}
-            >
-              Prenota
-            </a>
-          </div>
-        </div>
-
-        {/* Barra link navigazione — solo desktop */}
-        <div
-          className="hidden md:flex justify-center items-center gap-10 py-2"
-          style={{
-            backgroundColor: "rgba(245,240,235,0.98)",
-            borderBottom: "1px solid rgba(140,59,59,0.10)",
-          }}
-        >
-          <nav className="flex items-center gap-10 text-xs tracking-widest uppercase" style={{ color: "hsl(var(--foreground))" }}>
+      <header
+        className="sticky top-0 z-50 px-8 py-3 grid grid-cols-3 items-center"
+        style={{
+          backgroundColor: "rgba(245,240,235,0.98)",
+          borderBottom: "1px solid rgba(140,59,59,0.10)",
+        }}
+      >
+        {/* Sinistra — link + scrittasilvia.png (solo desktop) */}
+        <div className="flex flex-col justify-center gap-1">
+          <nav className="hidden md:flex items-center gap-6 text-xs tracking-widest uppercase" style={{ color: "hsl(var(--foreground))" }}>
             <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
             <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
-            <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
-            <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
-            <a href="#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
           </nav>
+          <a href="/" className="hidden md:block mt-1">
+            <img
+              src="/scrittasilvia.png"
+              alt="Silvia"
+              className="object-contain"
+              style={{ maxHeight: "45px", width: "auto" }}
+            />
+          </a>
+        </div>
+
+        {/* Centro — logo occhio */}
+        <div className="flex justify-center">
+          <a href="/">
+            <img
+              src="/silvia_logo_fine.png"
+              alt="SCIARAM 33"
+              className="object-contain"
+              style={{ maxHeight: "70px", width: "auto" }}
+              data-testid="img-logo-navbar"
+            />
+          </a>
+        </div>
+
+        {/* Destra — link + Prenota */}
+        <div className="flex flex-col items-end justify-center gap-1">
+          <nav className="hidden md:flex items-center gap-6 text-xs tracking-widest uppercase" style={{ color: "hsl(var(--foreground))" }}>
+            <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio 33</a>
+            <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
+          </nav>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="link-whatsapp-navbar"
+            className="text-xs tracking-widest uppercase rounded-full px-5 py-2 mt-1 transition-all duration-300"
+            style={{
+              color: "hsl(var(--primary))",
+              border: "1px solid rgba(140,59,59,0.35)",
+            }}
+          >
+            Prenota
+          </a>
         </div>
       </header>
 
