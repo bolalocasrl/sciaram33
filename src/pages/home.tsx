@@ -177,29 +177,20 @@ export default function Home() {
           style={{ opacity: heroOpacity }}
           className="relative z-10 flex flex-col items-center text-center px-6 py-16 w-full max-w-2xl mx-auto"
         >
-          {/* Logo occhio con glow */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.88 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-6"
+          {/* Titolo principale */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="font-serif text-white mb-4"
+            style={{
+              fontSize: "clamp(3rem, 7vw, 6rem)",
+              fontWeight: 400,
+              textShadow: "0 2px 20px rgba(0,0,0,0.30), 0 1px 4px rgba(0,0,0,0.20)",
+            }}
           >
-            <img
-              src="/silvia_logo_fine.png"
-              alt="SCIARAM 33"
-              className="object-contain"
-              style={{
-                width: "clamp(100px, 12vw, 160px)",
-                height: "auto",
-                filter: [
-                  "drop-shadow(0 0 20px rgba(255,255,255,0.60))",
-                  "drop-shadow(0 0 50px rgba(255,255,255,0.30))",
-                  "drop-shadow(0 4px 12px rgba(0,0,0,0.25))",
-                ].join(" "),
-              }}
-              data-testid="img-logo-hero"
-            />
-          </motion.div>
+            Vibra con Noi
+          </motion.h1>
 
           {/* Movement Medicine */}
           <motion.p
