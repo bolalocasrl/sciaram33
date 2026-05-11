@@ -95,7 +95,7 @@ export default function Eventi() {
         >
           <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
           <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
-          <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
+          <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio 33</a>
           <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
           <a href="/#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
         </nav>

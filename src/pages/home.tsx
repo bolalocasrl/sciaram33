@@ -430,7 +430,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">Il nostro spazio</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-16">Lo Studio</h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-16">Lo Studio 33</h2>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -571,7 +571,7 @@ export default function Home() {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-accent shrink-0 mt-1" />
                   <div>
-                    <p className="font-medium text-foreground">Lo Studio</p>
+                    <p className="font-medium text-foreground">Lo Studio 33</p>
                     <p className="text-foreground/70">
                       Via Castelvetrano 45<br />Mazara del Vallo (TP)
                     </p>

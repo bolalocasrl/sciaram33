@@ -142,7 +142,7 @@ export default function Studio() {
         >
           <a href="/#chi-sono" className="hover:opacity-60 transition-opacity">Chi Sono</a>
           <a href="/#percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
-          <a href="/#lo-studio" className="hover:opacity-60 transition-opacity">Lo Studio</a>
+          <a href="/#lo-studio" className="hover:opacity-60 transition-opacity">Lo Studio 33</a>
           <a href="/#eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
           <a href="/#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
         </nav>
@@ -210,7 +210,7 @@ export default function Studio() {
               textShadow: "0 2px 20px rgba(0,0,0,0.40)",
             }}
           >
-            Lo Studio
+            Lo Studio 33
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
