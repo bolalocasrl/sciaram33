@@ -95,7 +95,7 @@ export default function Home() {
       <header
         className="sticky top-0 z-50 px-8 py-3 grid grid-cols-3 items-center"
         style={{
-          backgroundColor: "rgba(245,240,235,0.98)",
+          backgroundColor: "#fdf1db",
           borderBottom: "1px solid rgba(140,59,59,0.10)",
         }}
       >
@@ -255,21 +255,6 @@ export default function Home() {
             />
           </div>
         </motion.div>
-      </section>
-
-      {/* ── FILOSOFIA ── */}
-      <section className="py-32 px-6 bg-secondary/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <ScrollReveal>
-            <div className="w-14 h-14 border border-primary rounded-full mx-auto mb-12 flex items-center justify-center">
-              <span className="block w-2 h-2 bg-primary rounded-full" />
-            </div>
-            <h2 className="text-3xl md:text-5xl font-serif text-primary leading-tight">
-              Il cerchio è totalità, equilibrio, infinito. Uno spazio dove corpo e spirito si
-              incontrano. Il movimento diventa medicina: libera, smuove, riporta a uno.
-            </h2>
-          </ScrollReveal>
-        </div>
       </section>
 
       {/* ── CHI SONO ── */}
