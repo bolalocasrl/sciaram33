@@ -102,16 +102,16 @@ export default function Home() {
         }}
       >
         {/* Barra principale */}
-        <div className="px-8 py-3 flex items-center" style={{ color: "hsl(var(--foreground))" }}>
+        <div className="relative px-8 py-3 flex items-center" style={{ color: "hsl(var(--foreground))" }}>
 
-          {/* Logo testo — desktop */}
-          <a href="/" className="hidden md:block shrink-0 mr-8">
-            <img src="/scrittasilvia.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
-          </a>
-
-          {/* Logo testo — mobile */}
-          <a href="/" className="md:hidden shrink-0">
-            <img src="/scrittasilvia.png" alt="Silvia" className="object-contain" style={{ maxHeight: "35px", width: "auto" }} />
+          {/* Logo testo — desktop (posizione normale nel flusso) / mobile order-2 (centro) */}
+          <a href="/" className="shrink-0 order-2 md:order-none md:mr-8">
+            <img
+              src="/scrittasilvia.png"
+              alt="Silvia"
+              className="object-contain"
+              style={{ maxHeight: "35px", width: "auto" }}
+            />
           </a>
 
           {/* Link sinistri — solo desktop */}
@@ -120,8 +120,10 @@ export default function Home() {
             <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
           </nav>
 
-          {/* Logo occhio — centrato */}
-          <div className="flex-1 flex justify-center">
+          {/* Logo occhio — desktop: absolute centrato / mobile: order-1 (sinistra) */}
+          <div
+            className="md:absolute md:left-1/2 md:-translate-x-1/2 order-1 md:order-none shrink-0"
+          >
             <a href="/">
               <img
                 src="/silvia_logo_fine.png"
@@ -149,9 +151,12 @@ export default function Home() {
             </a>
           </nav>
 
-          {/* Hamburger — solo mobile */}
+          {/* Spacer mobile per spingere hamburger a destra */}
+          <div className="flex-1 md:hidden" />
+
+          {/* Hamburger — solo mobile, order-3 (destra) */}
           <button
-            className="md:hidden shrink-0 p-2"
+            className="md:hidden shrink-0 p-2 order-3"
             onClick={() => setMobileMenuOpen((o) => !o)}
             aria-label="Menu"
           >
