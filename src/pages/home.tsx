@@ -101,11 +101,18 @@ export default function Home() {
           borderBottom: "1px solid rgba(140,59,59,0.10)",
         }}
       >
-        {/* Barra principale */}
-        <div className="relative px-8 py-3 flex items-center" style={{ color: "hsl(var(--foreground))" }}>
-
-          {/* Logo testo — desktop (posizione normale nel flusso) / mobile order-2 (centro) */}
-          <a href="/" className="shrink-0 order-2 md:order-none md:mr-8">
+        {/* Barra mobile — grid 3 colonne */}
+        <div className="md:hidden grid grid-cols-3 items-center px-6 py-3">
+          <a href="/" className="justify-self-start">
+            <img
+              src="/silvia_logo_fine.png"
+              alt="SCIARAM 33"
+              className="object-contain"
+              style={{ maxHeight: "50px", width: "auto" }}
+              data-testid="img-logo-navbar"
+            />
+          </a>
+          <a href="/" className="justify-self-center">
             <img
               src="/scrittasilvia.png"
               alt="Silvia"
@@ -113,17 +120,34 @@ export default function Home() {
               style={{ maxHeight: "35px", width: "auto" }}
             />
           </a>
-
-          {/* Link sinistri — solo desktop */}
-          <nav className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase mr-auto">
-            <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
-            <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
-          </nav>
-
-          {/* Logo occhio — desktop: absolute centrato / mobile: order-1 (sinistra) */}
-          <div
-            className="md:absolute md:left-1/2 md:-translate-x-1/2 order-1 md:order-none shrink-0"
+          <button
+            className="justify-self-end p-2"
+            onClick={() => setMobileMenuOpen((o) => !o)}
+            aria-label="Menu"
           >
+            {mobileMenuOpen
+              ? <X className="w-5 h-5" style={{ color: "hsl(var(--primary))" }} />
+              : <Menu className="w-5 h-5" style={{ color: "hsl(var(--primary))" }} />
+            }
+          </button>
+        </div>
+
+        {/* Barra desktop — flex con logo occhio absolute centrato */}
+        <div className="relative hidden md:flex items-center px-8 py-3" style={{ color: "hsl(var(--foreground))" }}>
+
+          {/* Logo scritta + link sinistri */}
+          <div className="flex items-center gap-8 mr-auto">
+            <a href="/">
+              <img src="/scrittasilvia.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
+            </a>
+            <nav className="flex items-center gap-8 text-xs tracking-widest uppercase">
+              <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
+              <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
+            </nav>
+          </div>
+
+          {/* Logo occhio — absolute centrato */}
+          <div className="absolute left-1/2 -translate-x-1/2">
             <a href="/">
               <img
                 src="/silvia_logo_fine.png"
@@ -135,8 +159,8 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Link destri + Prenota — solo desktop */}
-          <nav className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase ml-auto">
+          {/* Link destri + Prenota */}
+          <nav className="flex items-center gap-8 text-xs tracking-widest uppercase ml-auto">
             <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio 33</a>
             <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
             <a
@@ -150,21 +174,6 @@ export default function Home() {
               Prenota
             </a>
           </nav>
-
-          {/* Spacer mobile per spingere hamburger a destra */}
-          <div className="flex-1 md:hidden" />
-
-          {/* Hamburger — solo mobile, order-3 (destra) */}
-          <button
-            className="md:hidden shrink-0 p-2 order-3"
-            onClick={() => setMobileMenuOpen((o) => !o)}
-            aria-label="Menu"
-          >
-            {mobileMenuOpen
-              ? <X className="w-5 h-5" style={{ color: "hsl(var(--primary))" }} />
-              : <Menu className="w-5 h-5" style={{ color: "hsl(var(--primary))" }} />
-            }
-          </button>
         </div>
 
         {/* Menu mobile a tendina */}
