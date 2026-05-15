@@ -180,38 +180,56 @@ export default function Silvia() {
 
       {/* ── IL PERCORSO ── */}
       <section className="py-32 px-6 bg-background">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
-            <div className="w-14 h-14 border border-primary rounded-full mx-auto mb-12 flex items-center justify-center">
-              <span className="block w-2 h-2 bg-primary rounded-full" />
-            </div>
-            <h2 className="text-3xl md:text-5xl font-serif text-primary leading-tight text-center mb-16">
-              Un percorso fatto di corpi, terre e silenzi.
-            </h2>
-          </ScrollReveal>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
 
-          <div className="space-y-12 text-lg text-foreground/85 font-light leading-relaxed max-w-2xl mx-auto">
-            <ScrollReveal delay={0.1}>
-              <p>
-                La mia storia con il movimento non è iniziata in palestra. È iniziata su una stuoia, in un piccolo studio di yoga a Mumbai, mentre cercavo qualcosa che le parole non riuscivano ancora a definire.
-              </p>
+          {/* Testo a sinistra */}
+          <div className="flex-1 max-w-xl">
+            <ScrollReveal>
+              <div className="w-14 h-14 border border-primary rounded-full mb-12 flex items-center justify-center">
+                <span className="block w-2 h-2 bg-primary rounded-full" />
+              </div>
+              <h2 className="text-3xl md:text-5xl font-serif text-primary leading-tight mb-16">
+                Un percorso fatto di corpi, terre e silenzi.
+              </h2>
             </ScrollReveal>
-            <ScrollReveal delay={0.15}>
-              <p>
-                Per anni ho viaggiato — India, Tailandia, Bali, Sri Lanka. Non come turista, ma come cercatrice. Ho studiato con maestri di yoga nella tradizione Iyengar e Ashtanga. Ho praticato meditazione vipassana. Ho capito che il corpo è l'unico tempio che non possiamo lasciare.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <p>
-                Al rientro in Italia, la formazione in Pilates — prima il Matwork, poi le macchine: Reformer, Cadillac, Ladder Barrel. Ho capito immediatamente la sinergia profonda tra queste due discipline: la precisione del Pilates e la profondità dello yoga si completano, non si escludono.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.25}>
-              <p>
-                SCIARAM 33 nasce da tutto questo. Dal numero 33 — la vibrazione del maestro insegnante nella numerologia. Da "Sciaram", parola che risuona con il sacro e la trasformazione. Un nome che è un'intenzione.
-              </p>
+
+            <div className="space-y-12 text-lg text-foreground/85 font-light leading-relaxed">
+              <ScrollReveal delay={0.1}>
+                <p>
+                  La mia storia con il movimento non è iniziata in palestra. È iniziata su una stuoia, in un piccolo studio di yoga a Mumbai, mentre cercavo qualcosa che le parole non riuscivano ancora a definire.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  Per anni ho viaggiato — India, Tailandia, Bali, Sri Lanka. Non come turista, ma come cercatrice. Ho studiato con maestri di yoga nella tradizione Iyengar e Ashtanga. Ho praticato meditazione vipassana. Ho capito che il corpo è l'unico tempio che non possiamo lasciare.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p>
+                  Al rientro in Italia, la formazione in Pilates — prima il Matwork, poi le macchine: Reformer, Cadillac, Ladder Barrel. Ho capito immediatamente la sinergia profonda tra queste due discipline: la precisione del Pilates e la profondità dello yoga si completano, non si escludono.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.25}>
+                <p>
+                  SCIARAM 33 nasce da tutto questo. Dal numero 33 — la vibrazione del maestro insegnante nella numerologia. Da "Sciaram", parola che risuona con il sacro e la trasformazione. Un nome che è un'intenzione.
+                </p>
+              </ScrollReveal>
+            </div>
+          </div>
+
+          {/* Foto a destra */}
+          <div className="flex-1 w-full max-w-lg">
+            <ScrollReveal direction="right">
+              <img
+                src="/chisonosilvia.webp"
+                alt="Silvia - SCIARAM 33"
+                loading="lazy"
+                className="w-full object-cover rounded-[2.5rem] shadow-2xl shadow-primary/10"
+                style={{ aspectRatio: "4/5" }}
+              />
             </ScrollReveal>
           </div>
+
         </div>
       </section>
 
