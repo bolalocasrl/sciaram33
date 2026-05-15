@@ -199,21 +199,42 @@ export default function Eventi() {
         </div>
       </section>
 
-      {/* ── CTA AGGIORNAMENTI ── */}
+      {/* ── NEWSLETTER ── */}
       <section className="py-24 px-6 bg-secondary/20">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-xl mx-auto text-center">
           <ScrollReveal>
-            <p className="text-lg text-foreground/85 font-light mb-8">
-              Vuoi essere aggiornato sui prossimi eventi?
+            <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4">Resta aggiornato</p>
+            <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4 leading-tight">
+              Rimani aggiornato sui prossimi eventi
+            </h2>
+            <p className="text-foreground/85 font-light mb-10">
+              Iscriviti per ricevere in anteprima le date dei nuovi appuntamenti.
             </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-8 py-4 text-primary hover:bg-primary hover:text-white transition-all duration-300"
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="flex flex-col sm:flex-row gap-3 justify-center mb-4"
             >
-              Scrivici su WhatsApp <ChevronRight className="w-3 h-3" />
-            </a>
+              <input
+                type="email"
+                placeholder="La tua email"
+                required
+                className="flex-1 px-5 py-3 rounded-full border border-primary/20 bg-background text-foreground font-light text-sm placeholder:text-foreground/65 focus:outline-none focus:border-primary/50 transition-colors"
+              />
+              <button
+                type="submit"
+                className="shrink-0 px-8 py-3 rounded-full text-xs tracking-widest uppercase text-white transition-all duration-300 hover:opacity-90 active:scale-95"
+                style={{ backgroundColor: "hsl(var(--primary))" }}
+              >
+                Iscriviti
+              </button>
+            </form>
+            <p className="text-foreground/65 text-xs font-light">
+              Iscrivendoti accetti il trattamento dei tuoi{" "}
+              <a href="/privacy" className="underline underline-offset-2 hover:text-primary transition-colors">
+                dati personali
+              </a>
+              .
+            </p>
           </ScrollReveal>
         </div>
       </section>
