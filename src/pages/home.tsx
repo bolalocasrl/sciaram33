@@ -137,7 +137,7 @@ export default function Home() {
           <div className="flex items-center w-full px-8 py-3">
 
             {/* Gruppo sinistro */}
-            <div className="flex items-center justify-between flex-1 pr-16">
+            <div className="flex items-center justify-between flex-1 pr-24">
               <a href="/">
                 <img src="/scrittasilvia.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
               </a>
@@ -159,7 +159,7 @@ export default function Home() {
             </div>
 
             {/* Gruppo destro */}
-            <div className="flex items-center justify-between flex-1 pl-16">
+            <div className="flex items-center justify-between flex-1 pl-24">
               <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio 33</a>
               <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
               <a
