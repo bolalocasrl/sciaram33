@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { ChevronRight, Menu, X } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/393204488202";
@@ -32,13 +32,6 @@ function ScrollReveal({
 
 export default function Silvia() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const heroRef = useRef(null);
-  const { scrollYProgress: heroScroll } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-  const heroOpacity = useTransform(heroScroll, [0, 0.7], [1, 0]);
 
   return (
     <main className="min-h-screen bg-background overflow-hidden selection:bg-primary/20 selection:text-primary">
@@ -97,103 +90,19 @@ export default function Silvia() {
         )}
       </header>
 
-      {/* ── HERO ── */}
-      <section
-        ref={heroRef}
-        className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden"
-      >
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('/chisonosilvia.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center 20%",
-            backgroundAttachment: window.innerWidth > 768 ? "fixed" : "scroll",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.65) 100%)",
-          }}
-        />
-
-        <motion.div
-          style={{ opacity: heroOpacity }}
-          className="relative z-10 flex flex-col items-center text-center px-6 pt-24 pb-16 w-full max-w-2xl mx-auto"
-        >
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.20, ease: "easeOut" }}
-            className="text-white/70 font-light mb-5 tracking-[0.34em] uppercase"
-            style={{ fontSize: "clamp(0.65rem, 1.2vw, 0.88rem)" }}
-          >
-            L'anima di SCIARAM 33
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.30, ease: "easeOut" }}
-            className="font-serif text-white leading-tight mb-8"
-            style={{
-              fontSize: "clamp(2.5rem, 6vw, 5rem)",
-              fontWeight: 500,
-              letterSpacing: "0.08em",
-              textShadow: "0 2px 20px rgba(0,0,0,0.40)",
-            }}
-          >
-            Ciao, sono Silvia.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.44, ease: "easeOut" }}
-            className="font-serif italic text-white/80 max-w-lg"
-            style={{
-              fontSize: "clamp(0.95rem, 1.6vw, 1.15rem)",
-              lineHeight: "1.85",
-              textShadow: "0 2px 14px rgba(0,0,0,0.55)",
-            }}
-          >
-            "Ho dedicato la mia vita a studiare il corpo, il movimento e l'anima. Questo è il mio viaggio."
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.0 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        >
-          <div className="w-[1px] h-12 bg-white/30 mx-auto overflow-hidden">
-            <motion.div
-              animate={{ y: ["-100%", "100%"] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-              className="w-full h-full bg-white/70"
-            />
-          </div>
-        </motion.div>
-      </section>
-
       {/* ── IL PERCORSO ── */}
-      <section className="py-32 px-6 bg-background">
+      <section className="pt-32 pb-32 px-6 bg-background">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
 
-          {/* Testo a sinistra */}
+          {/* Colonna sinistra — testo */}
           <div className="flex-1 max-w-xl">
-            <ScrollReveal>
-              <div className="w-14 h-14 border border-primary rounded-full mb-12 flex items-center justify-center">
-                <span className="block w-2 h-2 bg-primary rounded-full" />
-              </div>
-              <h2 className="text-3xl md:text-5xl font-serif text-primary leading-tight mb-16">
-                Un percorso fatto di corpi, terre e silenzi.
+            <ScrollReveal direction="left">
+              <p className="text-xs tracking-[0.3em] uppercase text-accent mb-6">L'anima di SCIARAM 33</p>
+              <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8 leading-tight">
+                Ciao, sono Silvia.
               </h2>
             </ScrollReveal>
-
-            <div className="space-y-12 text-lg text-foreground/85 font-light leading-relaxed">
+            <div className="space-y-8 text-lg text-foreground/85 font-light leading-relaxed">
               <ScrollReveal delay={0.1}>
                 <p>
                   La mia storia con il movimento non è iniziata in palestra. È iniziata su una stuoia, in un piccolo studio di yoga a Mumbai, mentre cercavo qualcosa che le parole non riuscivano ancora a definire.
@@ -217,7 +126,7 @@ export default function Silvia() {
             </div>
           </div>
 
-          {/* Foto a destra */}
+          {/* Colonna destra — foto */}
           <div className="flex-1 w-full max-w-lg">
             <ScrollReveal direction="right">
               <img
