@@ -324,29 +324,6 @@ export default function Percorsi() {
         </section>
       ))}
 
-      {/* ── COLLABORAZIONI ── */}
-      <section className="py-32 px-6 bg-secondary/20">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
-            <p className="text-xs tracking-[0.3em] uppercase text-accent mb-6">Collaborazioni</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-primary mb-10 leading-tight">
-              Welfare & Benessere Aziendale
-            </h2>
-            <p className="text-lg text-foreground/85 font-light leading-relaxed mb-12 max-w-2xl">
-              Ho collaborato con realtà aziendali per promuovere il riequilibrio psico-fisico dei dipendenti. Attraverso programmi mirati, integro tecniche di movimento consapevole e gestione dello stress per migliorare il clima organizzativo e la qualità della vita lavorativa, portando la consapevolezza nel cuore della produttività.
-            </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-6 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300"
-            >
-              Scrivimi per un progetto aziendale <ChevronRight className="w-3 h-3" />
-            </a>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* ── DISCIPLINE ── */}
       <section className="py-32 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
@@ -387,6 +364,29 @@ export default function Percorsi() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── COLLABORAZIONI ── */}
+      <section className="py-32 px-6 bg-secondary/20">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xs tracking-[0.3em] uppercase text-accent mb-6">Collaborazioni</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary mb-10 leading-tight">
+              Welfare & Benessere Aziendale
+            </h2>
+            <p className="text-lg text-foreground/85 font-light leading-relaxed mb-12 max-w-2xl">
+              Ho collaborato con realtà aziendali per promuovere il riequilibrio psico-fisico dei dipendenti. Attraverso programmi mirati, integro tecniche di movimento consapevole e gestione dello stress per migliorare il clima organizzativo e la qualità della vita lavorativa, portando la consapevolezza nel cuore della produttività.
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-6 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300"
+            >
+              Scrivimi per un progetto aziendale <ChevronRight className="w-3 h-3" />
+            </a>
+          </ScrollReveal>
         </div>
       </section>
 
