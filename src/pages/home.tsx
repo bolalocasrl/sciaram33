@@ -556,7 +556,13 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-10 flex flex-col flex-1">
-                  <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4">3 Luglio 2026</p>
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className="font-serif text-primary leading-none" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", fontWeight: 500 }}>3</span>
+                    <div>
+                      <p className="text-sm font-light text-primary/70 leading-tight">Luglio</p>
+                      <p className="text-sm font-light text-primary/65 leading-tight">2026</p>
+                    </div>
+                  </div>
                   <h3 className="text-2xl font-serif text-primary mb-4">Sciamana Peruviana</h3>
                   <p className="text-foreground/85 font-light leading-relaxed mb-8 flex-1">
                     Un evento immersivo con una sciamana peruviana. Lettura delle foglie di coca, cerimonie di connessione con la terra e rituali di trasformazione. Un'esperienza che va oltre il corpo.
