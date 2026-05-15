@@ -142,47 +142,6 @@ export default function Silvia() {
         </div>
       </section>
 
-      {/* ── FORMAZIONE ── */}
-      <section className="py-32 px-6 bg-secondary/20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
-          <div className="flex-1 w-full max-w-lg">
-            <ScrollReveal direction="left">
-              <div className="relative overflow-hidden rounded-3xl aspect-[3/4] shadow-2xl shadow-primary/10">
-                <img
-                  src="/chisonosilvia.webp"
-                  alt="Silvia - formazione"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </ScrollReveal>
-          </div>
-
-          <div className="flex-1 max-w-xl">
-            <ScrollReveal direction="right">
-              <p className="text-xs tracking-[0.3em] uppercase text-accent mb-6">Formazione</p>
-              <h2 className="text-4xl md:text-5xl font-serif text-primary mb-10 leading-tight">
-                Un sapere costruito nel tempo.
-              </h2>
-              <ul className="space-y-6">
-                {[
-                  { year: "India", desc: "Formazione in Yoga Iyengar e Ashtanga — studio approfondito dell'anatomia del movimento e della respirazione pranayama" },
-                  { year: "Tailandia", desc: "Ritiri di meditazione vipassana e pratica di yoga nidra — consapevolezza del corpo sottile" },
-                  { year: "Bali", desc: "Immersione nella tradizione balinese di cura del corpo — rituali di guarigione e connessione con la terra" },
-                  { year: "Italia", desc: "Certificazione completa in Pilates — Matwork, Reformer, Cadillac, Ladder Barrel, Spine Corrector" },
-                  { year: "SCIARAM 33", desc: "Fondazione dello studio a Mazara del Vallo — uno spazio dove il movimento diventa medicina" },
-                ].map((item) => (
-                  <li key={item.year} className="flex gap-6">
-                    <span className="text-xs tracking-widest uppercase text-primary font-bold shrink-0 pt-1 w-24">{item.year}</span>
-                    <p className="text-foreground/85 font-light leading-relaxed">{item.desc}</p>
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
       {/* ── FORMAZIONE & COMPETENZE ── */}
       <section className="py-32 px-6 bg-background">
         <div className="max-w-4xl mx-auto">

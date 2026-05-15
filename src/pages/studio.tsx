@@ -68,33 +68,6 @@ const salaMatworkPieces = [
   },
 ];
 
-const discipline = [
-  {
-    title: "Pilates con macchine",
-    img: "/2persone.webp",
-    desc: "Il Pilates alle macchine permette un lavoro che il solo peso corporeo non potrebbe raggiungere. Le molle creano resistenza adattiva — sfidano senza sovraccaricare, supportano senza compensare. Ogni sessione è un dialogo tra il tuo corpo e la macchina.",
-    tags: ["Reformer", "Cadillac", "Ladder Barrel", "Spine Corrector"],
-  },
-  {
-    title: "Pilates Matwork",
-    img: "/StudioCorpoLibero.webp",
-    desc: "Adatto a tutti, dalle prime sessioni agli atleti avanzati. Indicato per anziani che vogliono mantenere mobilità e forza, per donne in gravidanza che cercano sostegno sicuro, per chi è in riabilitazione post-intervento e per chiunque voglia ritrovare connessione con il proprio centro.",
-    tags: ["Anziani", "Gravidanza", "Riabilitazione", "Tutti i livelli"],
-  },
-  {
-    title: "Yoga",
-    img: "/CorpoLibero.webp",
-    desc: "Non uno yoga spettacolare, ma uno yoga onesto. Praticato lentamente, con attenzione alle transizioni, al respiro e alla qualità del contatto con il suolo. Un'ora di yoga a SCIARAM 33 è un ritorno a sé.",
-    tags: ["Hatha", "Yin", "Pranayama", "Tutti i livelli"],
-  },
-  {
-    title: "Meditazione",
-    img: "/StudioMix.webp",
-    desc: "La meditazione non è svuotare la mente — è imparare a osservarla. Le sessioni di meditazione guidata usano tecniche di mindfulness, body scan e visualizzazione per portare il sistema nervoso in uno stato di calma profonda e consapevole.",
-    tags: ["Mindfulness", "Body scan", "Visualizzazione", "Respirazione"],
-  },
-];
-
 export default function Studio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -286,49 +259,6 @@ export default function Studio() {
                     <h3 className="text-2xl font-serif text-primary">{item.name}</h3>
                   </div>
                   <p className="text-foreground/85 font-light leading-relaxed">{item.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── DISCIPLINE ── */}
-      <section className="py-32 px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal>
-            <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">La pratica</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-20">Le Discipline</h2>
-          </ScrollReveal>
-
-          <div className="space-y-24">
-            {discipline.map((d, i) => (
-              <ScrollReveal key={d.title} direction={i % 2 === 0 ? "left" : "right"}>
-                <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-12 lg:gap-20`}>
-                  <div className="flex-1 w-full max-w-lg">
-                    <div className="overflow-hidden rounded-3xl aspect-[4/3] shadow-xl shadow-primary/8">
-                      <img
-                        src={d.img}
-                        alt={d.title}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                      />
-                    </div>
-                  </div>
-                  <div className="flex-1 max-w-xl">
-                    <h3 className="text-3xl md:text-4xl font-serif text-primary mb-6">{d.title}</h3>
-                    <p className="text-lg text-foreground/85 font-light leading-relaxed mb-8">{d.desc}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {d.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-primary/20 text-primary/70"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               </ScrollReveal>
             ))}
