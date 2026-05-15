@@ -133,47 +133,48 @@ export default function Home() {
         </div>
 
         {/* Barra desktop — flex con logo occhio absolute centrato */}
-        <div className="relative hidden md:flex items-center px-8 py-3" style={{ color: "hsl(var(--foreground))" }}>
+        <div className="relative hidden md:flex" style={{ color: "hsl(var(--foreground))" }}>
+          <div className="flex items-center w-full px-8 py-3">
 
-          {/* Logo scritta + link sinistri */}
-          <div className="flex-1 flex items-center justify-end pr-24 gap-8">
-            <a href="/">
-              <img src="/scrittasilvia.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
-            </a>
-            <nav className="flex items-center gap-8 text-xs tracking-widest uppercase">
-              <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
-              <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
-            </nav>
+            {/* Gruppo sinistro */}
+            <div className="flex items-center justify-between flex-1 pr-16">
+              <a href="/">
+                <img src="/scrittasilvia.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
+              </a>
+              <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
+              <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
+            </div>
+
+            {/* Logo occhio — absolute centrato */}
+            <div className="absolute left-1/2 -translate-x-1/2">
+              <a href="/">
+                <img
+                  src="/silvia_logo_fine.png"
+                  alt="SCIARAM 33"
+                  className="object-contain"
+                  style={{ maxHeight: "65px", width: "auto" }}
+                  data-testid="img-logo-navbar"
+                />
+              </a>
+            </div>
+
+            {/* Gruppo destro */}
+            <div className="flex items-center justify-between flex-1 pl-16">
+              <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio 33</a>
+              <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="link-whatsapp-navbar"
+                className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white"
+                style={{ color: "hsl(var(--primary))", border: "1px solid rgba(140,59,59,0.35)" }}
+              >
+                Prenota
+              </a>
+            </div>
+
           </div>
-
-          {/* Logo occhio — absolute centrato */}
-          <div className="absolute left-1/2 -translate-x-1/2">
-            <a href="/">
-              <img
-                src="/silvia_logo_fine.png"
-                alt="SCIARAM 33"
-                className="object-contain"
-                style={{ maxHeight: "65px", width: "auto" }}
-                data-testid="img-logo-navbar"
-              />
-            </a>
-          </div>
-
-          {/* Link destri + Prenota */}
-          <nav className="flex-1 flex items-center justify-start pl-24 gap-8 text-xs tracking-widest uppercase">
-            <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio 33</a>
-            <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="link-whatsapp-navbar"
-              className="rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white"
-              style={{ color: "hsl(var(--primary))", border: "1px solid rgba(140,59,59,0.35)" }}
-            >
-              Prenota
-            </a>
-          </nav>
         </div>
 
         {/* Menu mobile a tendina */}
