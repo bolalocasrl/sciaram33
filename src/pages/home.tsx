@@ -711,6 +711,7 @@ export default function Home() {
                         </FormItem>
                       )}
                     />
+                    <p className="text-xs text-foreground/65 font-light">Inviando il messaggio accetti il trattamento dei tuoi <a href="/privacy" className="underline hover:text-primary transition-colors">dati personali</a>.</p>
                     <Button
                       type="submit"
                       className="w-full rounded-full py-6 text-sm uppercase tracking-widest mt-8 bg-primary hover:bg-primary/90 text-white group"

@@ -189,7 +189,7 @@ export default function Percorsi() {
         ref={heroRef}
         className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-primary"
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[22vw] font-serif text-white opacity-[0.04] whitespace-nowrap pointer-events-none select-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[16vw] font-serif text-white opacity-[0.04] whitespace-nowrap pointer-events-none select-none">
           PERCORSI
         </div>
 
