@@ -245,7 +245,7 @@ export default function Studio() {
           <ScrollReveal>
             <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">Sala Grande</p>
             <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-6">Sala Macchine</h2>
-            <p className="text-center text-foreground/60 font-light text-lg mb-16 max-w-2xl mx-auto">
+            <p className="text-center text-foreground/75 font-light text-lg mb-16 max-w-2xl mx-auto">
               Attrezzatura professionale Pilates per un lavoro profondo, preciso e trasformativo.
             </p>
           </ScrollReveal>
@@ -258,7 +258,7 @@ export default function Studio() {
                     <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
                     <h3 className="text-2xl font-serif text-primary">{item.name}</h3>
                   </div>
-                  <p className="text-foreground/70 font-light leading-relaxed">{item.desc}</p>
+                  <p className="text-foreground/85 font-light leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -272,7 +272,7 @@ export default function Studio() {
           <ScrollReveal>
             <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">Sala Piccola</p>
             <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-6">Sala Matwork</h2>
-            <p className="text-center text-foreground/60 font-light text-lg mb-16 max-w-2xl mx-auto">
+            <p className="text-center text-foreground/75 font-light text-lg mb-16 max-w-2xl mx-auto">
               Uno spazio raccolto per il lavoro a corpo libero — yoga, meditazione, movimento essenziale.
             </p>
           </ScrollReveal>
@@ -285,7 +285,7 @@ export default function Studio() {
                     <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
                     <h3 className="text-2xl font-serif text-primary">{item.name}</h3>
                   </div>
-                  <p className="text-foreground/70 font-light leading-relaxed">{item.desc}</p>
+                  <p className="text-foreground/85 font-light leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -317,7 +317,7 @@ export default function Studio() {
                   </div>
                   <div className="flex-1 max-w-xl">
                     <h3 className="text-3xl md:text-4xl font-serif text-primary mb-6">{d.title}</h3>
-                    <p className="text-lg text-foreground/70 font-light leading-relaxed mb-8">{d.desc}</p>
+                    <p className="text-lg text-foreground/85 font-light leading-relaxed mb-8">{d.desc}</p>
                     <div className="flex flex-wrap gap-2">
                       {d.tags.map((tag) => (
                         <span

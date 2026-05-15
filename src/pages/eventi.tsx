@@ -180,7 +180,7 @@ export default function Eventi() {
                     {ev.type && (
                       <p className="text-xs tracking-widest uppercase text-accent mb-5">{ev.type}</p>
                     )}
-                    <p className="text-foreground/70 font-light leading-relaxed mb-8">
+                    <p className="text-foreground/85 font-light leading-relaxed mb-8">
                       {ev.description}
                     </p>
                     <a
@@ -203,7 +203,7 @@ export default function Eventi() {
       <section className="py-24 px-6 bg-secondary/20">
         <div className="max-w-2xl mx-auto text-center">
           <ScrollReveal>
-            <p className="text-lg text-foreground/70 font-light mb-8">
+            <p className="text-lg text-foreground/85 font-light mb-8">
               Vuoi essere aggiornato sui prossimi eventi?
             </p>
             <a

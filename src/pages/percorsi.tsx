@@ -266,13 +266,13 @@ export default function Percorsi() {
                     </div>
                   </div>
 
-                  <p className="text-lg text-foreground/70 font-light leading-relaxed mb-8">
+                  <p className="text-lg text-foreground/85 font-light leading-relaxed mb-8">
                     {p.description}
                   </p>
 
                   <ul className="space-y-3 mb-8">
                     {p.details.map((d) => (
-                      <li key={d} className="flex items-start gap-3 text-foreground/65 font-light">
+                      <li key={d} className="flex items-start gap-3 text-foreground/80 font-light">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-2" />
                         {d}
                       </li>

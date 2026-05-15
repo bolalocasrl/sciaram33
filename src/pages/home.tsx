@@ -307,7 +307,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8 leading-tight">
                 Ciao, sono Silvia.
               </h2>
-              <div className="space-y-5 text-lg text-foreground/70 font-light leading-relaxed">
+              <div className="space-y-5 text-lg text-foreground/85 font-light leading-relaxed">
                 <p>
                   Ho dedicato anni a studiare il corpo e il movimento. Non come un insieme di
                   muscoli da allenare, ma come uno spazio da abitare con consapevolezza e cura.
@@ -385,7 +385,7 @@ export default function Home() {
               <h2 className="hidden md:block text-4xl md:text-5xl font-serif text-primary mb-8">
                 Quanto è libero il tuo corpo?
               </h2>
-              <p className="text-lg md:text-xl text-foreground/70 font-light leading-relaxed mb-10">
+              <p className="text-lg md:text-xl text-foreground/85 font-light leading-relaxed mb-10">
                 Tratteniamo emozioni, parole, esperienze. Il corpo si irrigidisce, si
                 appesantisce. La libertà nasce creando spazio. E si parte sempre da qui: dal corpo.
               </p>
@@ -464,7 +464,7 @@ export default function Home() {
               <div className="rounded-3xl border border-primary/10 p-10 bg-secondary/20 h-full">
                 <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">Sala Grande</p>
                 <h3 className="text-2xl font-serif text-primary mb-6">Sala Macchine</h3>
-                <ul className="space-y-3 text-foreground/70 font-light text-lg">
+                <ul className="space-y-3 text-foreground/85 font-light text-lg">
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
                     Cadillac
@@ -489,7 +489,7 @@ export default function Home() {
               <div className="rounded-3xl border border-primary/10 p-10 bg-secondary/20 h-full">
                 <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">Sala Piccola</p>
                 <h3 className="text-2xl font-serif text-primary mb-6">Sala Matwork</h3>
-                <ul className="space-y-3 text-foreground/70 font-light text-lg">
+                <ul className="space-y-3 text-foreground/85 font-light text-lg">
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
                     Pilates Matwork
@@ -512,7 +512,7 @@ export default function Home() {
           </div>
 
           <ScrollReveal>
-            <p className="text-center text-foreground/60 font-light text-lg mb-10 max-w-2xl mx-auto">
+            <p className="text-center text-foreground/75 font-light text-lg mb-10 max-w-2xl mx-auto">
               Adatto a tutti: anziani, donne in gravidanza, riabilitazione post intervento.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -558,7 +558,7 @@ export default function Home() {
                 <div className="p-10 flex flex-col flex-1">
                   <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4">3 Luglio 2026</p>
                   <h3 className="text-2xl font-serif text-primary mb-4">Sciamana Peruviana</h3>
-                  <p className="text-foreground/70 font-light leading-relaxed mb-8 flex-1">
+                  <p className="text-foreground/85 font-light leading-relaxed mb-8 flex-1">
                     Un evento immersivo con una sciamana peruviana. Lettura delle foglie di coca, cerimonie di connessione con la terra e rituali di trasformazione. Un'esperienza che va oltre il corpo.
                   </p>
                   <a
@@ -598,7 +598,7 @@ export default function Home() {
                   <MapPin className="w-6 h-6 text-accent shrink-0 mt-1" />
                   <div>
                     <p className="font-medium text-foreground">Lo Studio 33</p>
-                    <p className="text-foreground/70">
+                    <p className="text-foreground/85">
                       Via Castelvetrano 45<br />Mazara del Vallo (TP)
                     </p>
                   </div>
@@ -610,7 +610,7 @@ export default function Home() {
                     <p className="font-medium text-foreground">Telefono & WhatsApp</p>
                     <a
                       href="tel:3204488202"
-                      className="text-foreground/70 hover:text-primary transition-colors block"
+                      className="text-foreground/85 hover:text-primary transition-colors block"
                     >
                       320 448 8202
                     </a>
@@ -635,7 +635,7 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                       data-testid="link-instagram-contact"
-                      className="text-foreground/70 hover:text-primary transition-colors"
+                      className="text-foreground/85 hover:text-primary transition-colors"
                     >
                       @studiouno_pilatesreformer
                     </a>
@@ -656,11 +656,11 @@ export default function Home() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground/70 uppercase tracking-wider text-xs">Nome</FormLabel>
+                          <FormLabel className="text-foreground/85 uppercase tracking-wider text-xs">Nome</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="Il tuo nome"
-                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary text-lg font-light placeholder:text-foreground/50 placeholder:font-light"
+                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary text-lg font-light placeholder:text-foreground/65 placeholder:font-light"
                               data-testid="input-contact-name"
                               {...field}
                             />
@@ -674,11 +674,11 @@ export default function Home() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground/70 uppercase tracking-wider text-xs">Email</FormLabel>
+                          <FormLabel className="text-foreground/85 uppercase tracking-wider text-xs">Email</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="la.tua@email.com"
-                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary text-lg font-light placeholder:text-foreground/50 placeholder:font-light"
+                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary text-lg font-light placeholder:text-foreground/65 placeholder:font-light"
                               data-testid="input-contact-email"
                               {...field}
                             />
@@ -692,11 +692,11 @@ export default function Home() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground/70 uppercase tracking-wider text-xs">Messaggio</FormLabel>
+                          <FormLabel className="text-foreground/85 uppercase tracking-wider text-xs">Messaggio</FormLabel>
                           <FormControl>
                             <Textarea
                               placeholder="Come possiamo aiutarti?"
-                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary min-h-[100px] resize-none text-lg font-light placeholder:text-foreground/50 placeholder:font-light"
+                              className="bg-secondary/10 border border-primary/20 rounded-xl px-4 focus-visible:ring-0 focus-visible:border-primary min-h-[100px] resize-none text-lg font-light placeholder:text-foreground/65 placeholder:font-light"
                               data-testid="textarea-contact-message"
                               {...field}
                             />

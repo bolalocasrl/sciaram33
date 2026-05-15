@@ -190,7 +190,7 @@ export default function Silvia() {
             </h2>
           </ScrollReveal>
 
-          <div className="space-y-12 text-lg text-foreground/70 font-light leading-relaxed max-w-2xl mx-auto">
+          <div className="space-y-12 text-lg text-foreground/85 font-light leading-relaxed max-w-2xl mx-auto">
             <ScrollReveal delay={0.1}>
               <p>
                 La mia storia con il movimento non è iniziata in palestra. È iniziata su una stuoia, in un piccolo studio di yoga a Mumbai, mentre cercavo qualcosa che le parole non riuscivano ancora a definire.
@@ -247,7 +247,7 @@ export default function Silvia() {
                 ].map((item) => (
                   <li key={item.year} className="flex gap-6">
                     <span className="text-xs tracking-widest uppercase text-primary font-medium shrink-0 pt-1 w-24">{item.year}</span>
-                    <p className="text-foreground/70 font-light leading-relaxed">{item.desc}</p>
+                    <p className="text-foreground/85 font-light leading-relaxed">{item.desc}</p>
                   </li>
                 ))}
               </ul>
@@ -293,7 +293,7 @@ export default function Silvia() {
                   <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-2" />
                   <div>
                     <p className="font-medium text-foreground mb-2">{item.title}</p>
-                    <p className="text-foreground/70 font-light leading-relaxed">{item.desc}</p>
+                    <p className="text-foreground/85 font-light leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -310,7 +310,7 @@ export default function Silvia() {
             <h2 className="text-4xl md:text-5xl font-serif text-primary mb-10 leading-tight">
               Welfare & Benessere Aziendale
             </h2>
-            <p className="text-lg text-foreground/70 font-light leading-relaxed mb-12 max-w-2xl">
+            <p className="text-lg text-foreground/85 font-light leading-relaxed mb-12 max-w-2xl">
               Ho collaborato con realtà aziendali per promuovere il riequilibrio psico-fisico dei dipendenti. Attraverso programmi mirati, integro tecniche di movimento consapevole e gestione dello stress per migliorare il clima organizzativo e la qualità della vita lavorativa, portando la consapevolezza nel cuore della produttività.
             </p>
             <a
@@ -348,7 +348,7 @@ export default function Silvia() {
             <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8 leading-tight">
               Prenota la tua prima sessione.
             </h2>
-            <p className="text-lg text-foreground/70 font-light leading-relaxed mb-12">
+            <p className="text-lg text-foreground/85 font-light leading-relaxed mb-12">
               Una chiacchierata su WhatsApp è il primo passo. Raccontami di te, dei tuoi obiettivi. Troveremo insieme il percorso giusto.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
