@@ -1,6 +1,6 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { useInView, motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Menu, X } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/393204488202";
 
@@ -60,57 +60,63 @@ const eventi = [
 ];
 
 export default function Eventi() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <main className="min-h-screen bg-background overflow-hidden selection:bg-primary/20 selection:text-primary">
 
       {/* ── NAVBAR ── */}
       <header
-        className="fixed top-0 left-0 right-0 z-50 px-8 py-5 flex justify-between items-center transition-all duration-500"
+        className="sticky top-0 z-50"
         style={{
-          backdropFilter: scrolled ? "blur(18px)" : "blur(0px)",
-          WebkitBackdropFilter: scrolled ? "blur(18px)" : "blur(0px)",
-          backgroundColor: scrolled ? "rgba(245,243,242,0.82)" : "transparent",
-          borderBottom: scrolled ? "1px solid rgba(140,59,59,0.10)" : "none",
+          backgroundColor: "#fdf1db",
+          borderBottom: "1px solid rgba(140,59,59,0.10)",
         }}
       >
-        <a href="/">
-          <img
-            src="/silvia_logo_fine.png"
-            alt="SCIARAM 33"
-            className="object-contain transition-all duration-500"
-            style={{ maxHeight: "40px", width: "auto" }}
-          />
-        </a>
-        <nav
-          className="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase transition-colors duration-500"
-          style={{ color: "hsl(var(--foreground))" }}
-        >
-          <a href="/eventi" className="hover:opacity-60 transition-opacity">Eventi</a>
-          <a href="/percorsi" className="hover:opacity-60 transition-opacity">Percorsi</a>
-          <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio 33</a>
-          <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
-          <a href="/#contatti" className="hover:opacity-60 transition-opacity">Contatti</a>
-        </nav>
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-500"
-          style={{
-            color: "hsl(var(--primary))",
-            border: "1px solid rgba(140,59,59,0.35)",
-          }}
-        >
-          Prenota
-        </a>
+        {/* Barra mobile — grid 3 colonne */}
+        <div className="md:hidden grid grid-cols-3 items-center px-6 py-3">
+          <a href="/" className="justify-self-start">
+            <img src="/silvia_logo_fine.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "50px", width: "auto" }} />
+          </a>
+          <a href="/" className="justify-self-center">
+            <img src="/scrittasilvia.png" alt="Silvia" className="object-contain" style={{ maxHeight: "35px", width: "auto" }} />
+          </a>
+          <button className="justify-self-end p-2" onClick={() => setMobileMenuOpen((o) => !o)} aria-label="Menu">
+            {mobileMenuOpen
+              ? <X className="w-5 h-5" style={{ color: "hsl(var(--primary))" }} />
+              : <Menu className="w-5 h-5" style={{ color: "hsl(var(--primary))" }} />
+            }
+          </button>
+        </div>
+
+        {/* Barra desktop — flex con logo occhio absolute centrato */}
+        <div className="relative hidden md:flex" style={{ color: "hsl(var(--foreground))" }}>
+          <div className="flex items-center w-full px-8 py-3">
+            <div className="flex items-center justify-between flex-1 pr-24">
+              <a href="/"><img src="/scrittasilvia.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} /></a>
+              <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
+              <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
+            </div>
+            <div className="absolute left-1/2 -translate-x-1/2">
+              <a href="/"><img src="/silvia_logo_fine.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "65px", width: "auto" }} /></a>
+            </div>
+            <div className="flex items-center justify-between flex-1 pl-24">
+              <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio 33</a>
+              <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white" style={{ color: "hsl(var(--primary))", border: "1px solid rgba(140,59,59,0.35)" }}>Prenota</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Menu mobile a tendina */}
+        {mobileMenuOpen && (
+          <nav className="md:hidden flex flex-col px-8 pb-6 pt-2 gap-5 text-xs tracking-widest uppercase" style={{ color: "hsl(var(--foreground))", backgroundColor: "#fdf1db" }}>
+            <a href="/eventi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Eventi</a>
+            <a href="/percorsi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Percorsi</a>
+            <a href="/studio" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Lo Studio 33</a>
+            <a href="/silvia" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Chi Sono</a>
+          </nav>
+        )}
       </header>
 
       {/* ── SEZIONE PRINCIPALE ── */}
