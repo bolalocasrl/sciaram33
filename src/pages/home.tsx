@@ -136,7 +136,7 @@ export default function Home() {
         <div className="relative hidden md:flex items-center px-8 py-3" style={{ color: "hsl(var(--foreground))" }}>
 
           {/* Logo scritta + link sinistri */}
-          <div className="flex items-center gap-8 mr-40">
+          <div className="flex items-center gap-8 mr-52">
             <a href="/">
               <img src="/scrittasilvia.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
             </a>
@@ -160,7 +160,7 @@ export default function Home() {
           </div>
 
           {/* Link destri + Prenota */}
-          <nav className="flex items-center gap-8 text-xs tracking-widest uppercase ml-40">
+          <nav className="flex items-center gap-8 text-xs tracking-widest uppercase ml-52">
             <a href="/studio" className="hover:opacity-60 transition-opacity">Lo Studio 33</a>
             <a href="/silvia" className="hover:opacity-60 transition-opacity">Chi Sono</a>
             <a
