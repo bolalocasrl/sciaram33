@@ -173,7 +173,7 @@ export default function Silvia() {
                   { year: "SCIARAM 33", desc: "Fondazione dello studio a Mazara del Vallo — uno spazio dove il movimento diventa medicina" },
                 ].map((item) => (
                   <li key={item.year} className="flex gap-6">
-                    <span className="text-xs tracking-widest uppercase text-primary font-medium shrink-0 pt-1 w-24">{item.year}</span>
+                    <span className="text-xs tracking-widest uppercase text-primary font-bold shrink-0 pt-1 w-24">{item.year}</span>
                     <p className="text-foreground/85 font-light leading-relaxed">{item.desc}</p>
                   </li>
                 ))}
@@ -200,15 +200,15 @@ export default function Silvia() {
               },
               {
                 title: "Yoga e Meditazione",
-                desc: "Formazione in India, nell'area dell'Himalaya, seguita da maestri orientali sullo studio dei chakra e del suono per apprendere le tecniche millenarie di equilibrio e presenza.",
+                desc: <>Formazione in <strong>India</strong>, nell'area dell'Himalaya, seguita da maestri orientali sullo studio dei chakra e del suono per apprendere le tecniche millenarie di equilibrio e presenza.</>,
               },
               {
                 title: "Divino Femminile",
-                desc: "Ho appreso da sagge maestre illuminate il lavoro sul Divino Femminile, approfondendo la sacralità dell'utero inteso come portale di saggezza, creazione e potere intuitivo.",
+                desc: <>Ho appreso da sagge maestre illuminate il lavoro sul <strong>Divino Femminile</strong>, approfondendo la sacralità dell'utero inteso come portale di saggezza, creazione e potere intuitivo.</>,
               },
               {
                 title: "Ricerca sulla Coscienza",
-                desc: "Studio e ricerca nella foresta di Palawan sugli stati alterati di coscienza, sperimentando la connessione con altri piani e lo studio dello spazio-tempo.",
+                desc: <>Studio e ricerca nella foresta di <strong>Palawan</strong> sugli stati alterati di coscienza, sperimentando la connessione con altri piani e lo studio dello spazio-tempo.</>,
               },
               {
                 title: "Scienze Olistiche",
