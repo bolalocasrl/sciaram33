@@ -438,6 +438,7 @@ export default function Percorsi() {
           © {new Date().getFullYear()} SCIARAM 33. Tutti i diritti riservati.
         </p>
         <p className="text-background/30 text-xs">Movement Medicine · Mazara del Vallo</p>
+        <p className="text-background/30 text-xs mt-1">Via Castelvetrano 45, Mazara del Vallo (TP) · P.IVA: in aggiornamento</p>
       </footer>
     </main>
   );
