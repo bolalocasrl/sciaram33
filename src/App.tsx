@@ -8,6 +8,7 @@ import Silvia from "@/pages/silvia";
 import Studio from "@/pages/studio";
 import Percorsi from "@/pages/percorsi";
 import Eventi from "@/pages/eventi";
+import Privacy from "@/pages/privacy";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/studio" component={Studio} />
       <Route path="/percorsi" component={Percorsi} />
       <Route path="/eventi" component={Eventi} />
+      <Route path="/privacy" component={Privacy} />
       <Route component={NotFound} />
     </Switch>
   );

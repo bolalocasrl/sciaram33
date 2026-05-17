@@ -282,6 +282,7 @@ export default function Silvia() {
         />
         <p className="text-background/50 text-sm tracking-wide mb-2">
           © {new Date().getFullYear()} SCIARAM 33. Tutti i diritti riservati.
+          <a href="/privacy" className="text-background/40 hover:text-background/70 transition-colors underline ml-2 text-xs">Privacy Policy</a>
         </p>
         <p className="text-background/30 text-xs">Movement Medicine · Mazara del Vallo</p>
         <p className="text-background/30 text-xs mt-1">Via Castelvetrano 45, Mazara del Vallo (TP) · P.IVA: 02966860815</p>
