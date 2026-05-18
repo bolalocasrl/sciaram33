@@ -99,28 +99,23 @@ export default function Silvia() {
             <ScrollReveal direction="left">
               <p className="text-xs tracking-[0.3em] uppercase text-accent mb-6">L'anima di SCIARAM 33</p>
               <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8 leading-tight">
-                Ciao, sono Silvia.
+                Founder
               </h2>
             </ScrollReveal>
             <div className="space-y-8 text-lg text-foreground/85 font-light leading-relaxed">
               <ScrollReveal delay={0.1}>
                 <p>
-                  La mia storia con il movimento non è iniziata in palestra. È iniziata su una stuoia, in un piccolo studio di yoga a Mumbai, mentre cercavo qualcosa che le parole non riuscivano ancora a definire.
+                  Dietro SCIARAM 33 c'è Silvia, ricercatrice spirituale e istruttrice di Pilates.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
                 <p>
-                  Per anni ho viaggiato — India, Tailandia, Bali, Sri Lanka. Non come turista, ma come cercatrice. Ho studiato con maestri di yoga nella tradizione Iyengar e Ashtanga. Ho praticato meditazione vipassana. Ho capito che il corpo è l'unico tempio che non possiamo lasciare.
+                  Dopo anni di studio, lavoro e ricerche esperienziali, è tornata nella sua terra natale, la Sicilia, per intraprendere un nuovo progetto incentrato sulla coscienza corporale attraverso il movimento e tecniche di riconnessione al sé.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p>
-                  Al rientro in Italia, la formazione in Pilates — prima il Matwork, poi le macchine: Reformer, Cadillac, Ladder Barrel. Ho capito immediatamente la sinergia profonda tra queste due discipline: la precisione del Pilates e la profondità dello yoga si completano, non si escludono.
-                </p>
-              </ScrollReveal>
-              <ScrollReveal delay={0.25}>
-                <p>
-                  SCIARAM 33 nasce da tutto questo. Dal numero 33 — la vibrazione del maestro insegnante nella numerologia. Da "Sciaram", parola che risuona con il sacro e la trasformazione. Un nome che è un'intenzione.
+                  Si è formata nel metodo classico Pilates con specializzazione grandi attrezzi Reformer & Cadillac certificata in Italia. Ha conseguito una formazione in Yoga e Meditazione seguita da maestri orientali in India, nell'area dell'Himalaya e a Bali sullo studio dei chakra e del suono per apprendere le tecniche millenarie di risveglio e presenza. Ha studiato e appreso da sagge maestre illuminate il lavoro sul Divino Femminile, approfondendo la sacralità dell'utero inteso come portale di conoscenza, creazione e potere umano e divino. Ha fatto ricerca nella foresta di Palawan, nelle Filippine, dove ha studiato gli stati alterati di coscienza e ha approfondito tecniche di rilascio Somato-Emozionale, un lavoro che accompagna a liberarsi da blocchi emotivi e ancestrali accumulati nel corpo e a prendere coscienza del proprio corpo. Ha approfondito lo studio della bioenergetica e del linguaggio simbolico ed energetico del corpo per imparare a leggere la mappa dell'anima.
                 </p>
               </ScrollReveal>
             </div>
@@ -197,7 +192,7 @@ export default function Silvia() {
               Welfare & Benessere Aziendale
             </h2>
             <p className="text-lg text-foreground/85 font-light leading-relaxed mb-12 max-w-2xl">
-              Ho collaborato con realtà aziendali per promuovere il riequilibrio psico-fisico dei dipendenti. Attraverso programmi mirati, integro tecniche di movimento consapevole e gestione dello stress per migliorare il clima organizzativo e la qualità della vita lavorativa, portando la consapevolezza nel cuore della produttività.
+              Ho collaborato con realtà aziendali per promuovere il <strong>riequilibrio psico-fisico dei dipendenti</strong>. Attraverso programmi mirati, integro tecniche di movimento consapevole e gestione dello stress per migliorare il clima organizzativo e la qualità della vita lavorativa, portando la consapevolezza nel cuore della produttività.
             </p>
             <a
               href={WHATSAPP_URL}
