@@ -376,7 +376,7 @@ export default function Percorsi() {
               Welfare & Benessere Aziendale
             </h2>
             <p className="text-lg text-foreground/85 font-light leading-relaxed mb-12 max-w-2xl">
-              Ho collaborato con realtà aziendali per promuovere il riequilibrio psico-fisico dei dipendenti. Attraverso programmi mirati, integro tecniche di movimento consapevole e gestione dello stress per migliorare il clima organizzativo e la qualità della vita lavorativa, portando la consapevolezza nel cuore della produttività.
+              Ho collaborato con realtà aziendali per promuovere il <strong>riequilibrio psico-fisico dei dipendenti</strong>. Attraverso programmi mirati, integro tecniche di movimento consapevole e gestione dello stress per migliorare il clima organizzativo e la qualità della vita lavorativa, portando la consapevolezza nel cuore della produttività.
             </p>
             <a
               href={WHATSAPP_URL}

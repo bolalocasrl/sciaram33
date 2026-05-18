@@ -599,6 +599,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-6xl font-serif text-primary mb-12">
                 Ritrova il tuo spazio.
               </h2>
+              <p className="text-lg text-foreground/85 font-light leading-relaxed mb-8 max-w-lg">Se desideri saperne di più su SCIARAM 33 e sui servizi che offro (tariffe, orari, consulenze, eventi, workshop, sessioni private, ecc.), non esitare a contattarmi. Sarà un piacere aiutarti a scegliere il percorso migliore per te.</p>
               <div className="space-y-8 font-light text-lg">
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-accent shrink-0 mt-1" />
