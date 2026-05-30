@@ -1,5 +1,6 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { getEventi, type Evento } from "../lib/sanity";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -89,6 +90,18 @@ export default function Home() {
   const heroOpacity = useTransform(heroScroll, [0, 0.7], [1, 0]);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [eventiSanity, setEventiSanity] = useState<Evento[]>([]);
+
+  useEffect(() => {
+    getEventi().then(setEventiSanity).catch(() => {});
+  }, []);
+
+  const MESI_IT = ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"];
+  function parseData(iso: string | null | undefined) {
+    if (!iso) return { day: null, month: null, year: null };
+    const [y, m, d] = iso.split("-");
+    return { day: String(parseInt(d, 10)), month: MESI_IT[parseInt(m, 10) - 1], year: y };
+  }
 
   return (
     <main className="min-h-screen bg-background overflow-hidden selection:bg-primary/20 selection:text-primary">
@@ -545,37 +558,46 @@ export default function Home() {
           </ScrollReveal>
 
           <div className="max-w-lg">
-            <ScrollReveal direction="left">
-              <div className="group rounded-3xl border border-primary/10 bg-background overflow-hidden flex flex-col h-full hover:border-primary/25 transition-all duration-500">
-                <div className="overflow-hidden aspect-[16/9]">
-                  <img
-                    src="/sciamanaperu2.webp"
-                    alt="Sciamana Peruviana"
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-10 flex flex-col flex-1">
-                  <div className="flex items-baseline gap-2 mb-4">
-                    <span className="font-serif text-primary leading-none" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", fontWeight: 500 }}>3</span>
-                    <div>
-                      <p className="text-sm font-light text-primary/70 leading-tight">Luglio</p>
-                      <p className="text-sm font-light text-primary/65 leading-tight">2026</p>
+            {eventiSanity[0] && (() => {
+              const ev = eventiSanity[0];
+              const { day, month, year } = parseData(ev.data);
+              const imgSrc = ev.immagine?.asset?.url ?? "/sciamanaperu2.webp";
+              return (
+                <ScrollReveal direction="left">
+                  <div className="group rounded-3xl border border-primary/10 bg-background overflow-hidden flex flex-col h-full hover:border-primary/25 transition-all duration-500">
+                    <div className="overflow-hidden aspect-[16/9]">
+                      <img
+                        src={imgSrc}
+                        alt={ev.titolo}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-10 flex flex-col flex-1">
+                      {day && (
+                        <div className="flex items-baseline gap-2 mb-4">
+                          <span className="font-serif text-primary leading-none" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", fontWeight: 500 }}>{day}</span>
+                          <div>
+                            <p className="text-sm font-light text-primary/70 leading-tight">{month}</p>
+                            <p className="text-sm font-light text-primary/65 leading-tight">{year}</p>
+                          </div>
+                        </div>
+                      )}
+                      <h3 className="text-2xl font-serif text-primary mb-4">{ev.titolo}</h3>
+                      <p className="text-foreground/85 font-light leading-relaxed mb-8 flex-1">
+                        {ev.descrizione}
+                      </p>
+                      <a
+                        href="/eventi"
+                        className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 hover:bg-primary hover:text-white transition-all duration-300 self-start text-primary"
+                      >
+                        Scopri l'evento <ChevronRight className="w-3 h-3" />
+                      </a>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-serif text-primary mb-4">Sciamana Peruviana</h3>
-                  <p className="text-foreground/85 font-light leading-relaxed mb-8 flex-1">
-                    Un evento immersivo con una sciamana peruviana. Lettura delle foglie di coca, cerimonie di connessione con la terra e rituali di trasformazione. Un'esperienza che va oltre il corpo.
-                  </p>
-                  <a
-                    href="/eventi"
-                    className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 hover:bg-primary hover:text-white transition-all duration-300 self-start text-primary"
-                  >
-                    Scopri l'evento <ChevronRight className="w-3 h-3" />
-                  </a>
-                </div>
-              </div>
-            </ScrollReveal>
+                </ScrollReveal>
+              );
+            })()}
 
           </div>
           <div className="flex justify-center mt-14">
