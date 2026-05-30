@@ -1,6 +1,7 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useInView, motion } from "framer-motion";
 import { ChevronRight, Menu, X } from "lucide-react";
+import { getEventi, type Evento } from "../lib/sanity";
 
 const WHATSAPP_URL = "https://wa.me/393204488202";
 
@@ -30,37 +31,21 @@ function ScrollReveal({
   );
 }
 
-const eventi = [
-  {
-    day: "3",
-    month: "Luglio",
-    year: "2026",
-    img: "/sciamanaperu1.webp",
-    guest: "Martina Mamani",
-    type: "Sciamana Peruviana · Lettura Foglie di Coca",
-    description:
-      "Martina Mamani Siwar Qoyllur, Maestra Medicina di tradizione Quechua, porta con sé la saggezza andina del Perù. Attraverso la lettura delle foglie di coca, offre un colloquio individuale di 30 minuti con traduzione. Un incontro con la tradizione spirituale andina e la connessione alla Pachamama.",
-    cta: "Prenota il posto",
-    ctaHref: WHATSAPP_URL,
-    ctaExternal: true,
-  },
-  {
-    day: null,
-    month: "Prossimamente",
-    year: null,
-    img: "/costellazionifamiliari.webp",
-    guest: "Costellazioni Familiari",
-    type: null,
-    description:
-      "Un viaggio nelle dinamiche profonde della famiglia.",
-    cta: "Ricevi aggiornamenti",
-    ctaHref: WHATSAPP_URL,
-    ctaExternal: true,
-  },
-];
+const MESI_IT = ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"];
+
+function parseData(iso: string | null | undefined): { day: string | null; month: string; year: string | null } {
+  if (!iso) return { day: null, month: "Prossimamente", year: null };
+  const [y, m, d] = iso.split("-");
+  return { day: String(parseInt(d, 10)), month: MESI_IT[parseInt(m, 10) - 1], year: y };
+}
 
 export default function Eventi() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [eventi, setEventi] = useState<Evento[]>([]);
+
+  useEffect(() => {
+    getEventi().then(setEventi).catch(() => {});
+  }, []);
 
   return (
     <main className="min-h-screen bg-background overflow-hidden selection:bg-primary/20 selection:text-primary">
@@ -138,63 +123,67 @@ export default function Eventi() {
 
           {/* Lista eventi */}
           <div className="space-y-20">
-            {eventi.map((ev, i) => (
-              <ScrollReveal key={ev.guest} delay={i * 0.1}>
-                <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12 border-t border-primary/10 pt-12">
+            {eventi.map((ev, i) => {
+              const { day, month, year } = parseData(ev.data);
+              const imgSrc = ev.immagine?.asset?.url;
+              return (
+                <ScrollReveal key={ev._id} delay={i * 0.1}>
+                  <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12 border-t border-primary/10 pt-12">
 
-                  {/* Data — mobile: sopra la foto, desktop: colonna sinistra */}
-                  <div className="md:w-28 md:shrink-0 flex md:flex-col items-baseline md:items-start gap-2 md:gap-0">
-                    {ev.day ? (
-                      <>
-                        <span
-                          className="font-serif text-primary leading-none"
-                          style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", fontWeight: 500 }}
-                        >
-                          {ev.day}
-                        </span>
-                        <div className="md:mt-1">
-                          <p className="text-sm font-light text-primary/70 leading-tight">{ev.month}</p>
-                          <p className="text-sm font-light text-primary/50 leading-tight">{ev.year}</p>
-                        </div>
-                      </>
-                    ) : (
-                      <p className="text-sm tracking-widest uppercase text-primary/50 font-light">{ev.month}</p>
-                    )}
-                  </div>
-
-                  {/* Foto */}
-                  <div className="md:w-72 md:shrink-0">
-                    <div className="overflow-hidden rounded-2xl aspect-square md:aspect-[4/3]">
-                      <img
-                        src={ev.img}
-                        alt={ev.guest}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                      />
+                    {/* Data — mobile: sopra la foto, desktop: colonna sinistra */}
+                    <div className="md:w-28 md:shrink-0 flex md:flex-col items-baseline md:items-start gap-2 md:gap-0">
+                      {day ? (
+                        <>
+                          <span
+                            className="font-serif text-primary leading-none"
+                            style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", fontWeight: 500 }}
+                          >
+                            {day}
+                          </span>
+                          <div className="md:mt-1">
+                            <p className="text-sm font-light text-primary/70 leading-tight">{month}</p>
+                            <p className="text-sm font-light text-primary/50 leading-tight">{year}</p>
+                          </div>
+                        </>
+                      ) : (
+                        <p className="text-sm tracking-widest uppercase text-primary/50 font-light">{month}</p>
+                      )}
                     </div>
-                  </div>
 
-                  {/* Contenuto */}
-                  <div className="flex-1">
-                    <h2 className="text-2xl md:text-3xl font-serif text-primary mb-2">{ev.guest}</h2>
-                    {ev.type && (
-                      <p className="text-xs tracking-widest uppercase text-accent mb-5">{ev.type}</p>
+                    {/* Foto */}
+                    {imgSrc && (
+                      <div className="md:w-72 md:shrink-0">
+                        <div className="overflow-hidden rounded-2xl aspect-square md:aspect-[4/3]">
+                          <img
+                            src={imgSrc}
+                            alt={ev.titolo}
+                            loading="lazy"
+                            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                          />
+                        </div>
+                      </div>
                     )}
-                    <p className="text-foreground/85 font-light leading-relaxed mb-8">
-                      {ev.description}
-                    </p>
-                    <a
-                      href={ev.ctaHref}
-                      {...(ev.ctaExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300"
-                    >
-                      {ev.cta} <ChevronRight className="w-3 h-3" />
-                    </a>
-                  </div>
 
-                </div>
-              </ScrollReveal>
-            ))}
+                    {/* Contenuto */}
+                    <div className="flex-1">
+                      <h2 className="text-2xl md:text-3xl font-serif text-primary mb-2">{ev.titolo}</h2>
+                      <p className="text-foreground/85 font-light leading-relaxed mb-8">
+                        {ev.descrizione}
+                      </p>
+                      <a
+                        href={WHATSAPP_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                      >
+                        Prenota il posto <ChevronRight className="w-3 h-3" />
+                      </a>
+                    </div>
+
+                  </div>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
