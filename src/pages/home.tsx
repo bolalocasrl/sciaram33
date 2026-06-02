@@ -147,12 +147,12 @@ export default function Home() {
 
         {/* Barra desktop — flex con logo occhio absolute centrato */}
         <div className="relative hidden md:flex" style={{ color: "hsl(var(--foreground))" }}>
-          <div className="flex items-center w-full px-8 py-3">
+          <div className="flex items-center w-full px-8 py-2">
 
             {/* Gruppo sinistro */}
             <div className="flex-1 flex items-center justify-around pr-20">
               <a href="/">
-                <img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "70px", width: "auto" }} />
+                <img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
               </a>
               <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
               <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
