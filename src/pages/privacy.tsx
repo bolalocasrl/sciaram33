@@ -126,8 +126,8 @@ export default function Privacy() {
                 <p>P.IVA: 02966860815</p>
                 <p>
                   Email:{" "}
-                  <a href="mailto:info.silviaciaramitaro@gmail.com" className="text-primary underline underline-offset-2 hover:opacity-75 transition-opacity">
-                    info.silviaciaramitaro@gmail.com
+                  <a href="mailto:info.sciaram33@gmail.com" className="text-primary underline underline-offset-2 hover:opacity-75 transition-opacity">
+                    info.sciaram33@gmail.com
                   </a>
                 </p>
               </div>
@@ -249,8 +249,8 @@ export default function Privacy() {
               </ul>
               <p className="mt-6">
                 Per esercitare i propri diritti è sufficiente inviare una richiesta a:{" "}
-                <a href="mailto:info.silviaciaramitaro@gmail.com" className="text-primary underline underline-offset-2 hover:opacity-75 transition-opacity">
-                  info.silviaciaramitaro@gmail.com
+                <a href="mailto:info.sciaram33@gmail.com" className="text-primary underline underline-offset-2 hover:opacity-75 transition-opacity">
+                  info.sciaram33@gmail.com
                 </a>
               </p>
               <p className="mt-4">
@@ -269,8 +269,8 @@ export default function Privacy() {
               <div className="pt-8 border-t border-primary/10">
                 <p className="text-sm text-foreground/65">
                   Per qualsiasi domanda relativa al trattamento dei tuoi dati personali, scrivici a{" "}
-                  <a href="mailto:info.silviaciaramitaro@gmail.com" className="text-primary underline underline-offset-2 hover:opacity-75 transition-opacity">
-                    info.silviaciaramitaro@gmail.com
+                  <a href="mailto:info.sciaram33@gmail.com" className="text-primary underline underline-offset-2 hover:opacity-75 transition-opacity">
+                    info.sciaram33@gmail.com
                   </a>
                   .
                 </p>
