@@ -130,7 +130,7 @@ export default function Home() {
               src="/logofinitosciaram33.png"
               alt="Silvia"
               className="object-contain"
-              style={{ maxHeight: "35px", width: "auto" }}
+              style={{ maxHeight: "52px", width: "auto" }}
             />
           </a>
           <button
@@ -152,11 +152,10 @@ export default function Home() {
             {/* Gruppo sinistro */}
             <div className="flex items-center justify-between flex-1 pr-24">
               <a href="/">
-                <img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
+                <img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "58px", width: "auto" }} />
               </a>
               <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
               <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
-              <a href="/#contatti" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Contatti</a>
             </div>
 
             {/* Logo occhio — absolute centrato */}
@@ -181,11 +180,11 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="link-whatsapp-navbar"
-                className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white"
-                style={{ color: "hsl(var(--primary))", border: "1px solid rgba(140,59,59,0.35)" }}
+                className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity"
               >
                 Prenota
               </a>
+              <a href="/#contatti" className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white" style={{ color: "hsl(var(--primary))", border: "1px solid rgba(140,59,59,0.35)" }}>Contatti</a>
             </div>
 
           </div>
@@ -199,9 +198,9 @@ export default function Home() {
           >
             <a href="/eventi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Eventi</a>
             <a href="/percorsi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Percorsi</a>
-            <a href="/#contatti" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Contatti</a>
             <a href="/studio" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Lo Studio 33</a>
             <a href="/silvia" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Chi Sono</a>
+            <a href="/#contatti" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Contatti</a>
           </nav>
         )}
       </header>
