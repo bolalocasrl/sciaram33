@@ -50,7 +50,7 @@ export default function Silvia() {
             <img src="/silvia_logo_fine.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "50px", width: "auto" }} />
           </a>
           <a href="/" className="justify-self-center">
-            <img src="/scrittasilvia.png" alt="Silvia" className="object-contain" style={{ maxHeight: "35px", width: "auto" }} />
+            <img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "35px", width: "auto" }} />
           </a>
           <button className="justify-self-end p-2" onClick={() => setMobileMenuOpen((o) => !o)} aria-label="Menu">
             {mobileMenuOpen
@@ -64,9 +64,10 @@ export default function Silvia() {
         <div className="relative hidden md:flex" style={{ color: "hsl(var(--foreground))" }}>
           <div className="flex items-center w-full px-8 py-3">
             <div className="flex items-center justify-between flex-1 pr-24">
-              <a href="/"><img src="/scrittasilvia.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} /></a>
+              <a href="/"><img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} /></a>
               <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
               <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
+              <a href="/#contatti" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Contatti</a>
             </div>
             <div className="absolute left-1/2 -translate-x-1/2">
               <a href="/"><img src="/silvia_logo_fine.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "65px", width: "auto" }} /></a>
@@ -84,6 +85,7 @@ export default function Silvia() {
           <nav className="md:hidden flex flex-col px-8 pb-6 pt-2 gap-5 text-xs tracking-widest uppercase" style={{ color: "hsl(var(--foreground))", backgroundColor: "#fdf1db" }}>
             <a href="/eventi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Eventi</a>
             <a href="/percorsi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Percorsi</a>
+            <a href="/#contatti" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Contatti</a>
             <a href="/studio" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Lo Studio 33</a>
             <a href="/silvia" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Chi Sono</a>
           </nav>
