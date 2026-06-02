@@ -152,7 +152,7 @@ export default function Home() {
             {/* Gruppo sinistro */}
             <div className="flex items-center justify-between flex-1 pr-24">
               <a href="/">
-                <img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "58px", width: "auto" }} />
+                <img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "42px", width: "auto" }} />
               </a>
               <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
               <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
@@ -175,15 +175,6 @@ export default function Home() {
             <div className="flex items-center justify-between flex-1 pl-24">
               <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio 33</a>
               <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="link-whatsapp-navbar"
-                className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity"
-              >
-                Prenota
-              </a>
               <a href="/#contatti" className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white" style={{ color: "hsl(var(--primary))", border: "1px solid rgba(140,59,59,0.35)" }}>Contatti</a>
             </div>
 
