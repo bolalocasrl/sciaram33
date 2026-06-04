@@ -162,20 +162,17 @@ export default function Eventi() {
                   <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12 border-t border-primary/10 pt-12">
 
                     {/* Data — mobile: sopra la foto, desktop: colonna sinistra */}
-                    <div className="md:w-28 md:shrink-0 flex md:flex-col items-baseline md:items-start gap-2 md:gap-0">
+                    <div className="md:w-36 md:shrink-0">
                       {day ? (
-                        <>
-                          <span
-                            className="font-serif text-primary leading-none"
-                            style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", fontWeight: 500 }}
-                          >
+                        <div className="flex items-center gap-3 mb-6">
+                          <span className="font-serif text-primary leading-none" style={{ fontSize: "clamp(5rem, 8vw, 7rem)", fontWeight: 500 }}>
                             {day}
                           </span>
-                          <div className="md:mt-1">
-                            <p className="text-sm font-light text-primary/70 leading-tight">{month}</p>
-                            <p className="text-sm font-light text-primary/50 leading-tight">{year}</p>
+                          <div className="flex flex-col">
+                            <span className="text-primary font-medium text-lg">{month}</span>
+                            <span className="text-primary/60 text-sm">{year}</span>
                           </div>
-                        </>
+                        </div>
                       ) : (
                         <p className="text-sm tracking-widest uppercase text-primary/50 font-light">{month}</p>
                       )}

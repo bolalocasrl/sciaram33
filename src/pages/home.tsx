@@ -583,11 +583,13 @@ export default function Home() {
                     </div>
                     <div className="p-10 flex flex-col flex-1">
                       {day && (
-                        <div className="flex items-baseline gap-2 mb-4">
-                          <span className="font-serif text-primary leading-none" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", fontWeight: 500 }}>{day}</span>
-                          <div>
-                            <p className="text-sm font-light text-primary/70 leading-tight">{month}</p>
-                            <p className="text-sm font-light text-primary/65 leading-tight">{year}</p>
+                        <div className="flex items-center gap-3 mb-6">
+                          <span className="font-serif text-primary leading-none" style={{ fontSize: "clamp(5rem, 8vw, 7rem)", fontWeight: 500 }}>
+                            {day}
+                          </span>
+                          <div className="flex flex-col">
+                            <span className="text-primary font-medium text-lg">{month}</span>
+                            <span className="text-primary/60 text-sm">{year}</span>
                           </div>
                         </div>
                       )}
