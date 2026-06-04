@@ -166,7 +166,7 @@ export default function Home() {
           <div className="flex items-center w-full px-8 py-2">
 
             {/* Gruppo sinistro */}
-            <div className="flex-1 flex items-center justify-around pr-32">
+            <div className="flex-1 flex items-center justify-around pr-16">
               <a href="/">
                 <img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
               </a>
@@ -188,7 +188,7 @@ export default function Home() {
             </div>
 
             {/* Gruppo destro */}
-            <div className="flex-1 flex items-center justify-around pl-32">
+            <div className="flex-1 flex items-center justify-around pl-16">
               <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio 33</a>
               <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
               <a href="/#contatti" className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white" style={{ color: "hsl(var(--primary))", border: "1px solid rgba(140,59,59,0.35)" }}>Contatti</a>

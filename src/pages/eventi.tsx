@@ -107,7 +107,7 @@ export default function Eventi() {
         {/* Barra desktop — flex con logo occhio absolute centrato */}
         <div className="relative hidden md:flex" style={{ color: "hsl(var(--foreground))" }}>
           <div className="flex items-center w-full px-8 py-2">
-            <div className="flex-1 flex items-center justify-around pr-32">
+            <div className="flex-1 flex items-center justify-around pr-16">
               <a href="/"><img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} /></a>
               <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
               <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
@@ -115,7 +115,7 @@ export default function Eventi() {
             <div className="absolute left-1/2 -translate-x-1/2">
               <a href="/"><img src="/silvia_logo_fine.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "65px", width: "auto" }} /></a>
             </div>
-            <div className="flex-1 flex items-center justify-around pl-32">
+            <div className="flex-1 flex items-center justify-around pl-16">
               <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio 33</a>
               <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
               <a href="/#contatti" className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white" style={{ color: "hsl(var(--primary))", border: "1px solid rgba(140,59,59,0.35)" }}>Contatti</a>
