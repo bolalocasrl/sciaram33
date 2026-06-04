@@ -42,6 +42,36 @@ function parseData(iso: string | null | undefined): { day: string | null; month:
 export default function Eventi() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [eventi, setEventi] = useState<Evento[]>([]);
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  const onSubmitNewsletter = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("https://api.brevo.com/v3/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "api-key": import.meta.env.VITE_BREVO_API_KEY,
+        },
+        body: JSON.stringify({ email, listIds: [2], updateEnabled: true }),
+      });
+      if (res.ok) {
+        setSuccess(true);
+        setEmail("");
+      } else {
+        setError("Errore nell'iscrizione. Riprova o scrivici su WhatsApp.");
+      }
+    } catch {
+      setError("Errore nell'iscrizione. Riprova o scrivici su WhatsApp.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     getEventi().then(setEventi).catch(() => {});
@@ -200,24 +230,32 @@ export default function Eventi() {
             <p className="text-foreground/85 font-light mb-10">
               Iscriviti per ricevere in anteprima le date dei nuovi appuntamenti.
             </p>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex flex-col sm:flex-row gap-3 justify-center mb-4"
-            >
-              <input
-                type="email"
-                placeholder="La tua email"
-                required
-                className="flex-1 px-5 py-3 rounded-full border border-primary/20 bg-background text-foreground font-light text-sm placeholder:text-foreground/65 focus:outline-none focus:border-primary/50 transition-colors"
-              />
-              <button
-                type="submit"
-                className="shrink-0 px-8 py-3 rounded-full text-xs tracking-widest uppercase text-white transition-all duration-300 hover:opacity-90 active:scale-95"
-                style={{ backgroundColor: "hsl(var(--primary))" }}
+            {success ? (
+              <p className="text-sm text-primary font-light mb-4">Iscrizione avvenuta con successo! Ti terremo aggiornato sui prossimi eventi.</p>
+            ) : (
+              <form
+                onSubmit={onSubmitNewsletter}
+                className="flex flex-col sm:flex-row gap-3 justify-center mb-4"
               >
-                Iscriviti
-              </button>
-            </form>
+                <input
+                  type="email"
+                  placeholder="La tua email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 px-5 py-3 rounded-full border border-primary/20 bg-background text-foreground font-light text-sm placeholder:text-foreground/65 focus:outline-none focus:border-primary/50 transition-colors"
+                />
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="shrink-0 px-8 py-3 rounded-full text-xs tracking-widest uppercase text-white transition-all duration-300 hover:opacity-90 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
+                  style={{ backgroundColor: "hsl(var(--primary))" }}
+                >
+                  {loading ? "Iscrizione in corso..." : "Iscriviti"}
+                </button>
+              </form>
+            )}
+            {error && <p className="text-sm text-destructive font-light mb-4">{error}</p>}
             <p className="text-foreground/65 text-xs font-light">
               Iscrivendoti accetti il trattamento dei tuoi{" "}
               <a href="/privacy" className="underline underline-offset-2 hover:text-primary transition-colors">
