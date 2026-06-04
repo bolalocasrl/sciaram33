@@ -77,9 +77,25 @@ export default function Home() {
     defaultValues: { name: "", email: "", message: "" },
   });
 
-  const onSubmit = (data: ContactFormValues) => {
-    const mailtoLink = `mailto:info@sciaram33.com?subject=Richiesta SCIARAM 33 da ${data.name}&body=Nome: ${data.name}%0AEmail: ${data.email}%0A%0AMessaggio:%0A${data.message}`;
-    window.location.href = mailtoLink;
+  const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const onSubmit = async (data: ContactFormValues) => {
+    setFormStatus("loading");
+    try {
+      const res = await fetch("https://formspree.io/f/mnjynaol", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setFormStatus("success");
+        form.reset();
+      } else {
+        setFormStatus("error");
+      }
+    } catch {
+      setFormStatus("error");
+    }
   };
 
   const heroRef = useRef(null);
@@ -729,12 +745,19 @@ export default function Home() {
                     <p className="text-xs text-foreground/65 font-light">Inviando il messaggio accetti il trattamento dei tuoi <a href="/privacy" className="underline hover:text-primary transition-colors">dati personali</a>.</p>
                     <Button
                       type="submit"
-                      className="w-full rounded-full py-6 text-sm uppercase tracking-widest mt-8 bg-primary hover:bg-primary/90 text-white group"
+                      disabled={formStatus === "loading"}
+                      className="w-full rounded-full py-6 text-sm uppercase tracking-widest mt-8 bg-primary hover:bg-primary/90 text-white group disabled:opacity-60 disabled:cursor-not-allowed"
                       data-testid="button-contact-submit"
                     >
-                      <span>Invia Messaggio</span>
-                      <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <span>{formStatus === "loading" ? "Invio in corso..." : "Invia Messaggio"}</span>
+                      {formStatus !== "loading" && <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />}
                     </Button>
+                    {formStatus === "success" && (
+                      <p className="text-sm text-primary font-light mt-3">Messaggio inviato! Ti risponderemo presto.</p>
+                    )}
+                    {formStatus === "error" && (
+                      <p className="text-sm text-destructive font-light mt-3">Errore nell'invio. Riprova o scrivici su WhatsApp.</p>
+                    )}
                   </form>
                 </Form>
               </div>
