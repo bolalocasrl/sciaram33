@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { ChevronRight, Users, User, Layers, Menu, X } from "lucide-react";
+import { ChevronRight, Menu, X } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/393204488202";
 
@@ -29,66 +29,6 @@ function ScrollReveal({
     </motion.div>
   );
 }
-
-const percorsi = [
-  {
-    icon: <Users className="w-6 h-6" />,
-    title: "Pilates Matwork & Yoga",
-    subtitle: "Small Group · 6 posti",
-    img: "/StudioCorpoLibero.webp",
-    tag: "Gruppo",
-    duration: "60 min",
-    level: "Tutti i livelli",
-    description:
-      "La pratica di gruppo è un'esperienza unica: si condivide l'energia, la fatica, la crescita. In un piccolo gruppo di massimo 6 persone, ogni lezione è guidata con attenzione individuale, pur nel contesto collettivo.",
-    details: [
-      "Esercizi di Pilates Matwork su tappetino — core, postura, respirazione",
-      "Sequenze di yoga integrate per aprire e allungare",
-      "Piccoli attrezzi: elastic band, soft ball, magic circle",
-      "Guida dettagliata sulla respirazione e l'allineamento",
-      "Adatto a chi inizia e a chi ha già esperienza",
-    ],
-    ideal: "Ideale per chi vuole iniziare, per chi ama condividere la pratica, per chi cerca continuità e regolarità.",
-  },
-  {
-    icon: <Layers className="w-6 h-6" />,
-    title: "Reformer & Cadillac",
-    subtitle: "Duetto · 2 posti",
-    img: "/2persone.webp",
-    tag: "Semi-privato",
-    duration: "55 min",
-    level: "Tutti i livelli",
-    description:
-      "Due persone, due macchine, un'attenzione quasi privata. Il formato duetto permette un lavoro intenso alle macchine con il supporto di un'altra persona che condivide il tuo stesso livello o obiettivo.",
-    details: [
-      "Lavoro completo su Reformer — molle, footbar, straps",
-      "Sessioni su Cadillac per esercizi di apertura e sospensione",
-      "Personalizzazione del carico e degli esercizi per ogni persona",
-      "Correzioni posturali continue durante tutta la sessione",
-      "Progressione strutturata nel tempo",
-    ],
-    ideal: "Ideale per coppie, amici, o chiunque voglia la precisione del lavoro alle macchine con un tocco semi-privato.",
-  },
-  {
-    icon: <User className="w-6 h-6" />,
-    title: "Sessioni Individuali",
-    subtitle: "1-to-1 · Su misura",
-    img: "/CorpoLibero.webp",
-    tag: "Privato",
-    duration: "60 min",
-    level: "Su misura",
-    description:
-      "Il percorso più completo. Una sessione individuale è progettata interamente per te — la tua storia, il tuo corpo, i tuoi obiettivi. Si lavora su tutte le macchine e a corpo libero, costruendo un programma che evolve settimana dopo settimana.",
-    details: [
-      "Valutazione posturale e funzionale iniziale",
-      "Programma personalizzato su Reformer, Cadillac, Ladder Barrel, Spine Corrector",
-      "Integrazione di Pilates Matwork e yoga dove appropriato",
-      "Focus su riabilitazione, prevenzione o performance",
-      "Monitoraggio continuo dei progressi",
-    ],
-    ideal: "Ideale per chi ha esigenze specifiche, per la riabilitazione post-intervento, per la gravidanza, per atleti e per chi vuole il massimo dall'esperienza.",
-  },
-];
 
 const discipline = [
   {
@@ -247,84 +187,6 @@ export default function Percorsi() {
           </div>
         </motion.div>
       </section>
-
-      {/* ── PERCORSI DETTAGLIO ── */}
-      {percorsi.map((p, i) => (
-        <section
-          key={p.title}
-          className={`py-32 px-6 ${i % 2 === 0 ? "bg-background" : "bg-secondary/15"}`}
-        >
-          <div className="max-w-7xl mx-auto">
-            <div className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} items-start gap-12 lg:gap-20`}>
-              {/* Image */}
-              <div className="w-full lg:flex-1 max-w-lg lg:max-w-none">
-                <ScrollReveal direction={i % 2 === 0 ? "left" : "right"}>
-                  <div className="overflow-hidden rounded-3xl aspect-[4/3] shadow-2xl shadow-primary/10">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                  </div>
-                </ScrollReveal>
-              </div>
-
-              {/* Content */}
-              <div className="lg:flex-1">
-                <ScrollReveal direction={i % 2 === 0 ? "right" : "left"}>
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center text-primary/60">
-                      {p.icon}
-                    </span>
-                    <span className="text-xs tracking-widest uppercase text-accent">{p.tag}</span>
-                  </div>
-
-                  <h2 className="text-3xl md:text-4xl font-serif text-primary mb-2">{p.title}</h2>
-                  <p className="text-xs tracking-widest uppercase text-foreground/40 mb-6">{p.subtitle}</p>
-
-                  <div className="flex gap-6 mb-8">
-                    <div>
-                      <p className="text-xs tracking-wider uppercase text-foreground/40 mb-1">Durata</p>
-                      <p className="text-sm font-medium text-foreground">{p.duration}</p>
-                    </div>
-                    <div className="w-[1px] bg-primary/10" />
-                    <div>
-                      <p className="text-xs tracking-wider uppercase text-foreground/40 mb-1">Livello</p>
-                      <p className="text-sm font-medium text-foreground">{p.level}</p>
-                    </div>
-                  </div>
-
-                  <p className="text-lg text-foreground/85 font-light leading-relaxed mb-8">
-                    {p.description}
-                  </p>
-
-                  <ul className="space-y-3 mb-8">
-                    {p.details.map((d) => (
-                      <li key={d} className="flex items-start gap-3 text-foreground/80 font-light">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-2" />
-                        {d}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <p className="text-sm text-accent font-light italic mb-8">{p.ideal}</p>
-
-                  <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-8 py-4 text-xs tracking-widest uppercase rounded-full text-white transition-all duration-300 hover:opacity-90 active:scale-95 shadow-lg"
-                    style={{ backgroundColor: "hsl(var(--primary))" }}
-                  >
-                    Richiedi informazioni <ChevronRight className="w-3 h-3" />
-                  </a>
-                </ScrollReveal>
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
 
       {/* ── DISCIPLINE ── */}
       <section className="py-32 px-6 bg-background">
