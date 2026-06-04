@@ -594,9 +594,6 @@ export default function Home() {
                         </div>
                       )}
                       <h3 className="text-2xl font-serif text-primary mb-4">{ev.titolo}</h3>
-                      <p className="text-foreground/85 font-light leading-relaxed mb-8 flex-1">
-                        {ev.descrizione}
-                      </p>
                       <a
                         href="/eventi"
                         className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 hover:bg-primary hover:text-white transition-all duration-300 self-start text-primary"
