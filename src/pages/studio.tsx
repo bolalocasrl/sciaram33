@@ -70,8 +70,8 @@ export default function Studio() {
       <header
         className="sticky top-0 z-50"
         style={{
-          backgroundColor: "#fdf1db",
-          borderBottom: "1px solid rgba(140,59,59,0.10)",
+          backgroundColor: "hsl(var(--primary))",
+          borderBottom: "1px solid rgba(255,255,255,0.10)",
         }}
       >
         {/* Barra mobile — grid 3 colonne */}
@@ -80,38 +80,38 @@ export default function Studio() {
             <img src="/silvia_logo_fine.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "50px", width: "auto" }} />
           </a>
           <a href="/" className="justify-self-center">
-            <img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "52px", width: "auto" }} />
+            <img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "52px", width: "auto", filter: "brightness(0) invert(1)" }} />
           </a>
           <button className="justify-self-end p-2" onClick={() => setMobileMenuOpen((o) => !o)} aria-label="Menu">
             {mobileMenuOpen
-              ? <X className="w-5 h-5" style={{ color: "hsl(var(--primary))" }} />
-              : <Menu className="w-5 h-5" style={{ color: "hsl(var(--primary))" }} />
+              ? <X className="w-5 h-5" style={{ color: "white" }} />
+              : <Menu className="w-5 h-5" style={{ color: "white" }} />
             }
           </button>
         </div>
 
         {/* Barra desktop — flex con logo occhio absolute centrato */}
-        <div className="relative hidden md:flex" style={{ color: "hsl(var(--foreground))" }}>
+        <div className="relative hidden md:flex" style={{ color: "rgba(255,255,255,0.85)" }}>
           <div className="flex items-center w-full px-8 py-2">
             <div className="flex-1 flex items-center justify-around pr-16">
-              <a href="/"><img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} /></a>
+              <a href="/"><img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto", filter: "brightness(0) invert(1)" }} /></a>
               <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
               <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
             </div>
             <div className="absolute left-1/2 -translate-x-1/2">
-              <a href="/"><img src="/silvia_logo_fine.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "65px", width: "auto" }} /></a>
+              <a href="/"><img src="/silvia_logo_fine.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "65px", width: "auto", filter: "brightness(0) invert(1)" }} /></a>
             </div>
             <div className="flex-1 flex items-center justify-around pl-16">
               <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio 33</a>
               <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
-              <a href="/#contatti" className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white" style={{ color: "hsl(var(--primary))", border: "1px solid rgba(140,59,59,0.35)" }}>Contatti</a>
+              <a href="/#contatti" className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white" style={{ color: "white", border: "1px solid rgba(255,255,255,0.40)" }}>Contatti</a>
             </div>
           </div>
         </div>
 
         {/* Menu mobile a tendina */}
         {mobileMenuOpen && (
-          <nav className="md:hidden flex flex-col px-8 pb-6 pt-2 gap-5 text-xs tracking-widest uppercase" style={{ color: "hsl(var(--foreground))", backgroundColor: "#fdf1db" }}>
+          <nav className="md:hidden flex flex-col px-8 pb-6 pt-2 gap-5 text-xs tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.85)", backgroundColor: "hsl(var(--primary))" }}>
             <a href="/" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Home</a>
             <a href="/eventi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Eventi</a>
             <a href="/percorsi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Percorsi</a>
