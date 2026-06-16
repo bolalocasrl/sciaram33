@@ -168,7 +168,7 @@ export default function Percorsi() {
             className="text-white/70 font-light max-w-md"
             style={{ fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)", lineHeight: "1.80" }}
           >
-            Quattro percorsi per quattro approcci alla pratica. Ogni corpo è diverso — ogni percorso è pensato per rispondere a un bisogno specifico.
+            Coscienza Corporea
           </motion.p>
         </motion.div>
 
@@ -199,9 +199,9 @@ export default function Percorsi() {
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {salaMacchinePieces.map((item, i) => (
-              <ScrollReveal key={item.name} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
+              <ScrollReveal key={item.name} delay={i * 0.1} direction="up">
                 <div className="rounded-3xl border border-primary/10 p-10 bg-secondary/10 hover:bg-secondary/20 transition-colors duration-500 h-full">
                   <div className="flex items-center gap-4 mb-5">
                     <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
@@ -311,6 +311,29 @@ export default function Percorsi() {
           </div>
         </div>
       )}
+
+      {/* ── WELFARE AZIENDALE ── */}
+      <section className="py-32 px-6 bg-secondary/20">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xs tracking-[0.3em] uppercase text-accent mb-6">Collaborazioni</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary mb-10 leading-tight">
+              Welfare & Benessere Aziendale
+            </h2>
+            <p className="text-lg text-foreground/85 font-light leading-relaxed mb-12 max-w-2xl">
+              Ho collaborato con realtà aziendali per promuovere il <strong>riequilibrio psico-fisico dei dipendenti</strong>. Attraverso programmi mirati, integro tecniche di movimento consapevole e gestione dello stress per migliorare il clima organizzativo e la qualità della vita lavorativa, portando la consapevolezza nel cuore della produttività.
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-6 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300"
+            >
+              Scrivimi per un progetto aziendale <ChevronRight className="w-3 h-3" />
+            </a>
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* ── CTA FINALE ── */}
       <section className="py-32 px-6 bg-primary text-white">
