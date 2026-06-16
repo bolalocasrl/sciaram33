@@ -499,18 +499,15 @@ export default function Home() {
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
                     Ladder Barrel
                   </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                    Spine Corrector
-                  </li>
+
                 </ul>
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="right">
               <div className="rounded-3xl border border-primary/10 p-10 bg-secondary/20 h-full">
-                <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">Sala Piccola</p>
-                <h3 className="text-2xl font-serif text-primary mb-6">Sala Matwork</h3>
+                <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">Sciala</p>
+                <h3 className="text-2xl font-serif text-primary mb-6">Sciala</h3>
                 <ul className="space-y-3 text-foreground/85 font-light text-lg">
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
@@ -634,7 +631,7 @@ export default function Home() {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-accent shrink-0 mt-1" />
                   <div>
-                    <p className="font-medium text-foreground">Lo Studio 33</p>
+                    <p className="font-medium text-foreground">SCIARAM 33</p>
                     <p className="text-foreground/85">
                       Via Castelvetrano 45<br />Mazara del Vallo (TP)
                     </p>
@@ -668,13 +665,13 @@ export default function Home() {
                   <div>
                     <p className="font-medium text-foreground">Instagram</p>
                     <a
-                      href="https://www.instagram.com/studiouno_pilatesreformer/"
+                      href="https://www.instagram.com/sciaram33.pilates/"
                       target="_blank"
                       rel="noopener noreferrer"
                       data-testid="link-instagram-contact"
                       className="text-foreground/85 hover:text-primary transition-colors"
                     >
-                      @studiouno_pilatesreformer
+                      @sciaram33.pilates
                     </a>
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 # PROJECT.md — SCIARAM 33
 
 ## Il Progetto
-Sito web di uno studio di Pilates e Yoga a Mazara del Vallo (TP), fondato da Silvia.
+Sito web di uno studio di Pilates e Yoga a Mazara del Vallo (TP), fondato da Silvia Ciaramitaro.
 
 - **Sito live:** https://sciaram33.vercel.app/
 - **Repository:** https://github.com/bolalocasrl/sciaram33
@@ -22,33 +22,28 @@ Sito web di uno studio di Pilates e Yoga a Mazara del Vallo (TP), fondato da Sil
 ## Stile Visivo
 - Colori: primario bordeaux/rosso scuro `hsl(var(--primary))`, secondario beige chiaro `#fdf1db`
 - Font: serif per titoli, sans-serif per testo
-- Animazioni: componente `ScrollReveal` con framer-motion (direction: up/down/left/right, delay)
+- Animazioni: componente `ScrollReveal` con framer-motion
 - Immagini: tutte `.webp` nella cartella `/public`
 - Bottoni CTA: `rounded-full`, bordeaux, testo bianco
 - Tono di voce: elegante, spirituale, evocativo — non commerciale
-- Testi: `text-foreground/85` come opacità standard (non /70 che è troppo chiaro sul beige)
+- Testi: `text-foreground/85` come opacità standard
 
 ---
 
-## Navbar (aggiornata — uguale in tutte le pagine)
+## Navbar (uguale in tutte le pagine)
 - Sfondo fisso `#fdf1db` con `borderBottom` sempre visibile
-- Mobile: `grid grid-cols-3` — logo occhio sinistra, scrittasilvia.png centro, hamburger destra
-- Desktop: `hidden md:flex relative` — gruppo sinistro con `flex-1 flex items-center justify-end pr-24`, logo occhio `absolute left-1/2 -translate-x-1/2`, gruppo destro con `flex-1 flex items-center justify-start pl-24`
+- Mobile: `grid grid-cols-3` — logo occhio sinistra, logofinitosciaram33.png centro, hamburger destra
+- Menu mobile: Home, Eventi, Percorsi, Lo Studio 33, Chi Sono, Contatti
+- Desktop: `hidden md:flex relative` — gruppo sinistro `flex-1 flex items-center justify-around pr-16`, logo occhio `absolute left-1/2 -translate-x-1/2`, gruppo destro `flex-1 flex items-center justify-around pl-16`
 - Link sinistri: Eventi, Percorsi
-- Link destri: Lo Studio 33, Chi Sono, Prenota (bottone)
-
----
-
-## Componenti Chiave
-- `ScrollReveal` → animazione entrata elementi
-- `WHATSAPP_URL` → costante definita in ogni file pagina
-- Pulsante WhatsApp fisso in basso a destra verde `#25D366`
+- Link destri: Lo Studio 33, Chi Sono
+- CTA destra: Contatti (bottone bordeaux con bordo)
 
 ---
 
 ## Immagini Disponibili in /public
 - `heronatura.webp` → hero background home
-- `chisonosilvia.webp` → foto Silvia (hero silvia.tsx + sezione Chi Sono home)
+- `chisonosilvia.webp` → foto Silvia
 - `sessioneindividuale.webp` → sezione Body Freedom home
 - `StudioCorpoLibero.webp` → percorso Pilates Matwork
 - `2persone.webp` → percorso Reformer & Cadillac
@@ -59,7 +54,7 @@ Sito web di uno studio di Pilates e Yoga a Mazara del Vallo (TP), fondato da Sil
 - `costellazionifamiliari.webp` → evento costellazioni
 - `studiosilviavuoto.webp` → hero studio.tsx
 - `silvia_logo_fine.png` → logo occhio navbar/footer
-- `scrittasilvia.png` → logo scritta navbar
+- `logofinitosciaram33.png` → logo scritta navbar (SCYARAM 33)
 
 ---
 
@@ -71,58 +66,69 @@ Sito web di uno studio di Pilates e Yoga a Mazara del Vallo (TP), fondato da Sil
 | /studio | studio.tsx | ✅ Completata |
 | /percorsi | percorsi.tsx | ✅ Completata |
 | /eventi | eventi.tsx | ✅ Completata |
-| /privacy | privacy.tsx | ❌ Da creare |
+| /privacy | privacy.tsx | ✅ Completata |
 | * | not-found.tsx | ✅ |
+
+---
+
+## Sanity CMS
+- **Account:** bolalocasrl (Google)
+- **Project ID:** `6xywmoj8`
+- **Organization ID:** `oL5fa331A`
+- **Studio URL:** https://sciaram33.sanity.studio/
+- **Piano:** Growth Trial → passa a Free automaticamente dopo 30 giorni
+- **Schema:** evento (titolo, data, descrizione, immagine, attivo)
+- **Silvia invitata come:** Editor (info.sciaram33@gmail.com)
+- **Pagine collegate:** eventi.tsx + sezione eventi in home.tsx
+
+---
+
+## Servizi Collegati
+| Servizio | Account | Uso |
+|----------|---------|-----|
+| Vercel | bolalocasrl | Deploy automatico |
+| Sanity | bolalocasrl | CMS eventi |
+| Formspree | Silvia Ciaramitaro | Form contatti (endpoint: mnjynaol) |
+| Brevo | info.sciaram33@gmail.com | Newsletter eventi (lista ID: 2) |
+
+---
+
+## Variabili d'Ambiente
+In `.env.local` (non nel repository) e su Vercel:
+- `VITE_SANITY_PROJECT_ID=6xywmoj8`
+- `VITE_SANITY_DATASET=production`
+- `VITE_SANITY_TOKEN=...`
+- `VITE_BREVO_API_KEY=...`
 
 ---
 
 ## Stato Lavori
 
-### ✅ Completato (sessione 15 Maggio 2026)
-- Navbar unificata e aggiornata in tutte le pagine
-- Link navbar equidistanti dal logo centrale su desktop
+### ✅ Completato
+- Navbar unificata in tutte le pagine con logo, link equidistanti, CTA Contatti
 - Testi scuriti da /70 a /85 in tutte le pagine
-- Data evento in grande nella home
-- silvia.tsx: nuova hero a due colonne (testo sinistra, foto destra)
-- silvia.tsx: grassetto su paesi e "Divino Femminile"
-- silvia.tsx: rimossa sezione "Un sapere costruito nel tempo"
-- percorsi.tsx: fix parola PERCORSI tagliata su mobile
-- percorsi.tsx: aggiunta sezione Collaborazioni
-- percorsi.tsx: aggiunta sezione "Le Discipline" (spostata da studio.tsx)
-- studio.tsx: rimossa sezione "Le Discipline"
-- eventi.tsx: form newsletter frontend (senza logica invio)
-- Footer: aggiunta P.IVA (in aggiornamento) e sede legale in tutte le pagine
-- Form contatti home: aggiunto link privacy policy
-- Bug navigazione primo click: risolto con nuova navbar
+- silvia.tsx: hero a due colonne, testo Founder, grassetto paesi
+- percorsi.tsx: rimosso dettaglio percorsi individuali, aggiunta sezione Discipline
+- eventi.tsx: form newsletter collegato a Brevo, data grande e visibile
+- home.tsx: form contatti collegato a Formspree, sezione eventi collegata a Sanity
+- Privacy Policy pagina + link footer
+- Footer: P.IVA 02966860815 + sede legale
+- Sanity CMS: setup completo, studio deployato, Silvia invitata
+- Brevo: account creato, lista Newsletter Sciaram33 (ID: 2), API collegata
+- Fix route SPA su Vercel (vercel.json)
 
-### 📋 Da fare (Matte)
-- Creare pagina /privacy con testo GDPR standard (in attesa P.IVA da Silvia)
-- Aggiungere link /privacy nel footer (in attesa pagina privacy)
-- Collegare form contatti a email reale via Formspree (decidere con Silvia)
-- Collegare form newsletter a Brevo (in attesa mail ufficiale Silvia)
+### 📋 Da fare (in attesa)
 - Collegare dominio sciaram33.it a Vercel (in attesa acquisto da Silvia)
-- Sostituire "P.IVA: in aggiornamento" con numero reale (in attesa da Silvia)
-- Test completo mobile e desktop prima del lancio
-
-### 📋 Da fare (Silvia)
-- Fornire P.IVA
-- Acquistare dominio sciaram33.it con i suoi dati
-- Inviare foto professionali delle due sale studio
-- Inviare foto sezione Collaborazioni pagina Chi Sono
-- Testo definitivo sezione Chi Sono
+- Aggiungere CORS origin sciaram33.it su Sanity dopo collegamento dominio
+- Foto reali delle due sale studio (metà giugno da Silvia)
+- Test completo mobile e desktop pre-lancio
+- Invitare Silvia su Brevo quando vuole gestire newsletter autonomamente
 
 ---
 
 ## Contatti
 - WhatsApp: +39 320 448 8202
-- Email: info@sciaram33.com / info.silviaciaramitaro@gmail.com
+- Email: info.sciaram33@gmail.com
 - Instagram: @studiouno_pilatesreformer
 - Indirizzo: Via Castelvetrano 45, Mazara del Vallo (TP)
-
----
-
-## Note Tecniche
-- Il form contatti usa `mailto:` — da sostituire con Formspree
-- Il form newsletter non ha logica di invio — da collegare a Brevo
-- Vercel intestato a bolalocasrl (Matte) — dominio sarà intestato a Silvia, si possono collegare senza problemi
-- Brevo: creare account con mail ufficiale Silvia (info@sciaram33.com) quando disponibile
+- P.IVA: 02966860815
