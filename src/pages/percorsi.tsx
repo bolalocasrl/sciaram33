@@ -30,35 +30,35 @@ function ScrollReveal({
   );
 }
 
-const discipline = [
+const salaMacchinePieces = [
   {
-    title: "Pilates con macchine",
-    img: "/2persone.webp",
-    desc: "Il Pilates alle macchine permette un lavoro che il solo peso corporeo non potrebbe raggiungere. Le molle creano resistenza adattiva — sfidano senza sovraccaricare, supportano senza compensare. Ogni sessione è un dialogo tra il tuo corpo e la macchina.",
-    tags: ["Reformer", "Cadillac", "Ladder Barrel", "Spine Corrector"],
+    name: "Cadillac",
+    desc: "La macchina più completa del Pilates. Permette di lavorare in sospensione, in trazione e in appoggio, rendendo possibili esercizi impossibili altrove. Ideale per riabilitazione e per chi cerca una pratica profonda e articolata.",
   },
   {
-    title: "Pilates Matwork",
-    img: "/StudioCorpoLibero.webp",
-    desc: "Adatto a tutti, dalle prime sessioni agli atleti avanzati. Indicato per anziani che vogliono mantenere mobilità e forza, per donne in gravidanza che cercano sostegno sicuro, per chi è in riabilitazione post-intervento e per chiunque voglia ritrovare connessione con il proprio centro.",
-    tags: ["Anziani", "Gravidanza", "Riabilitazione", "Tutti i livelli"],
+    name: "Reformer",
+    desc: "Il simbolo del Pilates. Una piattaforma scorrevole con un sistema di molle regolabili che crea resistenza e supporto simultanei. Ogni esercizio sul Reformer richiede controllo, precisione e consapevolezza corporea totale.",
   },
   {
-    title: "Yoga",
-    img: "/CorpoLibero.webp",
-    desc: "Non uno yoga spettacolare, ma uno yoga onesto. Praticato lentamente, con attenzione alle transizioni, al respiro e alla qualità del contatto con il suolo. Un'ora di yoga a SCIARAM 33 è un ritorno a sé.",
-    tags: ["Hatha", "Yin", "Pranayama", "Tutti i livelli"],
+    name: "Ladder Barrel",
+    desc: "Una combinazione di scala e barile che permette un'estensione della colonna profonda e sicura. Fondamentale per aprire il petto, allungare i flessori dell'anca e aumentare la mobilità laterale.",
+  },
+];
+
+const salaMatworkPieces = [
+  {
+    name: "Pilates Matwork & Piccoli Attrezzi",
+    desc: "La radice di tutto. Il Pilates a corpo libero su tappetino nasce dalla connessione tra respiro, centro e movimento — solo il tuo corpo e la tua consapevolezza, con il sostegno di foam roller, magic circle, elastic band, soft ball. Strumenti semplici che amplificano la consapevolezza propriocettiva e permettono un lavoro più mirato su specifiche catene muscolari.",
   },
   {
-    title: "Meditazione",
-    img: "/StudioMix.webp",
-    desc: "La meditazione non è svuotare la mente — è imparare a osservarla. Le sessioni di meditazione guidata usano tecniche di mindfulness, body scan e visualizzazione per portare il sistema nervoso in uno stato di calma profonda e consapevole.",
-    tags: ["Mindfulness", "Body scan", "Visualizzazione", "Respirazione"],
+    name: "Yoga & Meditazione",
+    desc: "Non uno yoga spettacolare, ma uno yoga onesto. Uno yoga che dialoga con il Pilates — attenzione all'allineamento, all'apertura e alla presenza. Il silenzio è parte della pratica: la meditazione guidata è integrata nelle sessioni per portare la mente nello stesso stato di quiete e attenzione che il corpo sta imparando a trovare.",
   },
 ];
 
 export default function Percorsi() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [yogaModalOpen, setYogaModalOpen] = useState(false);
 
   const heroRef = useRef(null);
   const { scrollYProgress: heroScroll } = useScroll({
@@ -188,48 +188,129 @@ export default function Percorsi() {
         </motion.div>
       </section>
 
-      {/* ── DISCIPLINE ── */}
+      {/* ── SALA MACCHINE ── */}
       <section className="py-32 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
-            <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">La pratica</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-20">Le Discipline</h2>
+            <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">Sala Grande</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-6">Sala Macchine</h2>
+            <p className="text-center text-foreground/75 font-light text-lg mb-16 max-w-2xl mx-auto">
+              Attrezzatura professionale Pilates per un lavoro profondo, preciso e trasformativo.
+            </p>
           </ScrollReveal>
 
-          <div className="space-y-24">
-            {discipline.map((d, i) => (
-              <ScrollReveal key={d.title} direction={i % 2 === 0 ? "left" : "right"}>
-                <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-12 lg:gap-20`}>
-                  <div className="flex-1 w-full max-w-lg">
-                    <div className="overflow-hidden rounded-3xl aspect-[4/3] shadow-xl shadow-primary/8">
-                      <img
-                        src={d.img}
-                        alt={d.title}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                      />
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {salaMacchinePieces.map((item, i) => (
+              <ScrollReveal key={item.name} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
+                <div className="rounded-3xl border border-primary/10 p-10 bg-secondary/10 hover:bg-secondary/20 transition-colors duration-500 h-full">
+                  <div className="flex items-center gap-4 mb-5">
+                    <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                    <h3 className="text-2xl font-serif text-primary">{item.name}</h3>
                   </div>
-                  <div className="flex-1 max-w-xl">
-                    <h3 className="text-3xl md:text-4xl font-serif text-primary mb-6">{d.title}</h3>
-                    <p className="text-lg text-foreground/85 font-light leading-relaxed mb-8">{d.desc}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {d.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-primary/20 text-primary/70"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                  <p className="text-foreground/85 font-light leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
+
+      {/* ── SCIALA ── */}
+      <section className="py-32 px-6 bg-secondary/20">
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">Sciala</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-6">Sciala</h2>
+            <p className="text-center text-foreground/75 font-light text-lg mb-16 max-w-2xl mx-auto">
+              Uno spazio raccolto per il lavoro a corpo libero — yoga, meditazione, movimento essenziale.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {salaMatworkPieces.map((item, i) => (
+              <ScrollReveal key={item.name} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
+                <div className="rounded-3xl border border-primary/10 p-10 bg-background hover:bg-secondary/10 transition-colors duration-500 h-full">
+                  <div className="flex items-center gap-4 mb-5">
+                    <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                    <h3 className="text-2xl font-serif text-primary">{item.name}</h3>
+                  </div>
+                  <p className="text-foreground/85 font-light leading-relaxed mb-6">{item.desc}</p>
+                  {item.name === "Yoga & Meditazione" && (
+                    <button
+                      onClick={() => setYogaModalOpen(true)}
+                      className="text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                    >
+                      Scopri di più
+                    </button>
+                  )}
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── MODALE YOGA ── */}
+      {yogaModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-6"
+          style={{ backgroundColor: "rgba(0,0,0,0.60)" }}
+          onClick={() => setYogaModalOpen(false)}
+        >
+          <div
+            className="bg-background rounded-3xl p-10 max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-start justify-between mb-8">
+              <h3 className="text-3xl font-serif text-primary leading-tight">Il Yoga come scienza sacra</h3>
+              <button
+                onClick={() => setYogaModalOpen(false)}
+                className="ml-6 shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-primary/20 text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="space-y-5 text-foreground/85 font-light leading-relaxed">
+              <p>Ma il yoga non è una tendenza. Il yoga è una sacra scienza della coscienza. Secondo gli insegnamenti di Maharishi Patanjali e le antiche scritture yogiche, il yoga non è limitato solo alle posture fisiche.</p>
+              <p className="font-medium text-foreground">Il yoga è:</p>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                  <span><span className="font-medium text-foreground">Yama</span> — imparare a vivere con verità, compassione e integrità verso gli altri.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                  <span><span className="font-medium text-foreground">Niyama</span> — coltivare disciplina, autoconoscenza e purezza interiore.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                  <span><span className="font-medium text-foreground">Asana</span> — preparare il corpo per stare con consapevolezza, stabilità e presenza.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                  <span><span className="font-medium text-foreground">Pranayama</span> — espandere e bilanciare la forza vitale attraverso respirazione consapevole.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                  <span><span className="font-medium text-foreground">Pratyahara</span> — trasformare le sensazioni all'interno e disconnettersi da distrazioni esterne.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                  <span><span className="font-medium text-foreground">Dharana</span> — sviluppare una profonda concentrazione su un punto.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                  <span><span className="font-medium text-foreground">Dhyana</span> — entrare in uno stato di meditazione e continua attenzione.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                  <span><span className="font-medium text-foreground">Samadhi</span> — vivere una completa unione con l'esistenza oltre l'ego e la mente.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── CTA FINALE ── */}
       <section className="py-32 px-6 bg-primary text-white">
