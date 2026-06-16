@@ -565,7 +565,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-16">Eventi Speciali</h2>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className={eventiSanity.length === 1 ? "max-w-lg mx-auto" : eventiSanity.length === 2 ? "grid grid-cols-1 md:grid-cols-2 gap-6" : eventiSanity.length === 3 ? "grid grid-cols-1 md:grid-cols-3 gap-6" : "grid grid-cols-1 sm:grid-cols-2 gap-6"}>
             {eventiSanity.map((ev, i) => {
               const { day, month, year } = parseData(ev.data);
               const imgSrc = ev.immagine?.asset?.url ?? "/sciamanaperu2.webp";
