@@ -163,10 +163,10 @@ export default function Eventi() {
                   <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12 border-t border-primary/10 pt-12">
 
                     {/* Data — mobile: sopra la foto, desktop: colonna sinistra */}
-                    <div className="w-36 shrink-0">
+                    <div className="min-w-[160px] shrink-0">
                       {day ? (
                         <div className="flex items-center gap-3 mb-6">
-                          <span className="font-serif text-primary leading-none shrink-0" style={{ fontSize: "clamp(5rem, 8vw, 7rem)", fontWeight: 500 }}>
+                          <span className="font-serif text-primary leading-none shrink-0" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", fontWeight: 500 }}>
                             {day}
                           </span>
                           <div className="flex flex-col shrink-0 whitespace-nowrap">

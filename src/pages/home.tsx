@@ -110,6 +110,8 @@ export default function Home() {
 
   useEffect(() => {
     getEventi().then(setEventiSanity).catch(() => {});
+    const interval = setInterval(() => getEventi().then(setEventiSanity).catch(() => {}), 60000);
+    return () => clearInterval(interval);
   }, []);
 
   const MESI_IT = ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"];
@@ -563,13 +565,12 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-16">Eventi Speciali</h2>
           </ScrollReveal>
 
-          <div className="max-w-lg">
-            {eventiSanity[0] && (() => {
-              const ev = eventiSanity[0];
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {eventiSanity.map((ev, i) => {
               const { day, month, year } = parseData(ev.data);
               const imgSrc = ev.immagine?.asset?.url ?? "/sciamanaperu2.webp";
               return (
-                <ScrollReveal direction="left">
+                <ScrollReveal key={ev._id} delay={i * 0.1} direction="up">
                   <div className="group rounded-3xl border border-primary/10 bg-background overflow-hidden flex flex-col h-full hover:border-primary/25 transition-all duration-500">
                     <div className="overflow-hidden aspect-[16/9]">
                       <img
@@ -582,7 +583,7 @@ export default function Home() {
                     <div className="p-10 flex flex-col flex-1">
                       {day && (
                         <div className="flex items-center gap-3 mb-6">
-                          <span className="font-serif text-primary leading-none shrink-0" style={{ fontSize: "clamp(5rem, 8vw, 7rem)", fontWeight: 500 }}>
+                          <span className="font-serif text-primary leading-none shrink-0" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", fontWeight: 500 }}>
                             {day}
                           </span>
                           <div className="flex flex-col shrink-0 whitespace-nowrap">
@@ -602,7 +603,7 @@ export default function Home() {
                   </div>
                 </ScrollReveal>
               );
-            })()}
+            })}
 
           </div>
           <div className="flex justify-center mt-14">
