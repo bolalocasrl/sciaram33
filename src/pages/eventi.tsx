@@ -131,7 +131,21 @@ export default function Eventi() {
             <a href="/percorsi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Percorsi</a>
             <a href="/studio" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Lo Studio 33</a>
             <a href="/silvia" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Chi Sono</a>
-            <a href="/#contatti" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Contatti</a>
+            <button
+              className="hover:opacity-60 transition-opacity text-xs tracking-widest uppercase text-left"
+              style={{ color: "rgba(255,255,255,0.85)" }}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (window.location.pathname === '/') {
+                  document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#contatti';
+                  setTimeout(() => {
+                    document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 500);
+                }
+              }}
+            >Contatti</button>
           </nav>
         )}
       </header>
@@ -166,11 +180,11 @@ export default function Eventi() {
                     <div className="min-w-[160px] shrink-0">
                       {day ? (
                         <div className="flex items-center gap-3 mb-6">
-                          <span className="font-serif text-primary leading-none shrink-0" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", fontWeight: 500 }}>
+                          <span className="font-serif text-primary leading-none shrink-0" style={{ fontSize: "clamp(4.5rem, 8vw, 7rem)", fontWeight: 500 }}>
                             {day}
                           </span>
                           <div className="flex flex-col shrink-0 whitespace-nowrap">
-                            <span className="text-primary font-medium text-lg">{month}</span>
+                            <span className="text-primary font-medium text-2xl">{month}</span>
                             <span className="text-primary/60 text-sm">{year}</span>
                           </div>
                         </div>

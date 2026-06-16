@@ -87,7 +87,21 @@ export default function Privacy() {
             <a href="/percorsi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Percorsi</a>
             <a href="/studio" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Lo Studio 33</a>
             <a href="/silvia" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Chi Sono</a>
-            <a href="/#contatti" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Contatti</a>
+            <button
+              className="hover:opacity-60 transition-opacity text-xs tracking-widest uppercase text-left"
+              style={{ color: "rgba(255,255,255,0.85)" }}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (window.location.pathname === '/') {
+                  document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#contatti';
+                  setTimeout(() => {
+                    document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 500);
+                }
+              }}
+            >Contatti</button>
           </nav>
         )}
       </header>
