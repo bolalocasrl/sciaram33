@@ -114,6 +114,16 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const target = sessionStorage.getItem('scrollTo');
+    if (target) {
+      sessionStorage.removeItem('scrollTo');
+      setTimeout(() => {
+        document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+  }, []);
+
   const MESI_IT = ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"];
   function parseData(iso: string | null | undefined) {
     if (!iso) return { day: null, month: null, year: null };
@@ -216,12 +226,12 @@ export default function Home() {
               onClick={() => {
                 setMobileMenuOpen(false);
                 if (window.location.pathname === '/') {
-                  document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#contatti';
                   setTimeout(() => {
                     document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
-                  }, 500);
+                  }, 100);
+                } else {
+                  sessionStorage.setItem('scrollTo', 'contatti');
+                  window.location.href = '/';
                 }
               }}
             >Contatti</button>

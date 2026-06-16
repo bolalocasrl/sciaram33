@@ -127,12 +127,12 @@ export default function Percorsi() {
               onClick={() => {
                 setMobileMenuOpen(false);
                 if (window.location.pathname === '/') {
-                  document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#contatti';
                   setTimeout(() => {
                     document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
-                  }, 500);
+                  }, 100);
+                } else {
+                  sessionStorage.setItem('scrollTo', 'contatti');
+                  window.location.href = '/';
                 }
               }}
             >Contatti</button>

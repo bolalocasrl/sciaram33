@@ -19,55 +19,56 @@ Sito web di uno studio di Pilates e Yoga a Mazara del Vallo (TP), fondato da Sil
 
 ---
 
+## Colori
+- Bordeaux primario: `hsl(var(--primary))` = **#8C3B3B**
+- Beige sfondo: **#FDF1DB**
+- Avorio link navbar: `rgba(255,255,255,0.85)` = **#F5EDE0** per Canva
+
+---
+
 ## Stile Visivo
-- Colori: primario bordeaux/rosso scuro `hsl(var(--primary))`, secondario beige chiaro `#fdf1db`
 - Font: serif per titoli, sans-serif per testo
-- Animazioni: componente `ScrollReveal` con framer-motion
-- Immagini: tutte `.webp` nella cartella `/public`
-- Bottoni CTA: `rounded-full`, bordeaux, testo bianco
-- Tono di voce: elegante, spirituale, evocativo — non commerciale
 - Testi: `text-foreground/85` come opacità standard
+- Bottoni CTA: `rounded-full`, bordeaux, testo bianco
+- Tono di voce: elegante, spirituale, evocativo
 
 ---
 
 ## Navbar (uguale in tutte le pagine)
-- Sfondo fisso `#fdf1db` con `borderBottom` sempre visibile
-- Mobile: `grid grid-cols-3` — logo occhio sinistra, logofinitosciaram33.png centro, hamburger destra
-- Menu mobile: Home, Eventi, Percorsi, Lo Studio 33, Chi Sono, Contatti
-- Desktop: `hidden md:flex relative` — gruppo sinistro `flex-1 flex items-center justify-around pr-16`, logo occhio `absolute left-1/2 -translate-x-1/2`, gruppo destro `flex-1 flex items-center justify-around pl-16`
-- Link sinistri: Eventi, Percorsi
-- Link destri: Lo Studio 33, Chi Sono
-- CTA destra: Contatti (bottone bordeaux con bordo)
+- Sfondo: `hsl(var(--primary))` bordeaux
+- Mobile: `grid grid-cols-3` — logo occhio sinistra (`logofooternavbar.png` con filter bianco), scritta centro (`scrittanuova.png`), hamburger destra
+- Menu mobile: Home, Eventi, Percorsi, Lo Studio 33, Chi Sono, Contatti (button con scroll smooth)
+- Desktop: gruppo sinistro `flex-1 flex items-center justify-around pr-16` con `scrittanuova.png` + link Eventi + Percorsi; logo occhio `logofooternavbar.png` centrato absolute; gruppo destro con Lo Studio 33 + Chi Sono + Contatti (bottone con bordo bianco)
+- Testi link: `rgba(255,255,255,0.85)`
 
 ---
 
-## Immagini Disponibili in /public
+## Immagini in /public
 - `heronatura.webp` → hero background home
 - `chisonosilvia.webp` → foto Silvia
 - `sessioneindividuale.webp` → sezione Body Freedom home
-- `StudioCorpoLibero.webp` → percorso Pilates Matwork
-- `2persone.webp` → percorso Reformer & Cadillac
-- `CorpoLibero.webp` → percorso Sessioni Individuali
-- `StudioMix.webp` → percorso Studio Mix
+- `StudioCorpoLibero.webp` → placeholder studio/percorsi
+- `2persone.webp` → placeholder studio/percorsi
+- `CorpoLibero.webp` → placeholder percorsi
+- `StudioMix.webp` → placeholder studio
 - `sciamanaperu1.webp` → evento sciamana (pagina eventi)
-- `sciamanaperu2.webp` → evento sciamana (home)
-- `costellazionifamiliari.webp` → evento costellazioni
-- `studiosilviavuoto.webp` → hero studio.tsx
-- `silvia_logo_fine.png` → logo occhio navbar/footer
-- `logofinitosciaram33.png` → logo scritta navbar (SCYARAM 33)
+- `studiosilviavuoto.webp` → hero studio
+- `logofooternavbar.png` → logo occhio navbar centro + footer (con filter bianco su bordeaux)
+- `scrittanuova.png` → logo scritta sinistra navbar (su sfondo bordeaux)
+- `silvia_logo_fine.png` → vecchio logo (non più usato in navbar)
 
 ---
 
 ## Struttura Pagine
-| Pagina | File | Stato |
-|--------|------|-------|
-| / | home.tsx | ✅ Completata |
-| /silvia | silvia.tsx | ✅ Completata |
-| /studio | studio.tsx | ✅ Completata |
-| /percorsi | percorsi.tsx | ✅ Completata |
-| /eventi | eventi.tsx | ✅ Completata |
-| /privacy | privacy.tsx | ✅ Completata |
-| * | not-found.tsx | ✅ |
+| Pagina | File | Contenuto |
+|--------|------|-----------|
+| / | home.tsx | Hero, Chi Sono, Body Freedom, I Percorsi (3 card), Lo Studio (Sala Macchine + Sciala), Eventi Speciali (da Sanity), Contatti |
+| /silvia | silvia.tsx | Hero 2 colonne (testo+foto), Percorso, Formazione & Competenze, Welfare Aziendale, Filosofia, CTA |
+| /studio | studio.tsx | Hero, Carosello 4 foto, Adatto a tutti (CTA) |
+| /percorsi | percorsi.tsx | Hero "Coscienza Corporea", Sala Macchine (3 card), Sciala (2 card + popup Patanjali), Collaborazioni, CTA |
+| /eventi | eventi.tsx | Lista eventi da Sanity, form newsletter Brevo |
+| /privacy | privacy.tsx | Privacy Policy GDPR |
+| * | not-found.tsx | 404 |
 
 ---
 
@@ -76,59 +77,58 @@ Sito web di uno studio di Pilates e Yoga a Mazara del Vallo (TP), fondato da Sil
 - **Project ID:** `6xywmoj8`
 - **Organization ID:** `oL5fa331A`
 - **Studio URL:** https://sciaram33.sanity.studio/
-- **Piano:** Growth Trial → passa a Free automaticamente dopo 30 giorni
-- **Schema:** evento (titolo, data, descrizione, immagine, attivo)
-- **Silvia invitata come:** Editor (info.sciaram33@gmail.com)
-- **Pagine collegate:** eventi.tsx + sezione eventi in home.tsx
+- **Piano:** Growth Trial → Free automatico dopo 30 giorni
+- **Schema evento:** titolo, data, descrizione, immagine, attivo
+- **Silvia:** Editor invitata (info.sciaram33@gmail.com)
+- **Pagine collegate:** eventi.tsx (lista completa) + home.tsx (sezione eventi, griglia adattiva 1/2/3/4+ eventi, refresh ogni 60s)
 
 ---
 
 ## Servizi Collegati
-| Servizio | Account | Uso |
-|----------|---------|-----|
-| Vercel | bolalocasrl | Deploy automatico |
-| Sanity | bolalocasrl | CMS eventi |
-| Formspree | Silvia Ciaramitaro | Form contatti (endpoint: mnjynaol) |
-| Brevo | info.sciaram33@gmail.com | Newsletter eventi (lista ID: 2) |
+| Servizio | Account | Uso | Note |
+|----------|---------|-----|------|
+| Vercel | bolalocasrl | Deploy | Auto da push main |
+| Sanity | bolalocasrl | CMS eventi | Studio su sciaram33.sanity.studio |
+| Formspree | Silvia Ciaramitaro | Form contatti | Endpoint: mnjynaol |
+| Brevo | info.sciaram33@gmail.com | Newsletter | Lista ID: 2 |
+| Aruba | Silvia | Dominio sciaram33.it | Da acquistare |
 
 ---
 
-## Variabili d'Ambiente
-In `.env.local` (non nel repository) e su Vercel:
+## Variabili d'Ambiente (.env.local + Vercel)
 - `VITE_SANITY_PROJECT_ID=6xywmoj8`
 - `VITE_SANITY_DATASET=production`
-- `VITE_SANITY_TOKEN=...`
-- `VITE_BREVO_API_KEY=...`
+- `VITE_SANITY_TOKEN=...` (non condividere)
+- `VITE_BREVO_API_KEY=...` (non condividere)
 
 ---
 
 ## Stato Lavori
 
 ### ✅ Completato
-- Navbar unificata in tutte le pagine con logo, link equidistanti, CTA Contatti
-- Testi scuriti da /70 a /85 in tutte le pagine
-- silvia.tsx: hero a due colonne, testo Founder, grassetto paesi
-- percorsi.tsx: rimosso dettaglio percorsi individuali, aggiunta sezione Discipline
-- eventi.tsx: form newsletter collegato a Brevo, data grande e visibile
-- home.tsx: form contatti collegato a Formspree, sezione eventi collegata a Sanity
+- Navbar bordeaux unificata in tutte le pagine con nuovi loghi
+- Tutti i form funzionanti (Formspree + Brevo)
+- Sanity CMS collegato e funzionante
 - Privacy Policy pagina + link footer
-- Footer: P.IVA 02966860815 + sede legale
-- Sanity CMS: setup completo, studio deployato, Silvia invitata
-- Brevo: account creato, lista Newsletter Sciaram33 (ID: 2), API collegata
-- Fix route SPA su Vercel (vercel.json)
+- Footer con P.IVA 02966860815 + sede legale
+- percorsi.tsx: contenuto sostituito con sale + Sciala + popup Patanjali
+- studio.tsx: carosello foto + CTA
+- Fix routing SPA Vercel
+- Griglia eventi adattiva in home
+- Data eventi grande e visibile
 
-### 📋 Da fare (in attesa)
+### 📋 Da fare
 - Collegare dominio sciaram33.it a Vercel (in attesa acquisto da Silvia)
-- Aggiungere CORS origin sciaram33.it su Sanity dopo collegamento dominio
-- Foto reali delle due sale studio (metà giugno da Silvia)
+- Aggiungere CORS origin sciaram33.it su Sanity dopo dominio
+- Foto reali delle due sale studio (da Silvia)
 - Test completo mobile e desktop pre-lancio
-- Invitare Silvia su Brevo quando vuole gestire newsletter autonomamente
+- Aggiungere CORS origin nuovo dominio su Sanity quando disponibile
 
 ---
 
-## Contatti
+## Contatti Studio
 - WhatsApp: +39 320 448 8202
 - Email: info.sciaram33@gmail.com
-- Instagram: @studiouno_pilatesreformer
+- Instagram: @sciaram33.pilates
 - Indirizzo: Via Castelvetrano 45, Mazara del Vallo (TP)
 - P.IVA: 02966860815
