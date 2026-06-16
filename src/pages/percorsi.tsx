@@ -81,10 +81,10 @@ export default function Percorsi() {
         {/* Barra mobile — grid 3 colonne */}
         <div className="md:hidden grid grid-cols-3 items-center px-6 py-3">
           <a href="/" className="justify-self-start">
-            <img src="/silvia_logo_fine.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "50px", width: "auto" }} />
+            <img src="/logofooternavbar.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "50px", width: "auto", filter: "brightness(0) invert(1)" }} />
           </a>
           <a href="/" className="justify-self-center">
-            <img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "52px", width: "auto", filter: "brightness(0) invert(1)" }} />
+            <img src="/scrittanuova.png" alt="Silvia" className="object-contain" style={{ maxHeight: "52px", width: "auto" }} />
           </a>
           <button className="justify-self-end p-2" onClick={() => setMobileMenuOpen((o) => !o)} aria-label="Menu">
             {mobileMenuOpen
@@ -98,12 +98,12 @@ export default function Percorsi() {
         <div className="relative hidden md:flex" style={{ color: "rgba(255,255,255,0.85)" }}>
           <div className="flex items-center w-full px-8 py-2">
             <div className="flex-1 flex items-center justify-around pr-16">
-              <a href="/"><img src="/logofinitosciaram33.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto", filter: "brightness(0) invert(1)" }} /></a>
+              <a href="/"><img src="/scrittanuova.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} /></a>
               <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
               <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
             </div>
             <div className="absolute left-1/2 -translate-x-1/2">
-              <a href="/"><img src="/silvia_logo_fine.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "65px", width: "auto", filter: "brightness(0) invert(1)" }} /></a>
+              <a href="/"><img src="/logofooternavbar.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "65px", width: "auto", filter: "brightness(0) invert(1)" }} /></a>
             </div>
             <div className="flex-1 flex items-center justify-around pl-16">
               <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio 33</a>
@@ -374,7 +374,7 @@ export default function Percorsi() {
       {/* ── FOOTER ── */}
       <footer className="bg-foreground text-background py-1 px-6 text-center">
         <img
-          src="/silvia_logo_fine.png"
+          src="/logofooternavbar.png"
           alt="SCIARAM 33"
           className="mx-auto mb-3 object-contain"
           style={{ maxHeight: "40px", width: "auto" }}
