@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
 import { ChevronRight, Menu, X } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/393204488202";
@@ -30,53 +30,38 @@ function ScrollReveal({
   );
 }
 
-const salaMacchinePieces = [
-  {
-    name: "Cadillac",
-    desc: "La macchina più completa del Pilates. Permette di lavorare in sospensione, in trazione e in appoggio, rendendo possibili esercizi impossibili altrove. Ideale per riabilitazione e per chi cerca una pratica profonda e articolata.",
-  },
-  {
-    name: "Reformer",
-    desc: "Il simbolo del Pilates. Una piattaforma scorrevole con un sistema di molle regolabili che crea resistenza e supporto simultanei. Ogni esercizio sul Reformer richiede controllo, precisione e consapevolezza corporea totale.",
-  },
-  {
-    name: "Ladder Barrel",
-    desc: "Una combinazione di scala e barile che permette un'estensione della colonna profonda e sicura. Fondamentale per aprire il petto, allungare i flessori dell'anca e aumentare la mobilità laterale.",
-  },
-  {
-    name: "Spine Corrector",
-    desc: "Disegnato per correggere e allungare la colonna vertebrale. Perfetto per chi soffre di tensioni dorsali, per chi lavora seduto o per chi vuole ritrovare la naturalezza delle curve fisiologiche della schiena.",
-  },
-];
-
-const salaMatworkPieces = [
-  {
-    name: "Pilates Matwork",
-    desc: "La radice di tutto. Il Pilates a corpo libero su tappetino è la pratica originale di Joseph Pilates. Ogni esercizio nasce dalla connessione tra respiro, centro e movimento — senza macchinari, solo il tuo corpo e la tua consapevolezza.",
-  },
-  {
-    name: "Yoga",
-    desc: "Una pratica millenaria che unisce movimento, respiro e meditazione. Nella sala piccola, pratichiamo uno yoga che dialoga con il Pilates — attenzione all'allineamento, all'apertura e alla presenza.",
-  },
-  {
-    name: "Meditazione",
-    desc: "Il silenzio è parte della pratica. La meditazione guidata è integrata nelle sessioni per portare la mente nello stesso stato di quiete e attenzione che il corpo sta imparando a trovare.",
-  },
-  {
-    name: "Piccoli attrezzi",
-    desc: "Foam roller, magic circle, elastic band, soft ball. Strumenti semplici che amplificano la consapevolezza propriocettiva e permettono un lavoro più mirato su specifiche catene muscolari.",
-  },
+const CAROUSEL_IMAGES = [
+  "/studiosilviavuoto.webp",
+  "/StudioCorpoLibero.webp",
+  "/2persone.webp",
+  "/StudioMix.webp",
 ];
 
 export default function Studio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
-  const heroRef = useRef(null);
-  const { scrollYProgress: heroScroll } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-  const heroOpacity = useTransform(heroScroll, [0, 0.7], [1, 0]);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((s) => (s + 1) % CAROUSEL_IMAGES.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
+
+  const prev = () => setCurrentSlide((s) => (s - 1 + CAROUSEL_IMAGES.length) % CAROUSEL_IMAGES.length);
+  const next = () => setCurrentSlide((s) => (s + 1) % CAROUSEL_IMAGES.length);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (diff > 50) next();
+    else if (diff < -50) prev();
+    touchStartX.current = null;
+  };
 
   return (
     <main className="min-h-screen bg-background overflow-hidden selection:bg-primary/20 selection:text-primary">
@@ -138,66 +123,32 @@ export default function Studio() {
       </header>
 
       {/* ── HERO ── */}
-      <section
-        ref={heroRef}
-        className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden"
-      >
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('/studiosilviavuoto.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center 40%",
-            backgroundAttachment: window.innerWidth > 768 ? "fixed" : "scroll",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.65) 100%)",
-          }}
-        />
-
-        <motion.div
-          style={{ opacity: heroOpacity }}
-          className="relative z-10 flex flex-col items-center text-center px-6 pt-24 pb-16 w-full max-w-2xl mx-auto"
-        >
+      <section className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden bg-primary">
+        <div className="relative z-10 flex flex-col items-center text-center px-6 pt-16 pb-16 w-full max-w-2xl mx-auto">
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.20, ease: "easeOut" }}
-            className="text-white/70 font-light mb-5 tracking-[0.34em] uppercase"
-            style={{ fontSize: "clamp(0.65rem, 1.2vw, 0.88rem)" }}
+            className="text-white/50 font-light mb-5 tracking-widest uppercase text-xs"
           >
-            Mazara del Vallo
+            Il nostro spazio
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.30, ease: "easeOut" }}
-            className="font-serif text-white leading-none mb-8"
+            className="font-serif text-white leading-none"
             style={{
               fontSize: "clamp(2.5rem, 6vw, 5rem)",
               fontWeight: 500,
               letterSpacing: "0.12em",
-              textShadow: "0 2px 20px rgba(0,0,0,0.40)",
             }}
           >
             Lo Studio 33
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.44, ease: "easeOut" }}
-            className="text-white/75 font-light max-w-md"
-            style={{ fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)", lineHeight: "1.80" }}
-          >
-            Uno spazio progettato per il movimento consapevole. Due sale, macchine professionali, un'atmosfera che invita al silenzio interiore.
-          </motion.p>
-        </motion.div>
+        </div>
 
+        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -214,56 +165,66 @@ export default function Studio() {
         </motion.div>
       </section>
 
-      {/* ── SALA MACCHINE ── */}
-      <section className="py-32 px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal>
-            <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">Sala Grande</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-6">Sala Macchine</h2>
-            <p className="text-center text-foreground/75 font-light text-lg mb-16 max-w-2xl mx-auto">
-              Attrezzatura professionale Pilates per un lavoro profondo, preciso e trasformativo.
-            </p>
-          </ScrollReveal>
+      {/* ── CAROSELLO ── */}
+      <section className="py-20 px-6 bg-background">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative">
+            {/* Slides */}
+            <div
+              className="relative overflow-hidden rounded-3xl"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              <div className="aspect-[4/3] md:aspect-[16/9] relative">
+                {CAROUSEL_IMAGES.map((src, i) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt={`Studio ${i + 1}`}
+                    loading={i === 0 ? "eager" : "lazy"}
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
+                    style={{
+                      opacity: i === currentSlide ? 1 : 0,
+                      transform: i === currentSlide ? "scale(1)" : "scale(1.03)",
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {salaMacchinePieces.map((item, i) => (
-              <ScrollReveal key={item.name} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
-                <div className="rounded-3xl border border-primary/10 p-10 bg-secondary/10 hover:bg-secondary/20 transition-colors duration-500 h-full">
-                  <div className="flex items-center gap-4 mb-5">
-                    <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
-                    <h3 className="text-2xl font-serif text-primary">{item.name}</h3>
-                  </div>
-                  <p className="text-foreground/85 font-light leading-relaxed">{item.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+            {/* Frecce desktop */}
+            <button
+              onClick={prev}
+              aria-label="Precedente"
+              className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center rounded-full bg-background/90 shadow-lg transition-all duration-300 hover:bg-primary hover:text-white"
+              style={{ color: "hsl(var(--primary))" }}
+            >
+              <ChevronRight className="w-5 h-5 rotate-180" />
+            </button>
+            <button
+              onClick={next}
+              aria-label="Successiva"
+              className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center rounded-full bg-background/90 shadow-lg transition-all duration-300 hover:bg-primary hover:text-white"
+              style={{ color: "hsl(var(--primary))" }}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
 
-      {/* ── SALA MATWORK ── */}
-      <section className="py-32 px-6 bg-secondary/20">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal>
-            <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">Sala Piccola</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-6">Sala Matwork</h2>
-            <p className="text-center text-foreground/75 font-light text-lg mb-16 max-w-2xl mx-auto">
-              Uno spazio raccolto per il lavoro a corpo libero — yoga, meditazione, movimento essenziale.
-            </p>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {salaMatworkPieces.map((item, i) => (
-              <ScrollReveal key={item.name} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
-                <div className="rounded-3xl border border-primary/10 p-10 bg-background hover:bg-secondary/10 transition-colors duration-500 h-full">
-                  <div className="flex items-center gap-4 mb-5">
-                    <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
-                    <h3 className="text-2xl font-serif text-primary">{item.name}</h3>
-                  </div>
-                  <p className="text-foreground/85 font-light leading-relaxed">{item.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+            {/* Pallini indicatori */}
+            <div className="flex justify-center gap-2 mt-6">
+              {CAROUSEL_IMAGES.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentSlide(i)}
+                  aria-label={`Foto ${i + 1}`}
+                  className="w-2 h-2 rounded-full transition-all duration-300"
+                  style={{
+                    backgroundColor: i === currentSlide ? "hsl(var(--primary))" : "rgba(140,59,59,0.25)",
+                    transform: i === currentSlide ? "scale(1.4)" : "scale(1)",
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
