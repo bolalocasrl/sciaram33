@@ -175,7 +175,7 @@ export default function Home() {
 
         {/* Barra desktop — flex con logo occhio absolute centrato */}
         <div className="relative hidden md:flex" style={{ color: "rgba(255,255,255,0.85)" }}>
-          <div className="flex items-center w-full px-8 py-2">
+          <div className="flex items-center w-full px-8 py-4">
 
             {/* Gruppo sinistro */}
             <div className="flex-1 flex items-center justify-around pr-16">

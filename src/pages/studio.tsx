@@ -92,7 +92,7 @@ export default function Studio() {
 
         {/* Barra desktop — flex con logo occhio absolute centrato */}
         <div className="relative hidden md:flex" style={{ color: "rgba(255,255,255,0.85)" }}>
-          <div className="flex items-center w-full px-8 py-2">
+          <div className="flex items-center w-full px-8 py-4">
             <div className="flex-1 flex items-center justify-around pr-16">
               <a href="/"><img src="/scrittanuova.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} /></a>
               <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
