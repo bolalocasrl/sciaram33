@@ -278,7 +278,7 @@ export default function Home() {
               textShadow: "0 2px 20px rgba(0,0,0,0.30), 0 1px 4px rgba(0,0,0,0.20)",
             }}
           >
-            Vibra con Noi
+            Ritorna alla tua natura
           </motion.h1>
 
           {/* Movement Medicine */}
@@ -305,9 +305,12 @@ export default function Home() {
               lineHeight: "1.90",
             }}
           >
-            "È il tempo di darsi spazio.
-            <br />Uno spazio dove il tempo per sé diventa priorità.
-            <br />Qui il movimento è medicina."
+            Il corpo è il mezzo sacro con cui la nostra anima si muove nel mondo fisico
+            <br />Muoviti
+            <br />Respira
+            <br />Ama
+            <br />E sii presente
+            <br />Qui e Ora
           </motion.p>
 
           {/* CTA */}
@@ -357,16 +360,13 @@ export default function Home() {
               </h2>
               <div className="space-y-5 text-lg text-foreground/85 font-light leading-relaxed">
                 <p>
-                  Ho dedicato anni a studiare il corpo e il movimento. Non come un insieme di
-                  muscoli da allenare, ma come uno spazio da abitare con consapevolezza e cura.
+                  Dietro SCIARAM 33 c'è Silvia, ricercatrice spirituale e istruttrice di Pilates.
                 </p>
                 <p>
-                  SCIARAM 33 nasce da questa visione: creare un luogo dove la pratica fisica si
-                  intreccia con l'ascolto interiore. Dove ogni sessione è un ritorno a sé.
+                  Dopo anni di studio, lavoro e ricerche esperienziali, è tornata nella sua terra natale, la Sicilia, per intraprendere un nuovo progetto incentrato sulla coscienza corporale attraverso il movimento e tecniche di riconnessione al sé.
                 </p>
                 <p>
-                  Il mio approccio unisce la precisione del Pilates alla profondità dello yoga,
-                  creando percorsi su misura per ogni corpo, ogni storia, ogni obiettivo.
+                  Si è formata nel metodo classico Pilates con specializzazione grandi attrezzi Reformer &amp; Cadillac certificata in Italia. Ha conseguito una formazione in Yoga e Meditazione seguita da maestri orientali in India, nell'area dell'Himalaya e a Bali. Ha studiato il lavoro sul Divino Femminile e ha fatto ricerca nella foresta di Palawan sugli stati alterati di coscienza e tecniche di rilascio Somato-Emozionale.
                 </p>
               </div>
               <div className="mt-10 h-[1px] w-20 bg-primary/30" />
@@ -406,42 +406,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── BODY FREEDOM ── */}
-      <section className="py-32 px-6 bg-secondary/20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
-          <div className="md:hidden w-full max-w-lg mx-auto mb-2">
-            <h2 className="text-4xl font-serif text-primary">
-              Quanto è libero il tuo corpo?
-            </h2>
-          </div>
-          <div className="flex-1 w-full max-w-lg">
-            <ScrollReveal direction="left">
-              <div className="relative overflow-hidden rounded-t-full rounded-b-[100px] aspect-[3/4] shadow-2xl shadow-primary/10">
-                <img
-                  src="/sessioneindividuale.webp"
-                  alt="Sessione individuale"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                  data-testid="img-body-freedom"
-                />
-              </div>
-            </ScrollReveal>
-          </div>
-
-          <div className="flex-1 max-w-xl">
-            <ScrollReveal direction="right">
-              <h2 className="hidden md:block text-4xl md:text-5xl font-serif text-primary mb-8">
-                Quanto è libero il tuo corpo?
-              </h2>
-              <p className="text-lg md:text-xl text-foreground/85 font-light leading-relaxed mb-10">
-                Tratteniamo emozioni, parole, esperienze. Il corpo si irrigidisce, si
-                appesantisce. La libertà nasce creando spazio. E si parte sempre da qui: dal corpo.
-              </p>
-              <div className="h-[1px] w-24 bg-primary/20" />
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
 
       {/* ── I PERCORSI ── */}
       <section id="percorsi" className="py-32 px-6 bg-primary text-white relative overflow-hidden">
