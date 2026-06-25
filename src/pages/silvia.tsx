@@ -30,8 +30,11 @@ function ScrollReveal({
   );
 }
 
+const SILVIA_VIDEOS = ["/primovideosilvia.webm", "/secondovideosilvia.webm"];
+
 export default function Silvia() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [videoIndex, setVideoIndex] = useState(0);
 
   return (
     <main className="min-h-screen bg-background overflow-hidden selection:bg-primary/20 selection:text-primary">
@@ -105,6 +108,70 @@ export default function Silvia() {
           </nav>
         )}
       </header>
+
+      {/* ── HERO ── */}
+      <section className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden">
+        {/* Video background */}
+        <video
+          key={SILVIA_VIDEOS[videoIndex]}
+          autoPlay
+          muted
+          playsInline
+          onEnded={() => setVideoIndex((i) => (i + 1) % SILVIA_VIDEOS.length)}
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={SILVIA_VIDEOS[videoIndex]} type="video/webm" />
+        </video>
+
+        {/* Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.65) 100%)",
+          }}
+        />
+
+        {/* Contenuto */}
+        <div className="relative z-10 flex flex-col items-center text-center px-6 pt-16 pb-16 w-full max-w-2xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.20, ease: "easeOut" }}
+            className="text-white/70 font-light mb-5 tracking-widest uppercase text-xs"
+          >
+            L'anima di SCIARAM 33
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 0.30, ease: "easeOut" }}
+            className="font-serif text-white leading-none"
+            style={{
+              fontSize: "clamp(2.5rem, 6vw, 5rem)",
+              fontWeight: 500,
+              letterSpacing: "0.12em",
+            }}
+          >
+            Chi Sono
+          </motion.h1>
+        </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.0 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        >
+          <div className="w-[1px] h-12 bg-white/30 mx-auto overflow-hidden">
+            <motion.div
+              animate={{ y: ["-100%", "100%"] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+              className="w-full h-full bg-white/70"
+            />
+          </div>
+        </motion.div>
+      </section>
 
       {/* ── IL PERCORSO ── */}
       <section className="pt-32 pb-32 px-6 bg-background">
