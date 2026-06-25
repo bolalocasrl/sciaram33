@@ -271,9 +271,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-white mb-4"
+            className="font-serif text-white mb-4 whitespace-nowrap"
             style={{
-              fontSize: "clamp(3rem, 7vw, 6rem)",
+              fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
               fontWeight: 400,
               textShadow: "0 2px 20px rgba(0,0,0,0.30), 0 1px 4px rgba(0,0,0,0.20)",
             }}
@@ -305,12 +305,12 @@ export default function Home() {
               lineHeight: "1.90",
             }}
           >
-            Il corpo è il mezzo sacro con cui la nostra anima si muove nel mondo fisico
-            <br />Muoviti
-            <br />Respira
-            <br />Ama
-            <br />E sii presente
-            <br />Qui e Ora
+            Ascolta il tuo corpo, riscopri il tuo ritmo.
+            <br />Ogni intenzione che stabilisci e ogni rituale a cui ritorni sta rimodellando la tua architettura neurale.
+            <br />Sintonizzati sui tuoi ritmi naturali e fidati del tuo corpo.
+            <br />Non stai solo praticando — stai dirigendo la tua biologia per espandere il tuo potenziale.
+            <br />Muoviti. Respira. Ama. Sii presente.
+            <br />Inizia Ora.
           </motion.p>
 
           {/* CTA */}
