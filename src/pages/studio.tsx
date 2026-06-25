@@ -31,10 +31,41 @@ function ScrollReveal({
 }
 
 const CAROUSEL_IMAGES = [
-  "/studiosilviavuoto.webp",
-  "/StudioCorpoLibero.webp",
-  "/2persone.webp",
-  "/StudioMix.webp",
+  "/_NZF2741.webp",
+  "/_NZF2752.webp",
+  "/_NZF2755.webp",
+  "/_NZF2757.webp",
+  "/_NZF2759.webp",
+  "/_NZF2766.webp",
+  "/_NZF2770.webp",
+  "/_NZF2772.webp",
+  "/_NZF2794.webp",
+];
+
+const salaMacchinePieces = [
+  {
+    name: "Cadillac",
+    img: "/cadillac.webp",
+    desc: "La macchina più completa del Pilates. Permette di lavorare in sospensione, in trazione e in appoggio, rendendo possibili esercizi impossibili altrove. Ideale per riabilitazione e per chi cerca una pratica profonda e articolata.",
+  },
+  {
+    name: "Reformer",
+    img: "/reformer.webp",
+    desc: "Il simbolo del Pilates. Una piattaforma scorrevole con un sistema di molle regolabili che crea resistenza e supporto simultanei. Ogni esercizio sul Reformer richiede controllo, precisione e consapevolezza corporea totale.",
+  },
+];
+
+const salaMatworkPieces = [
+  {
+    name: "Pilates Matwork & Piccoli Attrezzi",
+    img: "/matworkpiccolaattrezzi.webp",
+    desc: "La radice di tutto. Il Pilates a corpo libero su tappetino nasce dalla connessione tra respiro, centro e movimento — solo il tuo corpo e la tua consapevolezza, con il sostegno di foam roller, magic circle, elastic band, soft ball. Strumenti semplici che amplificano la consapevolezza propriocettiva e permettono un lavoro più mirato su specifiche catene muscolari.",
+  },
+  {
+    name: "Yoga & Meditazione",
+    img: "/yogaemeditazione.webp",
+    desc: "Non uno yoga spettacolare, ma uno yoga onesto. Uno yoga che dialoga con il Pilates — attenzione all'allineamento, all'apertura e alla presenza. Il silenzio è parte della pratica: la meditazione guidata è integrata nelle sessioni per portare la mente nello stesso stato di quiete e attenzione che il corpo sta imparando a trovare.",
+  },
 ];
 
 export default function Studio() {
@@ -158,7 +189,7 @@ export default function Studio() {
               letterSpacing: "0.12em",
             }}
           >
-            Lo Studio 33
+            Lo Studio
           </motion.h1>
         </div>
 
@@ -239,6 +270,71 @@ export default function Studio() {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── LE SALE ── */}
+      <section className="py-24 px-6 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <h2 className="font-serif text-primary text-center mb-16" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>
+              Le Sale
+            </h2>
+          </ScrollReveal>
+
+          {/* Sala Macchine */}
+          <ScrollReveal>
+            <p className="text-xs tracking-[0.3em] uppercase text-primary/60 text-center mb-3">Primo ambiente</p>
+            <h3 className="font-serif text-2xl md:text-3xl text-primary text-center mb-4">Sala Macchine</h3>
+            <p className="text-foreground/70 font-light text-center max-w-2xl mx-auto mb-10">
+              La sala è attrezzata con macchinari Pilates professionali per un allenamento strutturato, profondo e altamente personalizzabile.
+            </p>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+            {salaMacchinePieces.map((piece, i) => (
+              <ScrollReveal key={piece.name} delay={i * 0.1}>
+                <div className="rounded-2xl overflow-hidden bg-secondary/10">
+                  <img
+                    src={piece.img}
+                    alt={piece.name}
+                    className="w-full aspect-[4/3] object-cover"
+                    loading="lazy"
+                  />
+                  <div className="p-6">
+                    <h4 className="font-serif text-xl text-primary mb-3">{piece.name}</h4>
+                    <p className="text-foreground/70 font-light leading-relaxed text-sm">{piece.desc}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Shala */}
+          <ScrollReveal>
+            <p className="text-xs tracking-[0.3em] uppercase text-primary/60 text-center mb-3">Secondo ambiente</p>
+            <h3 className="font-serif text-2xl md:text-3xl text-primary text-center mb-4">Shala</h3>
+            <p className="text-foreground/70 font-light text-center max-w-2xl mx-auto mb-10">
+              Uno spazio aperto e luminoso dedicato alla pratica a corpo libero, al Matwork e allo Yoga. Un luogo di silenzio e movimento consapevole.
+            </p>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {salaMatworkPieces.map((piece, i) => (
+              <ScrollReveal key={piece.name} delay={i * 0.1}>
+                <div className="rounded-2xl overflow-hidden bg-secondary/10">
+                  <img
+                    src={piece.img}
+                    alt={piece.name}
+                    className="w-full aspect-[4/3] object-cover"
+                    loading="lazy"
+                  />
+                  <div className="p-6">
+                    <h4 className="font-serif text-xl text-primary mb-3">{piece.name}</h4>
+                    <p className="text-foreground/70 font-light leading-relaxed text-sm">{piece.desc}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
