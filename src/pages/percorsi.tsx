@@ -43,14 +43,14 @@ const percorsi = [
     title: "Reformer & Cadillac",
     subtitle: "Duetto · 2 posti",
     description: "Precisione profonda con macchinari professionali. Ogni movimento calibrato per trasformare il corpo dall'interno.",
-    img: "/2persone.webp",
+    img: "/reformerecadillac.webp",
   },
   {
     icon: <User className="w-5 h-5" />,
     title: "Sessioni Individuali",
     subtitle: "1-to-1 · Su misura",
     description: "Percorsi personalizzati per riabilitazione, prevenzione o obiettivi specifici. Attenzione totale al tuo corpo, alla tua storia.",
-    img: "/CorpoLibero.webp",
+    img: "/sessionindividuali.webp",
   },
 ];
 
@@ -199,86 +199,17 @@ export default function Percorsi() {
         </motion.div>
       </section>
 
-      {/* ── SEZIONE A — IL METODO & LO YOGA ── */}
-      <section className="py-24 px-6 bg-secondary/20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto">
-
-          {/* Colonna sinistra — Pilates */}
-          <ScrollReveal direction="left">
-            <h2 className="font-serif text-3xl text-primary mb-6">Il Metodo Pilates</h2>
-            <p className="text-foreground/85 font-light leading-relaxed mb-8">
-              Il Metodo Pilates è un sistema di allenamento sviluppato all'inizio del '900 da Joseph Pilates. Pilates ha chiamato il suo metodo Contrology, con riferimento al modo in cui il metodo incoraggia l'uso della mente per controllare i muscoli. È un programma di esercizi che si concentra sui muscoli posturali, essenziali a fornire supporto alla colonna vertebrale e indicato nel campo della riabilitazione posturale. Il punto cardine del metodo è la tonificazione e il rinforzo del Power House: l'addome, i glutei, gli adduttori e la zona lombare.
-            </p>
-            <h3 className="font-serif text-xl text-primary mt-8 mb-4">I 6 Principi Chiave</h3>
-            <ol className="space-y-3 text-foreground/85 font-light leading-relaxed">
-              <li><span className="font-medium text-foreground">1. Concentrazione</span> — La mente guida il corpo.</li>
-              <li><span className="font-medium text-foreground">2. Controllo</span> — Nessun movimento lasciato al caso.</li>
-              <li><span className="font-medium text-foreground">3. Centratura</span> — Tutti i movimenti nascono dal Powerhouse.</li>
-              <li><span className="font-medium text-foreground">4. Fluidità</span> — I movimenti fluiscono con grazia.</li>
-              <li><span className="font-medium text-foreground">5. Precisione</span> — La qualità conta più della quantità.</li>
-              <li><span className="font-medium text-foreground">6. Respirazione</span> — Il motore del Pilates.</li>
-            </ol>
-          </ScrollReveal>
-
-          {/* Colonna destra — Yoga */}
-          <ScrollReveal direction="right">
-            <h2 className="font-serif text-3xl text-primary mb-6">Lo Yoga</h2>
-            <p className="text-foreground/85 font-light leading-relaxed mb-8">
-              Lo yoga è una sacra scienza della coscienza. Secondo gli insegnamenti di Maharishi Patanjali e le antiche scritture yogiche, lo yoga non è limitato solo alle posture fisiche.
-            </p>
-            <ul className="space-y-4 text-foreground/85 font-light leading-relaxed">
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                <span><span className="font-medium text-foreground">Yama</span> — imparare a vivere con verità, compassione e integrità verso gli altri.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                <span><span className="font-medium text-foreground">Niyama</span> — coltivare disciplina, autoconoscenza e purezza interiore.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                <span><span className="font-medium text-foreground">Asana</span> — preparare il corpo per stare con consapevolezza, stabilità e presenza.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                <span><span className="font-medium text-foreground">Pranayama</span> — espandere e bilanciare la forza vitale attraverso respirazione consapevole.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                <span><span className="font-medium text-foreground">Pratyahara</span> — trasformare le sensazioni all'interno e disconnettersi da distrazioni esterne.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                <span><span className="font-medium text-foreground">Dharana</span> — sviluppare una profonda concentrazione su un punto.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                <span><span className="font-medium text-foreground">Dhyana</span> — entrare in uno stato di meditazione e continua attenzione.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                <span><span className="font-medium text-foreground">Samadhi</span> — vivere una completa unione con l'esistenza oltre l'ego e la mente.</span>
-              </li>
-            </ul>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* ── SEZIONE B — I PERCORSI ── */}
-      <section className="py-24 px-6 bg-primary text-white relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[18vw] font-serif opacity-[0.04] whitespace-nowrap pointer-events-none select-none">
-          SCIARAM
-        </div>
-
+      <section className="py-24 px-6 bg-secondary/20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <ScrollReveal>
-            <h2 className="font-serif text-white text-4xl md:text-5xl text-center mb-16">I Percorsi</h2>
+            <h2 className="font-serif text-primary text-4xl md:text-5xl text-center mb-16">I Percorsi</h2>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {percorsi.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 0.1}>
-                <div className="group flex flex-col h-full rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500">
+                <div className="group flex flex-col h-full rounded-3xl overflow-hidden border border-primary/10 hover:border-primary/20 transition-all duration-500">
                   <div className="overflow-hidden aspect-[4/3]">
                     <img
                       src={p.img}
@@ -287,18 +218,18 @@ export default function Percorsi() {
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
-                  <div className="flex flex-col flex-1 p-7 bg-white/5 group-hover:bg-white/[0.08] transition-colors duration-500">
-                    <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center mb-4 text-white/60 group-hover:border-white/50 group-hover:text-white transition-all duration-300">
+                  <div className="flex flex-col flex-1 p-7 bg-background group-hover:bg-secondary/10 transition-colors duration-500">
+                    <div className="w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center mb-4 text-primary/60 group-hover:border-primary group-hover:text-primary transition-all duration-300">
                       {p.icon}
                     </div>
-                    <h3 className="text-lg font-serif mb-1">{p.title}</h3>
-                    <p className="text-xs tracking-widest uppercase text-white/40 mb-4">{p.subtitle}</p>
-                    <p className="text-white/60 font-light leading-relaxed text-sm flex-1">{p.description}</p>
+                    <h3 className="text-lg font-serif text-primary mb-1">{p.title}</h3>
+                    <p className="text-xs tracking-widest uppercase text-primary/40 mb-4">{p.subtitle}</p>
+                    <p className="text-foreground/60 font-light leading-relaxed text-sm flex-1">{p.description}</p>
                     <a
                       href={WHATSAPP_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-7 inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-white/20 rounded-full px-5 py-3 hover:bg-white hover:text-primary transition-all duration-300 self-start"
+                      className="mt-7 inline-flex items-center gap-2 text-xs tracking-widest uppercase border border-primary/30 rounded-full px-5 py-3 text-primary hover:bg-primary hover:text-white transition-all duration-300 self-start"
                     >
                       Richiedi informazioni <ChevronRight className="w-3 h-3" />
                     </a>
@@ -307,6 +238,71 @@ export default function Percorsi() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── SEZIONE A — IL METODO & LO YOGA ── */}
+      <section className="py-24 px-6 bg-primary">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto">
+
+          {/* Colonna sinistra — Pilates */}
+          <ScrollReveal direction="left">
+            <h2 className="font-serif text-3xl text-white mb-6">Il Metodo Pilates</h2>
+            <p className="text-white/80 font-light leading-relaxed mb-8">
+              Il Metodo Pilates è un sistema di allenamento sviluppato all'inizio del '900 da Joseph Pilates. Pilates ha chiamato il suo metodo Contrology, con riferimento al modo in cui il metodo incoraggia l'uso della mente per controllare i muscoli. È un programma di esercizi che si concentra sui muscoli posturali, essenziali a fornire supporto alla colonna vertebrale e indicato nel campo della riabilitazione posturale. Il punto cardine del metodo è la tonificazione e il rinforzo del Power House: l'addome, i glutei, gli adduttori e la zona lombare.
+            </p>
+            <h3 className="font-serif text-xl text-white mt-8 mb-4">I 6 Principi Chiave</h3>
+            <ol className="space-y-3 text-white/80 font-light leading-relaxed">
+              <li><span className="font-medium text-white">1. Concentrazione</span> — La mente guida il corpo.</li>
+              <li><span className="font-medium text-white">2. Controllo</span> — Nessun movimento lasciato al caso.</li>
+              <li><span className="font-medium text-white">3. Centratura</span> — Tutti i movimenti nascono dal Powerhouse.</li>
+              <li><span className="font-medium text-white">4. Fluidità</span> — I movimenti fluiscono con grazia.</li>
+              <li><span className="font-medium text-white">5. Precisione</span> — La qualità conta più della quantità.</li>
+              <li><span className="font-medium text-white">6. Respirazione</span> — Il motore del Pilates.</li>
+            </ol>
+          </ScrollReveal>
+
+          {/* Colonna destra — Yoga */}
+          <ScrollReveal direction="right">
+            <h2 className="font-serif text-3xl text-white mb-6">Lo Yoga</h2>
+            <p className="text-white/80 font-light leading-relaxed mb-8">
+              Lo yoga è una sacra scienza della coscienza. Secondo gli insegnamenti di Maharishi Patanjali e le antiche scritture yogiche, lo yoga non è limitato solo alle posture fisiche.
+            </p>
+            <ul className="space-y-4 text-white/80 font-light leading-relaxed">
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
+                <span><span className="font-medium text-white">Yama</span> — imparare a vivere con verità, compassione e integrità verso gli altri.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
+                <span><span className="font-medium text-white">Niyama</span> — coltivare disciplina, autoconoscenza e purezza interiore.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
+                <span><span className="font-medium text-white">Asana</span> — preparare il corpo per stare con consapevolezza, stabilità e presenza.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
+                <span><span className="font-medium text-white">Pranayama</span> — espandere e bilanciare la forza vitale attraverso respirazione consapevole.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
+                <span><span className="font-medium text-white">Pratyahara</span> — trasformare le sensazioni all'interno e disconnettersi da distrazioni esterne.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
+                <span><span className="font-medium text-white">Dharana</span> — sviluppare una profonda concentrazione su un punto.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
+                <span><span className="font-medium text-white">Dhyana</span> — entrare in uno stato di meditazione e continua attenzione.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/50 shrink-0" />
+                <span><span className="font-medium text-white">Samadhi</span> — vivere una completa unione con l'esistenza oltre l'ego e la mente.</span>
+              </li>
+            </ul>
+          </ScrollReveal>
         </div>
       </section>
 
