@@ -383,7 +383,7 @@ export default function Home() {
             <ScrollReveal direction="right">
               <div className="relative">
                 <img
-                  src="/chisonosilvia.webp"
+                  src="/fotochisono.webp"
                   alt="Silvia - SCIARAM 33"
                   loading="lazy"
                   className="w-full object-cover rounded-[2.5rem] shadow-2xl shadow-primary/10"
