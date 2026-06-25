@@ -227,7 +227,7 @@ export default function Studio() {
                     src={src}
                     alt={`Studio ${i + 1}`}
                     loading={i === 0 ? "eager" : "lazy"}
-                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700${src === "/matworkpiccolaattrezzi.webp" ? " object-top" : ""}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700${src === "/matworkpiccolaattrezzi.webp" ? " object-[center_20%]" : ""}`}
                     style={{
                       opacity: i === currentSlide ? 1 : 0,
                       transform: i === currentSlide ? "scale(1)" : "scale(1.03)",
