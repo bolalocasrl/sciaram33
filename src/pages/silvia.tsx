@@ -203,7 +203,7 @@ export default function Silvia() {
           <div className="flex-1 w-full max-w-lg">
             <ScrollReveal direction="right">
               <img
-                src="/fotochisono.webp"
+                src="/fotochisonosola.webp"
                 alt="Silvia - SCIARAM 33"
                 loading="lazy"
                 className="w-full object-cover rounded-[2.5rem] shadow-2xl shadow-primary/10"
