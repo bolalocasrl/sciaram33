@@ -422,15 +422,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {percorsi.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 0.1}>
-                <div className="group flex flex-col h-full rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500">
-                  <div className="overflow-hidden aspect-[4/3]">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                  </div>
+                <div className="group flex flex-col h-full rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-500">
                   <div className="flex flex-col flex-1 p-7 bg-white/5 group-hover:bg-white/[0.08] transition-colors duration-500">
                     <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center mb-4 text-white/60 group-hover:border-white/50 group-hover:text-white transition-all duration-300">
                       {p.icon}

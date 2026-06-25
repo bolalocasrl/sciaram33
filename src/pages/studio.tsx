@@ -42,11 +42,13 @@ const salaMacchinePieces = [
   {
     name: "Cadillac",
     img: "/cadillac.webp",
+    imgClass: "",
     desc: "La macchina più completa del Pilates. Permette di lavorare in sospensione, in trazione e in appoggio, rendendo possibili esercizi impossibili altrove. Ideale per riabilitazione e per chi cerca una pratica profonda e articolata.",
   },
   {
     name: "Reformer",
     img: "/reformer.webp",
+    imgClass: "",
     desc: "Il simbolo del Pilates. Una piattaforma scorrevole con un sistema di molle regolabili che crea resistenza e supporto simultanei. Ogni esercizio sul Reformer richiede controllo, precisione e consapevolezza corporea totale.",
   },
 ];
@@ -55,11 +57,13 @@ const salaMatworkPieces = [
   {
     name: "Pilates Matwork & Piccoli Attrezzi",
     img: "/matworkpiccolaattrezzi.webp",
+    imgClass: "",
     desc: "La radice di tutto. Il Pilates a corpo libero su tappetino nasce dalla connessione tra respiro, centro e movimento — solo il tuo corpo e la tua consapevolezza, con il sostegno di foam roller, magic circle, elastic band, soft ball. Strumenti semplici che amplificano la consapevolezza propriocettiva e permettono un lavoro più mirato su specifiche catene muscolari.",
   },
   {
     name: "Yoga & Meditazione",
     img: "/yogaemeditazione.webp",
+    imgClass: "object-top",
     desc: "Non uno yoga spettacolare, ma uno yoga onesto. Uno yoga che dialoga con il Pilates — attenzione all'allineamento, all'apertura e alla presenza. Il silenzio è parte della pratica: la meditazione guidata è integrata nelle sessioni per portare la mente nello stesso stato di quiete e attenzione che il corpo sta imparando a trovare.",
   },
 ];
@@ -294,7 +298,7 @@ export default function Studio() {
                   <img
                     src={piece.img}
                     alt={piece.name}
-                    className="w-full aspect-[4/3] object-cover"
+                    className={`w-full aspect-[4/3] object-cover${piece.imgClass ? ` ${piece.imgClass}` : ""}`}
                     loading="lazy"
                   />
                   <div className="p-6">
@@ -321,7 +325,7 @@ export default function Studio() {
                   <img
                     src={piece.img}
                     alt={piece.name}
-                    className="w-full aspect-[4/3] object-cover"
+                    className={`w-full aspect-[4/3] object-cover${piece.imgClass ? ` ${piece.imgClass}` : ""}`}
                     loading="lazy"
                   />
                   <div className="p-6">
