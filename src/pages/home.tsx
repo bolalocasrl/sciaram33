@@ -182,8 +182,8 @@ export default function Home() {
               <a href="/">
                 <img src="/scrittanuova.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
               </a>
-              <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
-              <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
+              <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
+              <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio</a>
             </div>
 
             {/* Logo occhio — absolute centrato */}
@@ -201,8 +201,8 @@ export default function Home() {
 
             {/* Gruppo destro */}
             <div className="flex-1 flex items-center justify-around pl-16">
-              <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio 33</a>
-              <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
+              <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
+              <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
               <a href="/#contatti" className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white" style={{ color: "white", border: "1px solid rgba(255,255,255,0.40)" }}>Contatti</a>
             </div>
 
@@ -216,10 +216,10 @@ export default function Home() {
             style={{ color: "rgba(255,255,255,0.85)", backgroundColor: "hsl(var(--primary))" }}
           >
             <a href="/" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Home</a>
-            <a href="/eventi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Eventi</a>
-            <a href="/percorsi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Percorsi</a>
-            <a href="/studio" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Lo Studio 33</a>
             <a href="/silvia" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Chi Sono</a>
+            <a href="/studio" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Lo Studio</a>
+            <a href="/percorsi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Percorsi</a>
+            <a href="/eventi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Eventi</a>
             <button
               className="hover:opacity-60 transition-opacity text-xs tracking-widest uppercase text-left"
               style={{ color: "rgba(255,255,255,0.85)" }}
@@ -356,7 +356,7 @@ export default function Home() {
             <ScrollReveal direction="left">
               <p className="text-xs tracking-[0.3em] uppercase text-accent mb-6">L'Anima di Sciaram 33</p>
               <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8 leading-tight">
-                Ciao, sono Silvia.
+                Founder
               </h2>
               <div className="space-y-5 text-lg text-foreground/85 font-light leading-relaxed">
                 <p>
@@ -474,6 +474,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <ScrollReveal direction="left">
               <div className="rounded-3xl border border-primary/10 p-10 bg-secondary/20 h-full">
+                <img src="/cadillac.webp" alt="Sala Macchine" className="rounded-2xl mb-6 w-full object-cover aspect-[16/9]" loading="lazy" />
                 <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">Sala Grande</p>
                 <h3 className="text-2xl font-serif text-primary mb-6">Sala Macchine</h3>
                 <ul className="space-y-3 text-foreground/85 font-light text-lg">
@@ -491,8 +492,9 @@ export default function Home() {
 
             <ScrollReveal direction="right">
               <div className="rounded-3xl border border-primary/10 p-10 bg-secondary/20 h-full">
-                <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">Sciala</p>
-                <h3 className="text-2xl font-serif text-primary mb-6">Sciala</h3>
+                <img src="/matworkpiccolaattrezzi.webp" alt="Shala" className="rounded-2xl mb-6 w-full object-cover aspect-[16/9]" loading="lazy" />
+                <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3">Shala</p>
+                <h3 className="text-2xl font-serif text-primary mb-6">Shala</h3>
                 <ul className="space-y-3 text-foreground/85 font-light text-lg">
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />

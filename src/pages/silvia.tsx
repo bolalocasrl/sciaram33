@@ -65,15 +65,15 @@ export default function Silvia() {
           <div className="flex items-center w-full px-8 py-4">
             <div className="flex-1 flex items-center justify-around pr-16">
               <a href="/"><img src="/scrittanuova.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} /></a>
-              <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
-              <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
+              <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
+              <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio</a>
             </div>
             <div className="absolute left-1/2 -translate-x-1/2">
               <a href="/"><img src="/logofooternavbar.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "65px", width: "auto", filter: "brightness(0) invert(1)" }} /></a>
             </div>
             <div className="flex-1 flex items-center justify-around pl-16">
-              <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio 33</a>
-              <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
+              <a href="/percorsi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Percorsi</a>
+              <a href="/eventi" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Eventi</a>
               <a href="/#contatti" className="text-xs tracking-widest uppercase rounded-full px-5 py-2 transition-all duration-300 hover:bg-primary hover:text-white" style={{ color: "white", border: "1px solid rgba(255,255,255,0.40)" }}>Contatti</a>
             </div>
           </div>
@@ -83,10 +83,10 @@ export default function Silvia() {
         {mobileMenuOpen && (
           <nav className="md:hidden flex flex-col px-8 pb-6 pt-2 gap-5 text-xs tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.85)", backgroundColor: "hsl(var(--primary))" }}>
             <a href="/" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Home</a>
-            <a href="/eventi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Eventi</a>
-            <a href="/percorsi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Percorsi</a>
-            <a href="/studio" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Lo Studio 33</a>
             <a href="/silvia" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Chi Sono</a>
+            <a href="/studio" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Lo Studio</a>
+            <a href="/percorsi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Percorsi</a>
+            <a href="/eventi" className="hover:opacity-60 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Eventi</a>
             <button
               className="hover:opacity-60 transition-opacity text-xs tracking-widest uppercase text-left"
               style={{ color: "rgba(255,255,255,0.85)" }}
@@ -217,7 +217,7 @@ export default function Silvia() {
             <p className="text-lg text-foreground/85 font-light leading-relaxed mb-12">
               Una chiacchierata su WhatsApp è il primo passo. Raccontami di te, dei tuoi obiettivi. Troveremo insieme il percorso giusto.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
@@ -226,12 +226,6 @@ export default function Silvia() {
                 style={{ backgroundColor: "hsl(var(--primary))" }}
               >
                 Scrivimi su WhatsApp <ChevronRight className="w-3 h-3" />
-              </a>
-              <a
-                href="/#contatti"
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 text-xs tracking-widest uppercase rounded-full border border-primary/30 text-primary transition-all duration-300 hover:bg-primary hover:text-white"
-              >
-                Contattaci <ChevronRight className="w-3 h-3" />
               </a>
             </div>
           </ScrollReveal>
