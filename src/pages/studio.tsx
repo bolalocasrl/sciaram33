@@ -31,15 +31,11 @@ function ScrollReveal({
 }
 
 const CAROUSEL_IMAGES = [
-  "/_NZF2741.webp",
-  "/_NZF2752.webp",
-  "/_NZF2755.webp",
-  "/_NZF2757.webp",
+  "/cadillac.webp",
+  "/reformer.webp",
+  "/matworkpiccolaattrezzi.webp",
+  "/yogaemeditazione.webp",
   "/_NZF2759.webp",
-  "/_NZF2766.webp",
-  "/_NZF2770.webp",
-  "/_NZF2772.webp",
-  "/_NZF2794.webp",
 ];
 
 const salaMacchinePieces = [
