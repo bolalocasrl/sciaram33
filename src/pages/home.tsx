@@ -59,14 +59,14 @@ const percorsi = [
     title: "Reformer & Cadillac",
     subtitle: "Duetto · 2 posti",
     description: "Precisione profonda con macchinari professionali. Ogni movimento calibrato per trasformare il corpo dall'interno.",
-    img: "/2persone.webp",
+    img: "/reformerecadillac.webp",
   },
   {
     icon: <User className="w-5 h-5" />,
     title: "Sessioni Individuali",
     subtitle: "1-to-1 · Su misura",
     description: "Percorsi personalizzati per riabilitazione, prevenzione o obiettivi specifici. Attenzione totale al tuo corpo, alla tua storia.",
-    img: "/CorpoLibero.webp",
+    img: "/sessionindividuali.webp",
   },
 ];
 
@@ -468,7 +468,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <p className="text-xs tracking-[0.3em] uppercase text-accent text-center mb-4">Il nostro spazio</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-16">Lo Studio 33</h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary text-center mb-16">Lo Studio</h2>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -485,11 +485,6 @@ export default function Home() {
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
                     Reformer
                   </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                    Ladder Barrel
-                  </li>
-
                 </ul>
               </div>
             </ScrollReveal>
