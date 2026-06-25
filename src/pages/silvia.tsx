@@ -30,11 +30,8 @@ function ScrollReveal({
   );
 }
 
-const SILVIA_VIDEOS = ["/primovideosilvia.webm", "/secondovideosilvia.webm"];
-
 export default function Silvia() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [videoIndex, setVideoIndex] = useState(0);
 
   return (
     <main className="min-h-screen bg-background overflow-hidden selection:bg-primary/20 selection:text-primary">
@@ -113,15 +110,13 @@ export default function Silvia() {
       <section className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden">
         {/* Video background */}
         <video
-          key={SILVIA_VIDEOS[videoIndex]}
+          src="/primovideosilvia.webm"
           autoPlay
           muted
+          loop
           playsInline
-          onEnded={() => setVideoIndex((i) => (i + 1) % SILVIA_VIDEOS.length)}
           className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src={SILVIA_VIDEOS[videoIndex]} type="video/webm" />
-        </video>
+        />
 
         {/* Overlay */}
         <div
