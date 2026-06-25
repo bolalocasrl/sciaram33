@@ -164,33 +164,17 @@ export default function Silvia() {
           </ScrollReveal>
           <div className="space-y-10">
             {[
-              {
-                title: "Pilates Grandi Attrezzi",
-                desc: "Istruttrice certificata in Italia con specializzazione e approfondimenti conseguiti all'estero.",
-              },
-              {
-                title: "Yoga e Meditazione",
-                desc: <>Formazione in <strong>India</strong>, nell'area dell'Himalaya, seguita da maestri orientali sullo studio dei chakra e del suono per apprendere le tecniche millenarie di equilibrio e presenza.</>,
-              },
-              {
-                title: "Divino Femminile",
-                desc: <>Ho appreso da sagge maestre illuminate il lavoro sul <strong>Divino Femminile</strong>, approfondendo la sacralità dell'utero inteso come portale di saggezza, creazione e potere intuitivo.</>,
-              },
-              {
-                title: "Ricerca sulla Coscienza",
-                desc: <>Studio e ricerca nella foresta di <strong>Palawan</strong> sugli stati alterati di coscienza, sperimentando la connessione con altri piani e lo studio dello spazio-tempo.</>,
-              },
-              {
-                title: "Scienze Olistiche",
-                desc: "Approfondimento in numerologia, astrologia, geometria sacra, sciamanesimo e medicina quantica, intesi come tecnologie di luce e chiavi per la comprensione della propria mappa animica.",
-              },
+              { title: "Pilates Grandi Attrezzi" },
+              { title: "Yoga e Meditazione" },
+              { title: "Divino Femminile" },
+              { title: "Ricerca sulla Coscienza" },
+              { title: "Scienze Olistiche" },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.08}>
                 <div className="flex gap-6 border-t border-primary/10 pt-8">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-2" />
                   <div>
-                    <p className="font-medium text-foreground mb-2">{item.title}</p>
-                    <p className="text-foreground/85 font-light leading-relaxed">{item.desc}</p>
+                    <p className="font-medium text-foreground">{item.title}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -218,21 +202,6 @@ export default function Silvia() {
             >
               Scrivimi per un progetto aziendale <ChevronRight className="w-3 h-3" />
             </a>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ── FILOSOFIA ── */}
-      <section className="py-32 px-6 bg-primary text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-5xl font-serif leading-tight mb-10">
-              "Il corpo è il luogo dove tutto inizia e tutto torna. La mia pratica è restituire alle persone il loro spazio interiore."
-            </h2>
-            <div className="h-[1px] w-20 bg-white/30 mx-auto mb-10" />
-            <p className="text-white/70 font-light text-lg max-w-2xl mx-auto leading-relaxed">
-              Ogni sessione con me è un ascolto. Non alleno corpi — accompagno persone. Il Pilates e lo yoga sono i miei strumenti, ma il vero lavoro è sempre più profondo.
-            </p>
           </ScrollReveal>
         </div>
       </section>
