@@ -50,7 +50,7 @@ const percorsi = [
     title: "Sessioni Individuali",
     subtitle: "1-to-1 · Su misura",
     description: "Percorsi personalizzati per riabilitazione, prevenzione o obiettivi specifici. Attenzione totale al tuo corpo, alla tua storia.",
-    img: "/sessionindividuali.webp",
+    img: "/IndividualeAttrezzo.webp",
   },
 ];
 
