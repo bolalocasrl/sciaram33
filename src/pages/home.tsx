@@ -515,7 +515,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href={WHATSAPP_URL}
+                href="https://www.google.com/maps/place/Via+Castelvetrano,+45,+91026+Mazara+del+Vallo+TP,+Italia/@37.6498218,12.5998736,43m/data=!3m1!1e3!4m6!3m5!1s0x131bc7ed8075b863:0xb2a7cf8237e3ad25!8m2!3d37.6498403!4d12.6001485!16s%2Fg%2F11nnkq35nf?entry=ttu&g_ep=EgoyMDI2MDYyMi4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-10 py-4 text-xs tracking-widest uppercase rounded-full text-white transition-all duration-300 hover:opacity-90 active:scale-95 shadow-lg"
@@ -610,9 +610,14 @@ export default function Home() {
                   <MapPin className="w-6 h-6 text-accent shrink-0 mt-1" />
                   <div>
                     <p className="font-medium text-foreground">SCIARAM 33</p>
-                    <p className="text-foreground/85">
+                    <a
+                      href="https://www.google.com/maps/place/Via+Castelvetrano,+45,+91026+Mazara+del+Vallo+TP,+Italia/@37.6498218,12.5998736,43m/data=!3m1!1e3!4m6!3m5!1s0x131bc7ed8075b863:0xb2a7cf8237e3ad25!8m2!3d37.6498403!4d12.6001485!16s%2Fg%2F11nnkq35nf?entry=ttu&g_ep=EgoyMDI2MDYyMi4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground/85 hover:text-primary transition-colors"
+                    >
                       Via Castelvetrano 45<br />Mazara del Vallo (TP)
-                    </p>
+                    </a>
                   </div>
                 </div>
 
