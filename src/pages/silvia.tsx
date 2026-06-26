@@ -206,7 +206,7 @@ export default function Silvia() {
                 src="/chisonofinitoo.webp"
                 alt="Silvia - SCIARAM 33"
                 loading="lazy"
-                className="w-full object-cover rounded-[2.5rem] shadow-2xl shadow-primary/10"
+                className="w-full max-w-sm mx-auto object-cover rounded-[2.5rem] shadow-2xl shadow-primary/10"
                 style={{ aspectRatio: "4/5" }}
               />
             </ScrollReveal>
