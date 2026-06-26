@@ -360,7 +360,7 @@ export default function Home() {
               </h2>
               <div className="space-y-5 text-lg text-foreground/85 font-light leading-relaxed">
                 <p>
-                  Dietro SCIARAM 33 c'è Silvia, ricercatrice spirituale e istruttrice di Pilates.
+                  Dietro SCIARAM 33 c'è Silvia: ricercatrice spirituale, istruttrice di Pilates e guida nell'arte dell'auto-osservazione corporea.
                 </p>
                 <p>
                   Dopo anni di studio, lavoro e ricerche esperienziali, è tornata nella sua terra natale, la Sicilia, per intraprendere un nuovo progetto incentrato sulla coscienza corporale attraverso il movimento e tecniche di riconnessione al sé.

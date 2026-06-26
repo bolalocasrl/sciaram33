@@ -183,7 +183,7 @@ export default function Silvia() {
             <div className="space-y-8 text-lg text-foreground/85 font-light leading-relaxed">
               <ScrollReveal delay={0.1}>
                 <p>
-                  Dietro SCIARAM 33 c'è Silvia, ricercatrice spirituale e istruttrice di Pilates.
+                  Dietro SCIARAM 33 c'è Silvia: ricercatrice spirituale, istruttrice di Pilates e guida nell'arte dell'auto-osservazione corporea.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
