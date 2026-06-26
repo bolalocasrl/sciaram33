@@ -648,13 +648,13 @@ export default function Home() {
                   <div>
                     <p className="font-medium text-foreground">Instagram</p>
                     <a
-                      href="https://www.instagram.com/sciaram33.pilates/"
+                      href="https://www.instagram.com/sciaram33.movementmedicine/"
                       target="_blank"
                       rel="noopener noreferrer"
                       data-testid="link-instagram-contact"
                       className="text-foreground/85 hover:text-primary transition-colors"
                     >
-                      @sciaram33.pilates
+                      @sciaram33.movementmedicine
                     </a>
                   </div>
                 </div>

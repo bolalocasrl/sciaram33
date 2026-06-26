@@ -36,6 +36,7 @@ const CAROUSEL_IMAGES = [
   "/matworkpiccolaattrezzi.webp",
   "/yogaemeditazione.webp",
   "/_NZF2759.webp",
+  "/_NZF2794.webp",
 ];
 
 const salaMacchinePieces = [
@@ -227,7 +228,7 @@ export default function Studio() {
                     src={src}
                     alt={`Studio ${i + 1}`}
                     loading={i === 0 ? "eager" : "lazy"}
-                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700${src === "/matworkpiccolaattrezzi.webp" ? " object-[center_20%]" : ""}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700${src === "/matworkpiccolaattrezzi.webp" ? " object-[center_20%]" : src === "/_NZF2794.webp" ? " object-top" : ""}`}
                     style={{
                       opacity: i === currentSlide ? 1 : 0,
                       transform: i === currentSlide ? "scale(1)" : "scale(1.03)",
