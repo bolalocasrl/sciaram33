@@ -155,7 +155,7 @@ export default function Home() {
           </a>
           <a href="/" className="justify-self-center">
             <img
-              src="/scrittanuova.png"
+              src="/titolosciaramfinito.png"
               alt="Silvia"
               className="object-contain"
               style={{ maxHeight: "52px", width: "auto" }}
@@ -180,7 +180,7 @@ export default function Home() {
             {/* Gruppo sinistro */}
             <div className="flex-1 flex items-center justify-around pr-16">
               <a href="/">
-                <img src="/scrittanuova.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
+                <img src="/titolosciaramfinito.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} />
               </a>
               <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
               <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio</a>
@@ -383,7 +383,7 @@ export default function Home() {
             <ScrollReveal direction="right">
               <div className="relative">
                 <img
-                  src="/fotochisonosola.webp"
+                  src="/chisonofinitoo.webp"
                   alt="Silvia - SCIARAM 33"
                   loading="lazy"
                   className="w-full object-cover rounded-[2.5rem] shadow-2xl shadow-primary/10"
@@ -611,7 +611,7 @@ export default function Home() {
                   <div>
                     <p className="font-medium text-foreground">SCIARAM 33</p>
                     <a
-                      href="https://www.google.com/maps/place/Via+Castelvetrano,+45,+91026+Mazara+del+Vallo+TP,+Italia/@37.6498218,12.5998736,43m/data=!3m1!1e3!4m6!3m5!1s0x131bc7ed8075b863:0xb2a7cf8237e3ad25!8m2!3d37.6498403!4d12.6001485!16s%2Fg%2F11nnkq35nf?entry=ttu&g_ep=EgoyMDI2MDYyMi4wIKXMDSoASAFQAw%3D%3D"
+                      href="https://www.google.com/maps/place/SCIARAM33/@37.6499303,12.5969724,673m/data=!3m1!1e3!4m10!1m2!2m1!1ssciaram+33!3m6!1s0x131bc7955df772a1:0x3e00bac317d99eda!8m2!3d37.6499303!4d12.5995473!15sCgpzY2lhcmFtIDMzkgEOcGlsYXRlc19zdHVkaW_gAQA!16s%2Fg%2F11zgczt9_y?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-foreground/85 hover:text-primary transition-colors"

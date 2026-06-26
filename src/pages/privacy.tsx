@@ -50,7 +50,7 @@ export default function Privacy() {
             <img src="/logofooternavbar.png" alt="SCIARAM 33" className="object-contain" style={{ maxHeight: "50px", width: "auto", filter: "brightness(0) invert(1)" }} />
           </a>
           <a href="/" className="justify-self-center">
-            <img src="/scrittanuova.png" alt="Silvia" className="object-contain" style={{ maxHeight: "52px", width: "auto" }} />
+            <img src="/titolosciaramfinito.png" alt="Silvia" className="object-contain" style={{ maxHeight: "52px", width: "auto" }} />
           </a>
           <button className="justify-self-end p-2" onClick={() => setMobileMenuOpen((o) => !o)} aria-label="Menu">
             {mobileMenuOpen
@@ -64,7 +64,7 @@ export default function Privacy() {
         <div className="relative hidden md:flex" style={{ color: "rgba(255,255,255,0.85)" }}>
           <div className="flex items-center w-full px-8 py-4">
             <div className="flex-1 flex items-center justify-around pr-16">
-              <a href="/"><img src="/scrittanuova.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} /></a>
+              <a href="/"><img src="/titolosciaramfinito.png" alt="Silvia" className="object-contain" style={{ maxHeight: "45px", width: "auto" }} /></a>
               <a href="/silvia" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Chi Sono</a>
               <a href="/studio" className="text-xs tracking-widest uppercase hover:opacity-60 transition-opacity">Lo Studio</a>
             </div>
